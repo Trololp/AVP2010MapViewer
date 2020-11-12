@@ -16,7 +16,7 @@ my problem with linking. find and delete in `AVP2010MapViewer.h` this stroke `#p
    1. Download [QuickBMS](https://aluigi.altervista.org/quickbms.htm)
    2. Then download script [asura.bms](https://github.com/Trololp/AVP2010MapViewer/blob/main/usefull_stuff/asura.bms)
    3. For maps you want to look at you need first unpack **.pc** files. Map Geometry located at **...\Aliens vs Predator\Envs\(Map_name)\**
-   this is file called **(Map_name).pc** you need to unpack this into the first folder for continue.*Example: Jungle.pc*
+   this is file called **(Map_name).pc** you need to unpack this into the first folder for continue.*Example: Jungle.pc*.
    Mission files located in same folder with map geometry and have specific prefix like. files like **A01_(Map_name).pc**. you need to unpack it in second folder.
    *Note : A - means alien mission M - marine P - predator.*
  
