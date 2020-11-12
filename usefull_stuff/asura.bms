@@ -1,0 +1,125 @@
+# Asura engine (script 0.2.2a)
+#  Sniper Elite
+#  Rogue Trooper
+#  Guard Shield
+#  possibly other Rebellion's games
+#   thanx to Terry Butler for having solved the mistery of the filenames in ASTS
+# script for QuickBMS http://aluigi.org/papers.htm#quickbms
+
+get PACK_SIZE asize
+getdstring SIGN 8
+if SIGN == "AsuraCmp"
+	get ZSIZE long
+	get SIZE long
+	math ZSIZE = PACK_SIZE
+	math ZSIZE -= 8
+	comtype huffboh
+	clog TEMPORARY_FILE 8 ZSIZE SIZE
+	open "." TEMPORARY_FILE
+	get PACK_SIZE asize
+	getdstring SIGN 8
+elif SIGN == "AsuraZlb"
+	get ZERO long
+	get ZSIZE long
+	get SIZE long
+	savepos OFFSET
+	math ZSIZE = PACK_SIZE
+	math ZSIZE -= OFFSET
+	comtype zlib
+	clog TEMPORARY_FILE OFFSET ZSIZE SIZE
+	open "." TEMPORARY_FILE
+	get PACK_SIZE asize
+	getdstring SIGN 8
+endif
+if SIGN != "Asura   "
+	cleanexit
+endif
+
+for x = 0
+	savepos CHUNK_OFFSET
+	math TMP = CHUNK_OFFSET
+	math TMP += 16
+	if TMP >= PACK_SIZE
+		cleanexit
+	endif
+	getdstring CHUNK 4
+	get CHUNKSZ long
+	get DUMMY long
+	get DUMMY long
+	if CHUNK == RSCF
+		# 0,F - mesh
+		# 2,0 - image
+		# 3,0 - sound
+		get TYPE long
+		get DUMMY long
+		get SIZE long
+		get NAME string
+		math OFFSET = CHUNK_OFFSET
+		math OFFSET += CHUNKSZ
+		math OFFSET -= SIZE
+		if TYPE == 0
+			string NAME += "."
+			string NAME += CHUNK
+			log NAME CHUNK_OFFSET CHUNKSZ
+		else
+			log NAME OFFSET SIZE
+		endif
+	elif CHUNK == ASTS
+		get FILES long
+		for i = 0 < FILES
+			callfunction padded_name 1
+			get DUMMY byte
+			get SIZE long
+			get OFFSET long
+			log NAME OFFSET SIZE
+		next i
+	else
+		savepos OFFSET
+		math SIZE = CHUNK_OFFSET
+		math SIZE += CHUNKSZ
+		math SIZE -= OFFSET
+		math NAME_OFFSET = 0
+		if CHUNK == HANM
+			math NAME_OFFSET = CHUNK_OFFSET
+			math NAME_OFFSET += 0x18
+		elif CHUNK == HSKL
+			get TMP string
+			savepos NAME_OFFSET
+			math NAME_OFFSET -= CHUNK_OFFSET
+			math NAME_OFFSET x 4
+			math NAME_OFFSET += CHUNK_OFFSET
+		elif CHUNK == HSKN
+			math NAME_OFFSET = CHUNK_OFFSET
+			math NAME_OFFSET += 0x18
+		elif CHUNK == HSBB
+			savepos NAME_OFFSET
+		endif
+		set NAME string CHUNK
+		string NAME += "_chunk/"
+		if NAME_OFFSET != 0
+			goto NAME_OFFSET
+			get RNAME string
+			string NAME += RNAME
+		else
+			string NAME += x
+		endif
+		string NAME += "."
+		string NAME += CHUNK #".dat"
+		#log NAME OFFSET SIZE    # comment here if you don't want to extract these useless chunks
+		log NAME CHUNK_OFFSET CHUNKSZ    # comment here if you don't want to extract these useless chunks
+	endif
+	math CHUNK_OFFSET += CHUNKSZ
+	goto CHUNK_OFFSET
+next x
+
+startfunction padded_name
+	set NAME string ""
+	set NAME_POS long 0
+	do
+		get DUMMY long
+		string NAME += "PADD"
+		putvarchr NAME NAME_POS DUMMY long
+		math NAME_POS += 4
+		strlen NAMESZ NAME
+	while NAMESZ >= NAME_POS
+endfunction
