@@ -4,17 +4,14 @@
 #include "Models.h"
 
 //Macro
-#define SFPS(file, pos) SetFilePointer(file, pos, 0, FILE_BEGIN)
-#define SFPC(file, pos) SetFilePointer(file, pos, 0, FILE_CURRENT)
-#define READ(file, buffer, size, a) ReadFile(file, buffer, size, a, NULL)
-
+#define SFPS(pos) SetFilePointer(f, pos, 0, FILE_BEGIN)
+#define SFPC(pos) SetFilePointer(f, pos, 0, FILE_CURRENT)
+#define READ(v) ReadFile(f, &(v), sizeof(v), &a, NULL)
+#define READP(p, n) ReadFile(f, p, n, &a, NULL)
 
 typedef struct {
 	DWORD id = 0;
 	ENTITY_TYPE type;
-	DWORD pos_offset;
-	DWORD pos2_offset;
-	//add support of text messages and custom loaders !
 } entity_info;
 
 struct e_act
@@ -22,6 +19,7 @@ struct e_act
 	WORD act_id;
 	WORD msgid;
 };
+
 
 extern std::vector<bbox> g_bboxes;
 extern std::vector<line> g_lines;
@@ -50,182 +48,189 @@ int SMSG_count2 = 0;
 void** SMSG_ptr1;
 void** SMSG_ptr2;
 
-entity_info e_info[174] = {
-	{ 0, ENTITY_UNKNOWN, 0, 0},
-	{ 1, ENTITY_GLOBAL, 0, 0 },
-	{ 2, ENTITY_UNKNOWN, 0, 0 },
-	{ 3, ENTITY_GLOBAL, 0, 0 },
-	{ 4, ENTITY_UNKNOWN, 0, 0 },
-	{ 5, ENTITY_UNKNOWN, 0, 0 },
-	{ 6, ENTITY_UNKNOWN, 0, 0 },
-	{ 7, ENTITY_POINT, 0x5C, 0 },
-	{ 8, ENTITY_UNKNOWN, 0, 0 },
-	{ 9, ENTITY_UNKNOWN, 0, 0 },
-	{ 10, ENTITY_UNKNOWN, 0, 0 },
-	{ 11, ENTITY_GLOBAL, 0, 0 },
-	{ 12, ENTITY_UNKNOWN, 0, 0 },
-	{ 13, ENTITY_UNKNOWN, 0, 0 },
-	{ 14, ENTITY_POINT, 0, 0 },
-	{ 15, ENTITY_UNKNOWN, 0, 0 },
-	{ 16, ENTITY_UNKNOWN, 0, 0 },
-	{ 17, ENTITY_UNKNOWN, 0, 0 },
-	{ 18, ENTITY_UNKNOWN, 0, 0 },
-	{ 19, ENTITY_UNKNOWN, 0, 0 },
-	{ 20, ENTITY_POINT, 0x58, 0x64 },
-	{ 21, ENTITY_POINT, 0, 0 },
-	{ 22, ENTITY_UNKNOWN, 0, 0 },
-	{ 23, ENTITY_UNKNOWN, 0, 0 },
-	{ 24, ENTITY_UNKNOWN, 0, 0 },
-	{ 25, ENTITY_UNKNOWN, 0, 0 },
-	{ 26, ENTITY_UNKNOWN, 0, 0 },
-	{ 27, ENTITY_UNKNOWN, 0, 0 },
-	{ 28, ENTITY_UNKNOWN, 0, 0 },	
-	{ 29, ENTITY_UNKNOWN, 0, 0 },
-	{ 30, ENTITY_UNKNOWN, 0, 0 },
-	{ 31, ENTITY_UNKNOWN, 0, 0 },
-	{ 32, ENTITY_GLOBAL, 0, 0 },
-	{ 33, ENTITY_POINT, 0x38, 0x48 },
-	{ 34, ENTITY_GLOBAL, 0, 0 },
-	{ 35, ENTITY_POINT, 0, 0 },
-	{ 36, ENTITY_UNKNOWN, 0, 0 },
-	{ 37, ENTITY_UNKNOWN, 0, 0 },
-	{ 38, ENTITY_UNKNOWN, 0, 0 },
-	{ 39, ENTITY_UNKNOWN, 0, 0 },
-	{ 40, ENTITY_UNKNOWN, 0, 0 },
-	{ 41, ENTITY_UNKNOWN, 0, 0 },
-	{ 42, ENTITY_UNKNOWN, 0, 0 },
-	{ 43, ENTITY_UNKNOWN, 0, 0 },
-	{ 44, ENTITY_UNKNOWN, 0, 0 },
-	{ 45, ENTITY_UNKNOWN, 0, 0 },
-	{ 46, ENTITY_UNKNOWN, 0, 0 },
-	{ 47, ENTITY_UNKNOWN, 0, 0 },
-	{ 48, ENTITY_UNKNOWN, 0, 0 },
-	{ 49, ENTITY_UNKNOWN, 0, 0 },
-	{ 50, ENTITY_UNKNOWN, 0, 0 },
-	{ 51, ENTITY_UNKNOWN, 0, 0 },
-	{ 52, ENTITY_UNKNOWN, 0, 0 },
-	{ 53, ENTITY_UNKNOWN, 0, 0 },
-	{ 54, ENTITY_UNKNOWN, 0, 0 },
-	{ 55, ENTITY_UNKNOWN, 0, 0 },
-	{ 56, ENTITY_UNKNOWN, 0, 0 },
-	{ 57, ENTITY_UNKNOWN, 0, 0 },
-	{ 58, ENTITY_UNKNOWN, 0, 0 },
-	{ 59, ENTITY_UNKNOWN, 0, 0 },
-	{ 60, ENTITY_UNKNOWN, 0, 0 },
-	{ 61, ENTITY_UNKNOWN, 0, 0 },
-	{ 62, ENTITY_UNKNOWN, 0, 0 },
-	{ 63, ENTITY_POINT, 0, 0 },
-	{ 64, ENTITY_POINT, 0, 0 },
-	{ 65, ENTITY_UNKNOWN, 0, 0 },
-	{ 66, ENTITY_UNKNOWN, 0, 0 },
-	{ 67, ENTITY_UNKNOWN, 0, 0 },
-	{ 68, ENTITY_GLOBAL, 0, 0 },
-	{ 69, ENTITY_POINT, 0, 0 },
-	{ 70, ENTITY_POINT, 0, 0 },
-	{ 71, ENTITY_POINT, 0, 0 },
-	{ 72, ENTITY_UNKNOWN, 0, 0 },
-	{ 73, ENTITY_UNKNOWN, 0, 0 },
-	{ 74, ENTITY_GLOBAL, 0, 0 },
-	{ 75, ENTITY_POINT, 0, 0 },
-	{ 76, ENTITY_UNKNOWN, 0, 0 },
-	{ 77, ENTITY_POINT, 0, 0 },
-	{ 78, ENTITY_POINT, 0, 0 },
-	{ 79, ENTITY_UNKNOWN, 0, 0 },
-	{ 80, ENTITY_UNKNOWN, 0, 0 },
-	{ 81, ENTITY_UNKNOWN, 0, 0 },
-	{ 82, ENTITY_UNKNOWN, 0, 0 },
-	{ 83, ENTITY_POINT, 0, 0 },
-	{ 84, ENTITY_UNKNOWN, 0, 0 },
-	{ 85, ENTITY_UNKNOWN, 0, 0 },
-	{ 86, ENTITY_UNKNOWN, 0, 0 },
-	{ 87, ENTITY_UNKNOWN, 0, 0 },
-	{ 88, ENTITY_UNKNOWN, 0, 0 },
-	{ 89, ENTITY_UNKNOWN, 0, 0 },
-	{ 90, ENTITY_UNKNOWN, 0, 0 },
-	{ 91, ENTITY_UNKNOWN, 0, 0 },
-	{ 92, ENTITY_POINT, 0, 0 },
-	{ 93, ENTITY_UNKNOWN, 0, 0 },
-	{ 94, ENTITY_POINT, 0, 0 },
-	{ 95, ENTITY_UNKNOWN, 0, 0 },
-	{ 96, ENTITY_UNKNOWN, 0, 0 },
-	{ 97, ENTITY_POINT, 0, 0 },
-	{ 98, ENTITY_UNKNOWN, 0, 0 },
-	{ 99, ENTITY_UNKNOWN, 0, 0 },
-	{ 100, ENTITY_POINT, 0, 0 },
-	{ 101, ENTITY_UNKNOWN, 0, 0 },
-	{ 102, ENTITY_UNKNOWN, 0, 0 },
-	{ 103, ENTITY_UNKNOWN, 0, 0 },
-	{ 104, ENTITY_UNKNOWN, 0, 0 },
-	{ 105, ENTITY_UNKNOWN, 0, 0 },
-	{ 106, ENTITY_UNKNOWN, 0, 0 },
-	{ 107, ENTITY_UNKNOWN, 0, 0 },
-	{ 108, ENTITY_UNKNOWN, 0, 0 },
-	{ 109, ENTITY_UNKNOWN, 0, 0 },
-	{ 110, ENTITY_UNKNOWN, 0, 0 },
-	{ 111, ENTITY_UNKNOWN, 0, 0 },
-	{ 112, ENTITY_UNKNOWN, 0, 0 },
-	{ 113, ENTITY_UNKNOWN, 0, 0 },
-	{ 114, ENTITY_POINT, 0, 0 },
-	{ 115, ENTITY_UNKNOWN, 0, 0 },
-	{ 116, ENTITY_UNKNOWN, 0, 0 },
-	{ 117, ENTITY_UNKNOWN, 0, 0 },
-	{ 118, ENTITY_UNKNOWN, 0, 0 },
-	{ 119, ENTITY_UNKNOWN, 0, 0 },
-	{ 120, ENTITY_UNKNOWN, 0, 0 },
-	{ 121, ENTITY_UNKNOWN, 0, 0 },
-	{ 122, ENTITY_UNKNOWN, 0, 0 },
-	{ 123, ENTITY_UNKNOWN, 0, 0 },
-	{ 124, ENTITY_UNKNOWN, 0, 0 },
-	{ 125, ENTITY_UNKNOWN, 0, 0 },
-	{ 126, ENTITY_POINT, 0, 0 },
-	{ 127, ENTITY_UNKNOWN, 0, 0 },
-	{ 128, ENTITY_UNKNOWN, 0, 0 },
-	{ 129, ENTITY_UNKNOWN, 0, 0 },
-	{ 130, ENTITY_GLOBAL, 0, 0 },
-	{ 131, ENTITY_UNKNOWN, 0, 0 },
-	{ 132, ENTITY_POINT, 0, 0 },
-	{ 133, ENTITY_GLOBAL, 0, 0 },
-	{ 134, ENTITY_UNKNOWN, 0, 0 },
-	{ 135, ENTITY_POINT, 0, 0 },
-	{ 136, ENTITY_POINT, 0, 0 },
-	{ 137, ENTITY_UNKNOWN, 0, 0 },
-	{ 138, ENTITY_POINT, 0, 0 },
-	{ 139, ENTITY_UNKNOWN, 0, 0 },
-	{ 140, ENTITY_POINT, 0, 0 },
-	{ 141, ENTITY_POINT, 0, 0 },
-	{ 142, ENTITY_POINT, 0, 0 },
-	{ 143, ENTITY_UNKNOWN, 0, 0 },
-	{ 144, ENTITY_POINT, 0, 0 },
-	{ 145, ENTITY_POINT, 0, 0 },
-	{ 146, ENTITY_POINT, 0, 0 },
-	{ 147, ENTITY_UNKNOWN, 0, 0 },
-	{ 148, ENTITY_UNKNOWN, 0, 0 },
-	{ 149, ENTITY_GLOBAL, 0, 0 },
-	{ 150, ENTITY_UNKNOWN, 0, 0 },
-	{ 151, ENTITY_UNKNOWN, 0, 0 },
-	{ 152, ENTITY_UNKNOWN, 0, 0 },
-	{ 153, ENTITY_UNKNOWN, 0, 0 },
-	{ 154, ENTITY_UNKNOWN, 0, 0 },
-	{ 155, ENTITY_UNKNOWN, 0, 0 },
-	{ 156, ENTITY_POINT, 0, 0 },
-	{ 157, ENTITY_POINT, 0, 0 },
-	{ 158, ENTITY_POINT, 0, 0 },
-	{ 159, ENTITY_UNKNOWN, 0, 0 },
-	{ 160, ENTITY_UNKNOWN, 0, 0 },
-	{ 161, ENTITY_UNKNOWN, 0, 0 },
-	{ 162, ENTITY_POINT, 0, 0 },
-	{ 163, ENTITY_POINT, 0, 0 },
-	{ 164, ENTITY_UNKNOWN, 0, 0 },
-	{ 165, ENTITY_UNKNOWN, 0, 0 },
-	{ 166, ENTITY_POINT, 0, 0 },
-	{ 167, ENTITY_UNKNOWN, 0, 0 },
-	{ 168, ENTITY_UNKNOWN, 0, 0 },
-	{ 169, ENTITY_POINT, 0, 0 },
-	{ 170, ENTITY_POINT, 0, 0 },
-	{ 171, ENTITY_UNKNOWN, 0, 0 },
-	{ 172, ENTITY_UNKNOWN, 0, 0 },
-	{ 173, ENTITY_UNKNOWN, 0, 0 },
+entity_info e_info[180] = {
+	{ 0, ENTITY_UNKNOWN },
+	{ 1, ENTITY_GLOBAL },
+	{ 2, ENTITY_UNKNOWN },
+	{ 3, ENTITY_GLOBAL },
+	{ 4, ENTITY_UNKNOWN },
+	{ 5, ENTITY_UNKNOWN },
+	{ 6, ENTITY_UNKNOWN },
+	{ 7, ENTITY_POINT },
+	{ 8, ENTITY_UNKNOWN },
+	{ 9, ENTITY_UNKNOWN },
+	{ 10, ENTITY_UNKNOWN },
+	{ 11, ENTITY_GLOBAL },
+	{ 12, ENTITY_UNKNOWN },
+	{ 13, ENTITY_UNKNOWN },
+	{ 14, ENTITY_POINT },
+	{ 15, ENTITY_UNKNOWN },
+	{ 16, ENTITY_UNKNOWN },
+	{ 17, ENTITY_UNKNOWN },
+	{ 18, ENTITY_UNKNOWN },
+	{ 19, ENTITY_UNKNOWN },
+	{ 20, ENTITY_POINT },
+	{ 21, ENTITY_POINT },
+	{ 22, ENTITY_UNKNOWN },
+	{ 23, ENTITY_UNKNOWN },
+	{ 24, ENTITY_UNKNOWN },
+	{ 25, ENTITY_UNKNOWN },
+	{ 26, ENTITY_UNKNOWN },
+	{ 27, ENTITY_UNKNOWN },
+	{ 28, ENTITY_UNKNOWN },
+	{ 29, ENTITY_UNKNOWN },
+	{ 30, ENTITY_UNKNOWN },
+	{ 31, ENTITY_UNKNOWN },
+	{ 32, ENTITY_GLOBAL },
+	{ 33, ENTITY_POINT },
+	{ 34, ENTITY_GLOBAL },
+	{ 35, ENTITY_POINT },
+	{ 36, ENTITY_UNKNOWN },
+	{ 37, ENTITY_UNKNOWN },
+	{ 38, ENTITY_UNKNOWN },
+	{ 39, ENTITY_UNKNOWN },
+	{ 40, ENTITY_UNKNOWN },
+	{ 41, ENTITY_UNKNOWN },
+	{ 42, ENTITY_UNKNOWN },
+	{ 43, ENTITY_UNKNOWN },
+	{ 44, ENTITY_UNKNOWN },
+	{ 45, ENTITY_UNKNOWN },
+	{ 46, ENTITY_UNKNOWN },
+	{ 47, ENTITY_UNKNOWN },
+	{ 48, ENTITY_UNKNOWN },
+	{ 49, ENTITY_UNKNOWN },
+	{ 50, ENTITY_UNKNOWN },
+	{ 51, ENTITY_UNKNOWN },
+	{ 52, ENTITY_UNKNOWN },
+	{ 53, ENTITY_UNKNOWN },
+	{ 54, ENTITY_UNKNOWN },
+	{ 55, ENTITY_UNKNOWN },
+	{ 56, ENTITY_UNKNOWN },
+	{ 57, ENTITY_UNKNOWN },
+	{ 58, ENTITY_UNKNOWN },
+	{ 59, ENTITY_UNKNOWN },
+	{ 60, ENTITY_UNKNOWN },
+	{ 61, ENTITY_UNKNOWN },
+	{ 62, ENTITY_UNKNOWN },
+	{ 63, ENTITY_POINT },
+	{ 64, ENTITY_POINT },
+	{ 65, ENTITY_UNKNOWN },
+	{ 66, ENTITY_UNKNOWN },
+	{ 67, ENTITY_UNKNOWN },
+	{ 68, ENTITY_GLOBAL },
+	{ 69, ENTITY_POINT },
+	{ 70, ENTITY_POINT },
+	{ 71, ENTITY_POINT },
+	{ 72, ENTITY_UNKNOWN },
+	{ 73, ENTITY_UNKNOWN },
+	{ 74, ENTITY_GLOBAL },
+	{ 75, ENTITY_POINT },
+	{ 76, ENTITY_UNKNOWN },
+	{ 77, ENTITY_POINT },
+	{ 78, ENTITY_POINT },
+	{ 79, ENTITY_UNKNOWN },
+	{ 80, ENTITY_UNKNOWN },
+	{ 81, ENTITY_UNKNOWN },
+	{ 82, ENTITY_UNKNOWN },
+	{ 83, ENTITY_POINT },
+	{ 84, ENTITY_UNKNOWN },
+	{ 85, ENTITY_UNKNOWN },
+	{ 86, ENTITY_UNKNOWN },
+	{ 87, ENTITY_UNKNOWN },
+	{ 88, ENTITY_UNKNOWN },
+	{ 89, ENTITY_UNKNOWN },
+	{ 90, ENTITY_UNKNOWN },
+	{ 91, ENTITY_UNKNOWN },
+	{ 92, ENTITY_POINT },
+	{ 93, ENTITY_UNKNOWN },
+	{ 94, ENTITY_POINT },
+	{ 95, ENTITY_UNKNOWN },
+	{ 96, ENTITY_UNKNOWN },
+	{ 97, ENTITY_POINT },
+	{ 98, ENTITY_UNKNOWN },
+	{ 99, ENTITY_UNKNOWN },
+	{ 100, ENTITY_POINT },
+	{ 101, ENTITY_UNKNOWN },
+	{ 102, ENTITY_UNKNOWN },
+	{ 103, ENTITY_UNKNOWN },
+	{ 104, ENTITY_UNKNOWN },
+	{ 105, ENTITY_UNKNOWN },
+	{ 106, ENTITY_UNKNOWN },
+	{ 107, ENTITY_UNKNOWN },
+	{ 108, ENTITY_UNKNOWN },
+	{ 109, ENTITY_UNKNOWN },
+	{ 110, ENTITY_UNKNOWN },
+	{ 111, ENTITY_UNKNOWN },
+	{ 112, ENTITY_UNKNOWN },
+	{ 113, ENTITY_UNKNOWN },
+	{ 114, ENTITY_POINT },
+	{ 115, ENTITY_UNKNOWN },
+	{ 116, ENTITY_UNKNOWN },
+	{ 117, ENTITY_UNKNOWN },
+	{ 118, ENTITY_UNKNOWN },
+	{ 119, ENTITY_UNKNOWN },
+	{ 120, ENTITY_UNKNOWN },
+	{ 121, ENTITY_UNKNOWN },
+	{ 122, ENTITY_UNKNOWN },
+	{ 123, ENTITY_UNKNOWN },
+	{ 124, ENTITY_UNKNOWN },
+	{ 125, ENTITY_UNKNOWN },
+	{ 126, ENTITY_POINT },
+	{ 127, ENTITY_UNKNOWN },
+	{ 128, ENTITY_UNKNOWN },
+	{ 129, ENTITY_UNKNOWN },
+	{ 130, ENTITY_GLOBAL },
+	{ 131, ENTITY_UNKNOWN },
+	{ 132, ENTITY_POINT },
+	{ 133, ENTITY_GLOBAL },
+	{ 134, ENTITY_UNKNOWN },
+	{ 135, ENTITY_POINT },
+	{ 136, ENTITY_POINT },
+	{ 137, ENTITY_UNKNOWN },
+	{ 138, ENTITY_POINT },
+	{ 139, ENTITY_UNKNOWN },
+	{ 140, ENTITY_POINT },
+	{ 141, ENTITY_POINT },
+	{ 142, ENTITY_POINT },
+	{ 143, ENTITY_UNKNOWN },
+	{ 144, ENTITY_POINT },
+	{ 145, ENTITY_POINT },
+	{ 146, ENTITY_POINT },
+	{ 147, ENTITY_UNKNOWN },
+	{ 148, ENTITY_UNKNOWN },
+	{ 149, ENTITY_GLOBAL },
+	{ 150, ENTITY_UNKNOWN },
+	{ 151, ENTITY_UNKNOWN },
+	{ 152, ENTITY_UNKNOWN },
+	{ 153, ENTITY_UNKNOWN },
+	{ 154, ENTITY_UNKNOWN },
+	{ 155, ENTITY_UNKNOWN },
+	{ 156, ENTITY_POINT },
+	{ 157, ENTITY_POINT },
+	{ 158, ENTITY_POINT },
+	{ 159, ENTITY_UNKNOWN },
+	{ 160, ENTITY_UNKNOWN },
+	{ 161, ENTITY_UNKNOWN },
+	{ 162, ENTITY_POINT },
+	{ 163, ENTITY_POINT },
+	{ 164, ENTITY_UNKNOWN },
+	{ 165, ENTITY_UNKNOWN },
+	{ 166, ENTITY_POINT },
+	{ 167, ENTITY_UNKNOWN },
+	{ 168, ENTITY_UNKNOWN },
+	{ 169, ENTITY_POINT },
+	{ 170, ENTITY_POINT },
+	{ 171, ENTITY_UNKNOWN },
+	{ 172, ENTITY_UNKNOWN },
+	{ 173, ENTITY_UNKNOWN },
+	{ 174, ENTITY_UNKNOWN },
+	{ 175, ENTITY_UNKNOWN },
+	{ 176, ENTITY_UNKNOWN },
+	{ 177, ENTITY_UNKNOWN },
+	{ 178, ENTITY_UNKNOWN },
+	{ 179, ENTITY_UNKNOWN }
 };
+
 
 int ent_id2 = 0;
 void Create_entity(char* name, char* data, DWORD ent_id, DWORD seq_id, XMFLOAT3 pos, XMVECTOR color = Colors::White, entity_prop* model = nullptr, bbox* bbox = nullptr, int connected_count = 0, DWORD* connected_list = nullptr)
@@ -252,14 +257,14 @@ void Create_entity(char* name, char* data, DWORD ent_id, DWORD seq_id, XMFLOAT3 
 	ent_id2++;
 }
 
-void Create_global_entity(char* name, char* data, DWORD ent_id, DWORD seq_id, int connected_count = 0, DWORD* connected_list = nullptr)
+void Create_global_entity(char* name, char* data, DWORD ent_id, DWORD seq_id, XMVECTOR Color = Colors::Cyan, int connected_count = 0, DWORD* connected_list = nullptr)
 {
 	if (g_default_column > 10.0f)
 	{
 		g_default_column = 0.0f;
 		g_default_row += 1.0f;
 	}
-	Create_entity(name, data, ent_id, seq_id, { g_default_column, 0.0f,  g_default_row}, Colors::Cyan, nullptr, nullptr, connected_count, connected_list);
+	Create_entity(name, data, ent_id, seq_id, { g_default_column, 0.0f,  g_default_row}, Color, nullptr, nullptr, connected_count, connected_list);
 	g_default_column += 1.0f;
 }
 
@@ -507,103 +512,122 @@ void Entity_update_vertex_buffer(DWORD id)
 	_aligned_free(vertices);
 }
 
+void Alloc_name_and_data_str(char** name, char** data)
+{
+	*data = (char*)malloc(512);
+	ZeroMemory(*data, 512);
+	*name = (char*)malloc(128);
+	ZeroMemory(*name, 128);
+}
+
+bbox* bbox_from_point(XMFLOAT3 pos, float size, XMVECTOR color,XMFLOAT4 rot = { 0.0f, 0.0f, 0.0f, 1.0f })
+{
+	bbox* e_bbox = new bbox;
+	e_bbox->p1 = XMFLOAT3(pos.x + size, pos.y + size, pos.z + size);
+	e_bbox->p2 = XMFLOAT3(pos.x - size, pos.y - size, pos.z - size);
+	//e_bbox->Color = color;
+	XMStoreFloat4(&(e_bbox->Color), color);
+	e_bbox->rot = rot;
+	return e_bbox;
+}
+
+bbox* bbox_from_asura_bb(asura_bbox* bb, XMFLOAT4 rot, XMVECTOR color)
+{
+	bbox* bbox_p = new bbox;
+	bbox_p->p1 = { bb->x1, bb->y1, bb->z1 };
+	bbox_p->p2 = { bb->x2, bb->y2, bb->z2 };
+	bbox_p->rot = rot;
+	XMStoreFloat4(&(bbox_p->Color), color);
+	return bbox_p;
+}
+
 void load_enti_1(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4 + 8);
+	READ(num);
+	SFPC(num * 4 + 8);
 
 	DWORD founded = 0;
 	DWORD* seq_ids = nullptr;
 
 	WORD* msgids = (WORD*)malloc(5 * 2);
-	READ(f, msgids, 5 * 2, &a);
+	READP(msgids, 5 * 2);
 	seq_ids = search_in_SMSG(msgids[2], 0, &founded);
-	SFPC(f, 6);
+	SFPC(6);
 	float f1, f2;
-	READ(f, &f1, 4, &a);
-	READ(f, &f2, 4, &a);
+	READ(f1);
+	READ(f2);
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity message_like_trigger (1)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n msgid: %d \n time?: %f %f \n ", seq_id, g_curr_file, msgids[2], f1, f2);
 
-	Create_global_entity(name, data, 1, seq_id, founded, seq_ids);
+	Create_global_entity(name, data, 1, seq_id, Colors::Purple, founded, seq_ids);
 }
 
 void load_enti_3(HANDLE f, DWORD seq_id)
 {
-	SFPS(f, 0x30);
+	SFPS(0x30);
 	char* str1 = (char*)malloc(128);
 	ZeroMemory(str1, 128);
 	read_padded_str(f, str1);
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity cutscene start (3)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Name: %s \n ", seq_id, g_curr_file, str1);
 
-	Create_global_entity(name, data, 3, seq_id);
+	Create_global_entity(name, data, 3, seq_id, Colors::LightGreen);
 }
 
-void load_prop(HANDLE file, DWORD seq_id)
+void load_prop(HANDLE f, DWORD seq_id)
 {
-	DWORD bytes_readen = 0;
+	DWORD a = 0;
 	
-	SetFilePointer(file, 0x58, NULL, FILE_BEGIN);
+	//SetFilePointer(file, 0x58, NULL, FILE_BEGIN);
+	SFPS(0x58);
 	int i;
-	ReadFile(file, &i, 4, &bytes_readen, NULL);
-	SetFilePointer(file, 0x5C + i*4, NULL, FILE_BEGIN);
-	
+	READ(i);
+	SFPC(i * 4);
+
 	entity_prop* prop = new entity_prop;
 	prop->visible = 1;
-	ReadFile(file, &(prop->pos), sizeof(XMFLOAT3), &bytes_readen, NULL);
-	ReadFile(file, &(prop->angle), sizeof(XMFLOAT4), &bytes_readen, NULL);
-	SetFilePointer(file, 0x21, NULL, FILE_CURRENT);
-	ReadFile(file, &(prop->special), sizeof(DWORD), &bytes_readen, NULL);
-	SetFilePointer(file, 4, NULL, FILE_CURRENT);
-	ReadFile(file, &(prop->model_hash), sizeof(DWORD), &bytes_readen, NULL);
-	SetFilePointer(file, 0x1c, NULL, FILE_CURRENT);
-	ReadFile(file, &(prop->group_id), sizeof(DWORD), &bytes_readen, NULL);
-	
-	bool movable = 1;
-	if (prop->group_id & 0b100)
-	{
-		movable = 0;
-	}
+	READ(prop->pos);
+	READ(prop->angle);
+	SFPC(0x21);
+	READ(prop->special);
+	SFPC(4);
+	READ(prop->model_hash);
+	SFPC(0x1C);
+	READ(prop->group_id);
+
+	bool movable = (prop->group_id & 0b100) ? 0 : 1;
 
 	hash_tree_node2* node = search_by_hash2(model_hashs, prop->model_hash);
+
 	if (!node)
-	{
 		node = g_default_model; // Default mdl
-	}
+	
 	model_info* mi = (model_info*)node->ptr;
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
 	const char* str = (movable) ? "true" : "false";
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Movable: %s \n Special: %x \n Flags: %d \n Model_name: \"%s\" \n", seq_id, g_curr_file, str, prop->special, prop->group_id, mi->mdl_name);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
 	sprintf(name, "Entity Prop (7)\n");
-	Create_entity(name, data, 7, seq_id, prop->pos, {1.0f, 1.0f, 1.0f, 1.0f}, prop);
-	//g_props.push_back(prop);
-	//dbgprint("Entity", "Loaded prop entity: (pos: %f %f %f) (angle: %f %f %f %f) (hash: %X) group id %d\n", prop.pos.x, prop.pos.y, prop.pos.z, prop.angle.x, prop.angle.y, prop.angle.z, prop.angle.w, prop.model_hash, prop.group_id);
+	Create_entity(name, data, 7, seq_id, prop->pos, Colors::White, prop);
 }
 
 void load_enti_11(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x3C);
+	SFPS(0x3C);
 	DWORD count = 0;
-	READ(f, &count, 4, &a);
+	READ(count);
 
 	DWORD found = 0;
 	DWORD totaly_found = 0;
@@ -613,8 +637,8 @@ void load_enti_11(HANDLE f, DWORD seq_id)
 	for (int i = 0; i < count; i++)
 	{
 		WORD msgid;
-		READ(f, &msgid, 2, &a);
-		SFPC(f, 6);
+		READ(msgid);
+		SFPC(6);
 		found = 0;
 		search_in_SMSG(msgid, 0, &found);
 		totaly_found += found;
@@ -622,13 +646,13 @@ void load_enti_11(HANDLE f, DWORD seq_id)
 	//dbgprint("e_act", "count %d totaly_found %d", count, totaly_found);
 	seq_ids = (DWORD*)malloc(totaly_found * 4);
 	ZeroMemory(seq_ids, totaly_found * 4);
-	SFPS(f, 0x40);
+	SFPS(0x40);
 
 	for (int i = 0; i < count; i++)
 	{
 		WORD msgid;
-		READ(f, &msgid, 2, &a);
-		SFPC(f, 6);
+		READ(msgid);
+		SFPC(6);
 		found = 0;
 		DWORD* seq_ids2 = search_in_SMSG(msgid, 0, &found);
 		if (seq_ids2 == nullptr)
@@ -637,44 +661,27 @@ void load_enti_11(HANDLE f, DWORD seq_id)
 		current_pos += found;
 	}
 	found = totaly_found;
-	//dbgprint("e_act", "ent 11 %d \n", seq_id);
-	/*
-	for (int i = 0; i < found; i++)
-	{
-	dbgprint("e_act", "seq_id: %d \n", seq_ids[i]);
-	}
-	dbgprint("e_act", "msgid %d\n", msgids[2]);
-	for (int i = 0; i < founded; i++)
-	{
-	dbgprint("e_act", "seq_id: %d \n", seq_ids[i]);
-	}*/
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 512);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity message (11)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 
-	Create_global_entity(name, data, 11, seq_id, found, seq_ids);
+	Create_global_entity(name, data, 11, seq_id, Colors::Purple, found, seq_ids);
 }
 
 void load_enti_14(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x38);
+	SFPS(0x38);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(f, seq_ids, 4, &a);
+	READP(seq_ids, 4);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
+	READ(pos);
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity . (14)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 	Create_entity(name, data, 14, seq_id, pos, Colors::Yellow, nullptr, nullptr, 1, seq_ids);
 }
@@ -682,198 +689,166 @@ void load_enti_14(HANDLE f, DWORD seq_id)
 void load_enti_20(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x58);
+	SFPS(0x58);
 	asura_bbox bb;
 	XMFLOAT4 rot;
-	READ(f, &bb, 24, &a);
-	READ(f, &rot, 16, &a);
-	//g_lines.push_back({ pos, pos2, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
-	bbox* bbox_p = new bbox;
-	bbox_p->p1 = {bb.x1, bb.y1, bb.z1 };
-	bbox_p->p2 = {bb.x2, bb.y2, bb.z2 };
-	bbox_p->rot = rot;
-	bbox_p->Color = { 1.0f, 0.0f, 0.0f, 1.0f };
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	READ(bb);
+	READ(rot);
+	bbox* bbox_p = bbox_from_asura_bb(&bb, rot, Colors::Red);
+	
+	XMFLOAT3 pos = { ((bbox_p->p1).x + (bbox_p->p2).x) / 2,
+		((bbox_p->p1).y + (bbox_p->p2).y) / 2,
+		((bbox_p->p1).z + (bbox_p->p2).z) / 2 };
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity . (20)\n");
-
-	XMVECTOR p1, p2;
-	p1 = XMLoadFloat3(&(bbox_p->p1));
-	p2 = XMLoadFloat3(&(bbox_p->p2));
-	XMFLOAT3 pos;
-	XMStoreFloat3(&pos, (p1 + p2) / 2);
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 	Create_entity(name, data, 20, seq_id, pos, Colors::Magenta, nullptr, bbox_p);
 }
 
-void load_door_entity(HANDLE file, DWORD seq_id)
+void load_door_entity(HANDLE f, DWORD seq_id)
 {
-	DWORD bytes_readen = 0;
+	DWORD a = 0;
 
 	DWORD* p_activator_seq_id = (DWORD*)malloc(4);
-	SetFilePointer(file, 0x28, NULL, FILE_BEGIN);
-	ReadFile(file, p_activator_seq_id, 4, &bytes_readen, NULL);
+	//SetFilePointer(file, 0x28, NULL, FILE_BEGIN);
+	SFPS(0x28);
+	//ReadFile(file, p_activator_seq_id, 4, &bytes_readen, NULL);
+	READP(p_activator_seq_id, 4);
 	//dbgprint("Doors", "Activator_id: %d \n", *p_activator_seq_id);
-	SetFilePointer(file, 0x54, NULL, FILE_BEGIN);
+	//SetFilePointer(file, 0x54, NULL, FILE_BEGIN);
+	SFPS(0x54);
 	int i;
-	ReadFile(file, &i, 4, &bytes_readen, NULL);
-	SetFilePointer(file, 0x58 + i * 4, NULL, FILE_BEGIN);
-
+	READ(i);
+	//SetFilePointer(file, 0x58 + i * 4, NULL, FILE_BEGIN);
+	SFPC(i * 4);
 	entity_prop* prop = new entity_prop;
 	prop->visible = 1;
-	ReadFile(file, &(prop->pos), sizeof(XMFLOAT3), &bytes_readen, NULL);
-	ReadFile(file, &(prop->angle), sizeof(XMFLOAT4), &bytes_readen, NULL);
-	SetFilePointer(file, 0x21, NULL, FILE_CURRENT);
-	ReadFile(file, &(prop->special), sizeof(DWORD), &bytes_readen, NULL);
-	SetFilePointer(file, 4, NULL, FILE_CURRENT);
-	ReadFile(file, &(prop->model_hash), sizeof(DWORD), &bytes_readen, NULL);
-	SetFilePointer(file, 0x1c, NULL, FILE_CURRENT);
-	ReadFile(file, &(prop->group_id), sizeof(DWORD), &bytes_readen, NULL);
+	READ(prop->pos);
+	READ(prop->angle);
+	SFPC(0x21);
+	READ(prop->special);
+	SFPC(4);
+	READ(prop->model_hash);
+	SFPC(0x1C);
+	READ(prop->group_id);
 
-	bool movable = 1;
-	if (prop->group_id & 0b100)
-	{
-		movable = 0;
-	}
+	bool movable = (prop->group_id & 0b100) ? 0 : 1;
+	const char* str = (movable) ? "true" : "false";
+
 	hash_tree_node2* node = search_by_hash2(model_hashs, prop->model_hash);
 	if (!node)
-	{
 		node = g_default_model; // Default mdl
-	}
+
 	model_info* mi = (model_info*)node->ptr;
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	const char* str = (movable) ? "true" : "false";
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Movable: %s \n Special: %x \n Flags: %d \n Model_name: \"%s\" \n", seq_id, g_curr_file, str, prop->special, prop->group_id, mi->mdl_name);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
 	sprintf(name, "Entity Movable_obj (21) \n");
-	bbox* e_bbox = new bbox;
-	e_bbox->p1 = XMFLOAT3(prop->pos.x + 0.2f, prop->pos.y + 0.2f, prop->pos.z + 0.2f);
-	e_bbox->p2 = XMFLOAT3(prop->pos.x - 0.2f, prop->pos.y - 0.2f, prop->pos.z - 0.2f);
-	e_bbox->Color = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+
+	bbox* e_bbox = bbox_from_point(prop->pos, 0.2f, Colors::White);	
 	Create_entity(name, data, 21, seq_id, prop->pos, Colors::White, prop, e_bbox, 1, p_activator_seq_id);
-	//g_props.push_back(prop);
-	//g_bboxes.push_back({ XMFLOAT3(prop.pos.x + 0.2f, prop.pos.y + 0.2f, prop.pos.z + 0.2f),XMFLOAT3(prop.pos.x - 0.2f, prop.pos.y - 0.2f, prop.pos.z - 0.2f), XMFLOAT4(1.0f,0.0f,1.0f,1.0f) }); // small cyan bbox
 }
 
 void load_enti_32(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x30);
+	SFPS(0x30);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4 + 16);
+	READ(num);
+	SFPC(num * 4 + 16);
 	float f1;
-	READ(f, &f1, 4, &a);
-	SFPC(f, 8);
+	READ(f1);
+	SFPC(8);
 	DWORD num2;
-	READ(f, &num2, 4, &a);
+	READ(num2);
 	for (int i = 0; i < num2; i++)
 	{
-		SFPC(f, 8);
+		SFPC(8);
 		asura_bbox bb;
 		XMFLOAT4 rot;
-		READ(f, &bb, 24, &a);
-		READ(f, &rot, 16, &a);
+		READ(bb);
+		READ(rot);
 		g_bboxes.push_back({ { bb.x1,bb.y1, bb.z1 },{ bb.x2,bb.y2, bb.z2 }, XMFLOAT4(0.2f, 0.2f, 0.8f, 1.0f), rot });
 	}
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Trigger Hurt (32)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Damage: %f \n", seq_id, g_curr_file, f1);
-	
 	Create_global_entity( name, data, 32, seq_id);
 }
 
-void load_enti_34(HANDLE file, DWORD seq_id)
+void load_enti_34(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x20);
+	SFPS(0x20);
 	int num1;
-	READ(file, &num1, 4, &a); // Two Section of HASH and some SHORT id
-	SFPC(file, num1 * 6);
+	READ(num1); // Two Section of HASH and some SHORT id
+	SFPC(num1 * 6);
 	int num2;
-	READ(file, &num2, 4, &a);
-	SFPC(file, num2 * 6);
+	READ(num2);
+	SFPC(num2 * 6);
 	int seq_id_count;
-	READ(file, &seq_id_count, 4, &a);
+	READ(seq_id_count);
 	DWORD* seq_ids = (DWORD*)malloc(4 * seq_id_count);
-	READ(file, seq_ids, 4 * seq_id_count, &a);
+	READP(seq_ids, 4 * seq_id_count);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
-	sprintf(name, "Entity Multimanager ? (34)\n");
-	Create_global_entity(name, data, 34, seq_id, seq_id_count, seq_ids);
+	sprintf(name, "Entity Multimanager (34)\n");
+	Create_global_entity(name, data, 34, seq_id, Colors::Purple, seq_id_count, seq_ids);
 }
 
 void load_enti_35(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4 + 8);
+	READ(num);
+	SFPC(num * 4 + 8);
 
 	DWORD founded = 0;
 	DWORD* seq_ids = nullptr;
 
 	WORD* msgids = (WORD*)malloc(5 * 2);
-	READ(f, msgids, 5 * 2, &a);
+	READP(msgids, 5 * 2);
 	seq_ids = search_in_SMSG(msgids[2], 0, &founded);
-	SFPC(f, 6);
+	SFPC(6);
 	float f1;
-	READ(f, &f1, 4, &a);
-	SFPS(f, 0x74);
+	READ(f1);
+	SFPS(0x74);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
+	READ(pos);
 
 	g_bboxes.push_back({ { pos.x + 0.2f,pos.y + 0.2f, pos.z + 0.2f },{ pos.x - 0.2f,pos.y - 0.2f, pos.z - 0.2f }, XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f), {0.0f, 0.0f, 0.0f, 1.0f} });
-	asura_bbox bb = { pos.x + f1, pos.x - f1, pos.y + f1, pos.y - f1 , pos.z + f1, pos.z - f1 };
-	bbox* bbox_p = new bbox;
-	bbox_p->Color = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
-	bbox_p->rot = { 0.0f, 0.0f, 0.0f, 1.0f };
-	bbox_p->p1 = { bb.x1,bb.y1, bb.z1 };
-	bbox_p->p2 = { bb.x2,bb.y2, bb.z2 };
+	bbox* bbox_p = bbox_from_point(pos, f1, Colors::Black);
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Trigger (dynamic) (35)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n radius: %f \n", seq_id, g_curr_file, f1);
 	Create_entity(name, data, 35, seq_id, pos, Colors::Red, nullptr, bbox_p, founded, seq_ids);
 }
 
-
-
 //Waypoints
-void load_enti_63(HANDLE file, DWORD seq_id)
+void load_enti_63(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x34);
+	SFPS(0x34);
 	int num1;
-	READ(file, &num1, 4, &a);
-	SFPC(file, num1 * 4);
+	READ(num1);
+	SFPC(num1 * 4);
 	DWORD flags;
-	READ(file, &flags, 4, &a);
+	READ(flags);
 	XMFLOAT3 pos;
-	READ(file, &pos, 12, &a);
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	READ(pos);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity path_point (63)\n");
 
 	DWORD state;
@@ -881,46 +856,43 @@ void load_enti_63(HANDLE file, DWORD seq_id)
 	bool start_node = flags & 0x10;
 	const char* str = (reversible) ? "true" : "false";
 
-
 	if (start_node)
 	{
 		DWORD* seq_ids = (DWORD*)malloc(4);
-		READ(file, seq_ids, 4, &a);
-		SFPC(file, 4);
-		READ(file, &state, 4, &a);
+		READP(seq_ids, 4);
+		SFPC(4);
+		READ(state);
 		sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n State1: %x\n State2: %x\n Reversible: %s \nStart_node \n", seq_id, g_curr_file, flags, LOWORD(state), HIWORD(state), str);
 		Create_entity(name, data, 63, seq_id, pos, Colors::Cyan, nullptr, nullptr, 1, seq_ids);
 	}
 	else
 	{
-		SFPC(file, 4);
-		READ(file, &state, 4, &a);
+		SFPC(4);
+		READ(state);
 		sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n State1: %x\n State2: %x\n Reversible: %s \n End_node \n", seq_id, g_curr_file, flags, LOWORD(state), HIWORD(state), str);
 		Create_entity(name, data, 63, seq_id, pos, Colors::Cyan, nullptr, nullptr, 0, nullptr);
 	}
 }
 
-void load_enti_64(HANDLE file, DWORD seq_id)
+void load_enti_64(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x38);
+	SFPS(0x38);
 	DWORD flags;
-	READ(file, &flags, 4, &a);
+	READ(flags);
 	XMFLOAT3 pos;
-	READ(file, &pos, 12, &a);
-	SFPC(file, 0x4);
+	READ(pos);
+	SFPC(0x4);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(file, seq_ids, 8, &a);
-	SFPC(file, 0x30);
+	READP(seq_ids, 8);
+	SFPC(0x30);
 	XMFLOAT3 pos2;
-	READ(file, &pos2, 12, &a);
+	READ(pos2);
 	
 	g_lines.push_back({ pos, pos2, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity path_controller (64)\n");
 
 	bool reversible = flags & 0x80;
@@ -931,40 +903,36 @@ void load_enti_64(HANDLE file, DWORD seq_id)
 
 }
 
-void load_enti_68(HANDLE file, DWORD seq_id)
+void load_enti_68(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x2C);
+	SFPS(0x2C);
 	int num1;
-	READ(file, &num1, 4, &a);
-	SFPC(file, num1 * 4 + 20);
+	READ(num1);
+	SFPC(num1 * 4 + 20);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(file, seq_ids, 4, &a);
+	READP(seq_ids, 4);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 32);
 	sprintf(name, "Entity Teleport property (68)\n");
-	Create_global_entity(name, data, 68, seq_id, 1, seq_ids);
+	Create_global_entity(name, data, 68, seq_id, Colors::Cyan ,1, seq_ids);
 }
 
 void load_enti_69(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	int num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
+	READ(num1);
+	SFPC(num1 * 4);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
+	READ(pos);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
 	sprintf(name, "Entity Teleport locations (69)\n");
 	Create_entity(name, data, 69, seq_id, pos, Colors::Purple);
 }
@@ -972,64 +940,53 @@ void load_enti_69(HANDLE f, DWORD seq_id)
 void load_enti_70(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x38);
+	SFPS(0x38);
 	DWORD founded = 0;
 	DWORD* seq_ids = nullptr;
 
 	WORD* msgids = (WORD*)malloc(5 * 2);
-	READ(f, msgids, 5 * 2, &a);
+	READP(msgids, 5 * 2);
 	seq_ids = search_in_SMSG(msgids[2], 0, &founded);
-	/*
-	dbgprint("e_act", "msgid %d\n", msgids[2]);
-	for (int i = 0; i < founded; i++)
-	{
-		dbgprint("e_act", "seq_id: %d \n", seq_ids[i]);
-	}*/
 
-	SFPS(f, 0x58);
+	SFPS(0x58);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
+	READ(pos);
 	char* str1 = (char*)malloc(256);
 	ZeroMemory(str1, 256);
-	SFPS(f, 0x88);
+	SFPS(0x88);
 	read_padded_str(f, str1);
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 512);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity debug node (70)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n note: %s \n", seq_id, g_curr_file, str1);
 
 	Create_entity(name, data, 71, seq_id, pos, Colors::Magenta, nullptr, nullptr, founded, seq_ids);
 }
 
-void load_enti_71(HANDLE file, DWORD seq_id)
+void load_enti_71(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x34);
+	SFPS(0x34);
 	DWORD flags;
-	READ(file, &flags, 4, &a);
+	READ(flags);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	READ(file, &pos, 12, &a);
-	READ(file, &rot, 16, &a);
-	SFPS(file, 0x180);
+	READ(pos);
+	READ(rot);
+	SFPS(0x180);
 	char* str1 = (char*)malloc(128);
 	ZeroMemory(str1, 128);
 	char* str2 = (char*)malloc(128);
 	ZeroMemory(str2, 128);
 	char* str3 = (char*)malloc(128);
 	ZeroMemory(str3, 128);
-	read_padded_str(file, str1);
-	read_padded_str(file, str2);
-	read_padded_str(file, str3);
+	read_padded_str(f, str1);
+	read_padded_str(f, str2);
+	read_padded_str(f, str3);
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 512);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity special fx (71)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n 1: %s \n 2: %s \n 3: %s \n", seq_id, g_curr_file, flags, str1, str2, str3);
@@ -1042,57 +999,51 @@ void load_enti_71(HANDLE file, DWORD seq_id)
 void load_enti_74(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	DWORD num = 0;
 	DWORD founded = 0;
 	DWORD* seq_ids = nullptr;
-	READ(f, &num, 4, &a);
+	READ(num);
 	if (num != 0)
 	{
 		e_act* acts = (e_act*)malloc(num * 4);
-		READ(f, acts, num * 4, &a);
+		READP(acts, num * 4);
 		seq_ids = search_in_SMSG(acts[0].msgid, 0, &founded);
 	}
 	
 	char* str1 = (char*)malloc(256);
 	ZeroMemory(str1, 256);
-	SFPC(f, 8);
+	SFPC(8);
 	read_padded_str(f, str1);
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 512);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity console var (74)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n command: %s \n", seq_id, g_curr_file, str1);
 
-	Create_global_entity( name, data, 74, seq_id, founded, seq_ids);
+	Create_global_entity( name, data, 74, seq_id, Colors::LightGreen, founded, seq_ids);
 }
 
-void load_enti_75(HANDLE file, DWORD seq_id)
+void load_enti_75(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x30);
+	SFPS(0x30);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	READ(file, &pos, 12, &a);
-	READ(file, &rot, 16, &a);
-	SFPS(file, 0x98);
+	READ(pos);
+	READ(rot);
+	SFPS(0x98);
 	char* str1 = (char*)malloc(128);
 	ZeroMemory(str1, 128);
 	char* str2 = (char*)malloc(128);
 	ZeroMemory(str2, 128);
-	read_padded_str(file, str1);
-	SFPC(file, 0xC);
-	read_padded_str(file, str2);
+	read_padded_str(f, str1);
+	SFPC(0xC);
+	read_padded_str(f, str2);
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity special fx (75)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n 1: %s \n 2: %s \n", seq_id, g_curr_file, str1, str2);
 	XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
 	g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
@@ -1103,65 +1054,57 @@ void load_enti_75(HANDLE file, DWORD seq_id)
 void load_enti_77(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x38);
+	SFPS(0x38);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
-	SFPS(f, 0x74);
+	READ(pos);
+	SFPS(0x74);
 	asura_bbox bb;
 	XMFLOAT4 rot;
-	READ(f, &bb, 24, &a);
-	READ(f, &rot, 16, &a);
+	READ(bb);
+	READ(rot);
 	g_bboxes.push_back({ { bb.x1,bb.y1, bb.z1 },{ bb.x2,bb.y2, bb.z2 }, XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f), rot });
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity special fx (77)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 	Create_entity(name, data, 77, seq_id, pos, Colors::Red);
 }
 
-void load_enti_78(HANDLE file, DWORD seq_id)
+void load_enti_78(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
 
-	SFPS(file, 0x40);
+	SFPS(0x40);
 
 	DWORD founded = 0;
 	DWORD* seq_ids = nullptr;
 
 	WORD* msgids = (WORD*)malloc(5 * 2);
-	READ(file, msgids, 5 * 2, &a);
+	READP(msgids, 5 * 2);
 	seq_ids = search_in_SMSG(msgids[2], 0, &founded);
 
-	SFPS(file, 0x7D);
+	SFPS(0x7D);
 	DWORD num1;
-	READ(file, &num1, 4, &a);
+	READ(num1);
 	for (int i = 0; i < num1; i++)
 	{
 		DWORD type;
-		READ(file, &type, 4, &a);
+		READ(type);
 		if (type == 1)
 		{
-			SFPC(file, 4);
+			SFPC(4);
 			asura_bbox bb;
 			XMFLOAT4 rot;
-			READ(file, &bb, 24, &a);
-			READ(file, &rot, 16, &a);
+			READ(bb);
+			READ(rot);
 			XMFLOAT3 pos = { (bb.x1 + bb.x2) / 2,(bb.y1 + bb.y2) / 2, (bb.z1 + bb.z2) / 2 };
 			g_bboxes.push_back({ {pos.x + 0.2f,pos.y + 0.2f, pos.z + 0.2f },{ pos.x - 0.2f,pos.y - 0.2f, pos.z - 0.2f }, XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f), rot });
-			bbox* bbox_p = new bbox;
-			bbox_p->Color = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
-			bbox_p->rot = rot;
-			bbox_p->p1 = { bb.x1,bb.y1, bb.z1 };
-			bbox_p->p2 = { bb.x2,bb.y2, bb.z2 };
-			SFPC(file, 16);
+			bbox* bbox_p = bbox_from_asura_bb(&bb, rot, Colors::Black);
+			SFPC(16);
 
-			char* data = (char*)malloc(128);
-			ZeroMemory(data, 128);
-			char* name = (char*)malloc(24);
-			ZeroMemory(name, 24);
+			char* name = nullptr; char* data = nullptr;
+			Alloc_name_and_data_str(&name, &data);
 			sprintf(name, "Entity (78)\n");
 			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Type 1 \n msgid: %d \n", seq_id, g_curr_file, msgids[2]);
 
@@ -1170,42 +1113,33 @@ void load_enti_78(HANDLE file, DWORD seq_id)
 		}
 		if (type == 2)
 		{
-			SFPC(file, 4);
+			SFPC(4);
 			XMFLOAT3 pos;
 			float value;
 			XMFLOAT4 rot;
-			READ(file, &pos, 12, &a);
-			READ(file, &value, 4, &a);
-			READ(file, &rot, 16, &a);
-			//dbgprint("dbg 78", "%f %f %f %f \n", rot.x, rot.y, rot.z, rot.w);
+			READ(pos);
+			READ(value);
+			READ(rot);
 			g_bboxes.push_back({ { pos.x + 0.2f,pos.y + 0.2f, pos.z + 0.2f },{ pos.x - 0.2f,pos.y - 0.2f, pos.z - 0.2f }, XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f), rot });
-			asura_bbox bb = { pos.x + value, pos.x - value, pos.y + value, pos.y - value , pos.z + value, pos.z - value };
-			bbox* bbox_p = new bbox;
-			bbox_p->Color = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
-			bbox_p->rot = rot;
-			bbox_p->p1 = { bb.x1,bb.y1, bb.z1 };
-			bbox_p->p2 = { bb.x2,bb.y2, bb.z2 };
-			char* data = (char*)malloc(128);
-			ZeroMemory(data, 128);
-			char* name = (char*)malloc(24);
-			ZeroMemory(name, 24);
+			bbox* bbox_p = bbox_from_point(pos, value, Colors::Black);
+
+			char* name = nullptr; char* data = nullptr;
+			Alloc_name_and_data_str(&name, &data);
 			sprintf(name, "Entity (78)\n");
 			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Type 2 \n radius: %f \n msgid: %d \n", seq_id, g_curr_file, value, msgids[2]);
 
 			Create_entity(name, data, 78, seq_id, pos, Colors::Red, nullptr, bbox_p, founded, seq_ids);
 			return;
 		}
-		if (type == 3)
+		if (type == 3) //unk yet
 		{
-			SFPC(file, 4);
+			SFPC(4);
 			XMFLOAT3 pos;
-			READ(file, &pos, 12, &a);
-			SFPC(file, 24);
+			READ(pos);
+			SFPC(24);
 
-			char* data = (char*)malloc(128);
-			ZeroMemory(data, 128);
-			char* name = (char*)malloc(24);
-			ZeroMemory(name, 24);
+			char* name = nullptr; char* data = nullptr;
+			Alloc_name_and_data_str(&name, &data);
 			sprintf(name, "Entity (78)\n");
 			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Type 3 \n msgid: %d \n", seq_id, g_curr_file, msgids[2]);
 
@@ -1219,70 +1153,52 @@ void load_enti_78(HANDLE file, DWORD seq_id)
 void load_enti_83(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x30);
+	SFPS(0x30);
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
+	READ(num1);
+	SFPC(num1 * 4);
 	DWORD hash;
-	READ(f, &hash, 4, &a);
+	READ(hash);
 
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
+	READ(pos);
+	READ(rot);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity Light obj (83)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
-	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
-	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
-	bbox* bbox_p = new bbox;
-	bbox_p->p1 = { pos.x + 0.1f, pos.y + 0.1f, pos.z + 0.1f };
-	bbox_p->p2 = { pos.x - 0.1f, pos.y - 0.1f, pos.z - 0.1f };
-	bbox_p->rot = rot;
-	bbox_p->Color = { 1.0f, 1.0f, 0.0f, 1.0f };
-	/*
-	entity_prop* prop = new entity_prop;
-	ZeroMemory(prop, sizeof(entity_prop));
-	prop->visible = 1;
-	prop->model_hash = hash;
-	prop->pos = pos;
-	prop->angle = rot;
-	*/
+
+	bbox* bbox_p = bbox_from_point(pos, 0.1f, Colors::Yellow, rot);
+	// no prop for now
 	Create_entity(name, data, 83, seq_id, pos, Colors::Yellow, nullptr, bbox_p);
 }
 
 void load_enti_92(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x3C);
+	SFPS(0x3C);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
-	SFPC(f, 116);
+	READ(some_float_data);
+	SFPC(116);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(f, seq_ids, 8, &a);
+	READP(seq_ids, 8);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
-	sprintf(name, "Entity alien? (92)\n");
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Entity alien (92)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
-	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
-	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	bbox* bbox_p = new bbox;
 	bbox_p->p1 = { pos.x + 0.4f, pos.y - 1.0f, pos.z + 0.4f };
 	bbox_p->p2 = { pos.x - 0.4f, pos.y - 0.0f, pos.z - 0.4f };
@@ -1302,30 +1218,26 @@ void load_enti_92(HANDLE f, DWORD seq_id)
 void load_enti_94(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x3C);
+	SFPS(0x3C);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
-	SFPC(f, 104);
+	READ(some_float_data);
+	SFPC(104);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(f, seq_ids, 8, &a);
+	READP(seq_ids, 8);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
-	sprintf(name, "Entity facehugger ? (94)\n");
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Facehugger (94)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
-	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
-	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	bbox* bbox_p = new bbox;
 	bbox_p->p1 = { pos.x + 0.3f, pos.y - 0.2f, pos.z + 0.3f };
 	bbox_p->p2 = { pos.x - 0.3f, pos.y - 0.0f, pos.z - 0.3f };
@@ -1345,26 +1257,24 @@ void load_enti_94(HANDLE f, DWORD seq_id)
 void load_enti_97(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x3C);
+	SFPS(0x3C);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
-	SFPC(f, 112);
+	READ(some_float_data);
+	SFPC(112);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(f, seq_ids, 8, &a);
+	READP(seq_ids, 8);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
-	sprintf(name, "Entity ? (97)\n");
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Predator (97)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
 	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
@@ -1388,23 +1298,21 @@ void load_enti_97(HANDLE f, DWORD seq_id)
 void load_enti_114(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x38);
+	SFPS(0x38);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4);
+	READ(num);
+	SFPC(num * 4);
 	DWORD flags;
 	XMFLOAT3 pos;
-	READ(f, &flags, 4, &a);
-	READ(f, &pos, 12, &a);
+	READ(flags);
+	READ(pos);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(f, seq_ids, 4, &a);
+	READP(seq_ids, 4);
 	if (*seq_ids == -1)
 		seq_ids = nullptr;
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity waypoint (114)\n");
 
 	bool reversible = flags & 0x80;
@@ -1416,27 +1324,25 @@ void load_enti_114(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 63, seq_id, pos, Colors::Cyan, nullptr, nullptr, 1, seq_ids);
 }
 
-void load_enti_100(HANDLE file, DWORD seq_id)
+void load_enti_100(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x3C);
+	SFPS(0x3C);
 	DWORD flags;
-	READ(file, &flags, 4, &a);
+	READ(flags);
 	XMFLOAT3 pos;
-	READ(file, &pos, 12, &a);
-	SFPC(file, 0x4);
+	READ(pos);
+	SFPC(0x4);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(file, seq_ids, 8, &a);
-	SFPC(file, 0x30);
+	READP(seq_ids, 8);
+	SFPC(0x30);
 	XMFLOAT3 pos2;
-	READ(file, &pos2, 12, &a);
+	READ(pos2);
 
 	g_lines.push_back({ pos, pos2, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity waypoint_controller (100)\n");
 
 	bool reversible = flags & 0x80;
@@ -1449,17 +1355,15 @@ void load_enti_100(HANDLE file, DWORD seq_id)
 void load_enti_126(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4);
+	READ(num);
+	SFPC(num * 4);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
+	READ(pos);
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Checkpoint (126)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws\n", seq_id, g_curr_file);
 
@@ -1468,10 +1372,8 @@ void load_enti_126(HANDLE f, DWORD seq_id)
 
 void load_enti_130(HANDLE f, DWORD seq_id)
 {
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "GameScores? (130)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws\n", seq_id, g_curr_file);
 	Create_global_entity(name, data, 130, seq_id);
@@ -1480,72 +1382,61 @@ void load_enti_130(HANDLE f, DWORD seq_id)
 void load_enti_132(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	XMFLOAT3 pos;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	SFPC(f, 24);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	SFPC(24);
 
 	asura_bbox ar;
 	XMFLOAT4 rot;
-	READ(f, &ar, 24, &a);
-	READ(f, &rot, 16, &a);
+	READ(ar);
+	READ(rot);
 
 	DWORD num2;
-	READ(f, &num2, 4, &a);
+	READ(num2);
 	DWORD* seq_ids = (DWORD*)malloc(num2 * 4);
-	READ(f, seq_ids, num2 * 4, &a);
+	READP(seq_ids, num2 * 4);
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity ??? (132)\n");
-
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 
-	bbox* bbox_p = new bbox;
-	bbox_p->p1 = { ar.x1, ar.y1, ar.z1 };
-	bbox_p->p2 = { ar.x2, ar.y2, ar.z2 };
-	bbox_p->rot = rot;
-	bbox_p->Color = {0.0f, 0.0f, 0.0f, 1.0f};
-
+	bbox* bbox_p = bbox_from_asura_bb(&ar, rot, Colors::Black);
+	
 	Create_entity(name, data, 132, seq_id, pos, Colors::White, nullptr, bbox_p, num2, seq_ids);
 }
 
 void load_enti_135(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x40);
+	SFPS(0x40);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
-	SFPC(f, 0x24);
+	READ(some_float_data);
+	SFPC(0x24);
 	DWORD type;
-	READ(f, &type, 4, &a);
+	READ(type);
 	int skip_bytes = type == 1 ? 0x23 : 0xD8;
-	SFPC(f, skip_bytes);
+	SFPC(skip_bytes);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(f, seq_ids, 8, &a);
+	READP(seq_ids, 8);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
-	sprintf(name, "Entity Combat_droid (135)\n");
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Combat_droid (135)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
-	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
-	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	bbox* bbox_p = new bbox;
 	bbox_p->p1 = { pos.x + 0.3f, pos.y - 1.2f, pos.z + 0.3f };
 	bbox_p->p2 = { pos.x - 0.3f, pos.y + 0.0f, pos.z - 0.3f };
@@ -1565,7 +1456,7 @@ void load_enti_135(HANDLE f, DWORD seq_id)
 void load_enti_133(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x30);
+	SFPS(0x30);
 	DWORD count = 0;
 	READ(f, &count, 4, &a);
 
@@ -1577,21 +1468,21 @@ void load_enti_133(HANDLE f, DWORD seq_id)
 	for (int i = 0; i < count; i++)
 	{
 		WORD msgid;
-		SFPC(f, 2);
-		READ(f, &msgid, 2, &a);
+		SFPC(2);
+		READ(msgid);
 		found = 0;
 		search_in_SMSG(msgid, 0, &found);
 		totaly_found += found;
 	}
 	seq_ids = (DWORD*)malloc(totaly_found * 4);
 	ZeroMemory(seq_ids, totaly_found * 4);
-	SFPS(f, 0x34);
+	SFPS(0x34);
 
 	for (int i = 0; i < count; i++)
 	{
 		WORD msgid;
-		SFPC(f, 2);
-		READ(f, &msgid, 2, &a);
+		SFPC(2);
+		READ(msgid);
 		found = 0;
 		DWORD* seq_ids2 = search_in_SMSG(msgid, 0, &found);
 		if (seq_ids2 == nullptr)
@@ -1601,29 +1492,26 @@ void load_enti_133(HANDLE f, DWORD seq_id)
 	}
 	found = totaly_found;
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 512);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "some event (133)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 
-	Create_global_entity(name, data, 133, seq_id, found, seq_ids);
+	Create_global_entity(name, data, 133, seq_id, Colors::Cyan, found, seq_ids);
 }
 
-void load_enti_136(HANDLE file, DWORD seq_id)
+void load_enti_136(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(file, 0x34);
+	SFPS(0x34);
 	DWORD flags;
-	READ(file, &flags, 4, &a);
+	READ(flags);
 	XMFLOAT3 pos;
-	READ(file, &pos, 12, &a);
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	READ(pos);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity obstacle (136)\n");
 
 	DWORD state;
@@ -1635,16 +1523,16 @@ void load_enti_136(HANDLE file, DWORD seq_id)
 	if (start_node)
 	{
 		DWORD* seq_ids = (DWORD*)malloc(4);
-		READ(file, seq_ids, 4, &a);
-		SFPC(file, 4);
-		READ(file, &state, 4, &a);
+		READP(seq_ids, 4);
+		SFPC(4);
+		READ(state);
 		sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n State1: %x\n State2: %x\n Reversible: %s \nStart_node \n", seq_id, g_curr_file, flags, LOWORD(state), HIWORD(state), str);
 		Create_entity(name, data, 136, seq_id, pos, Colors::Cyan, nullptr, nullptr, 0, nullptr);
 	}
 	else
 	{
-		SFPC(file, 4);
-		READ(file, &state, 4, &a);
+		SFPC(4);
+		READ(state);
 		sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n State1: %x\n State2: %x\n Reversible: %s \n End_node \n", seq_id, g_curr_file, flags, LOWORD(state), HIWORD(state), str);
 		Create_entity(name, data, 136, seq_id, pos, Colors::Cyan, nullptr, nullptr, 0, nullptr);
 	}
@@ -1653,20 +1541,18 @@ void load_enti_136(HANDLE file, DWORD seq_id)
 void load_enti_138(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x38);
+	SFPS(0x38);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4);
+	READ(num);
+	SFPC(num * 4);
 	DWORD num1;
 	XMFLOAT3 pos;
-	READ(f, &num1, 4, &a);
-	READ(f, &pos, 12, &a);
+	READ(num1);
+	READ(pos);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
-	sprintf(name, "Entity Predator spots? (138)\n");
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Predator spots? (138)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n flags: %x \n", seq_id, g_curr_file, num1);
 
@@ -1676,75 +1562,67 @@ void load_enti_138(HANDLE f, DWORD seq_id)
 void load_enti_140(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x40);
+	SFPS(0x40);
 	asura_bbox ar;
 	XMFLOAT4 rot;
-	READ(f, &ar, 24, &a);
-	READ(f, &rot, 16, &a);
-	SFPS(f, 0x7C);
+	READ(ar);
+	READ(rot);
+	SFPS(0x7C);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4);
+	READ(num);
+	SFPC(num * 4);
 	DWORD num1;
 	XMFLOAT3 pos;
-	READ(f, &num1, 4, &a);
-	READ(f, &pos, 12, &a);
+	READ(num1);
+	READ(pos);
 	DWORD num2;
 	DWORD num3;
-	SFPC(f, 20);
-	READ(f, &num2, 4, &a);
+	SFPC(20);
+	READ(num2);
 	DWORD* seq_ids = (DWORD*)malloc(num2 * 4);
-	READ(f, seq_ids, num2 * 4, &a);
-	READ(f, &num3, 4, &a);
+	READP(seq_ids, num2 * 4);
+	READ(num3);
 	DWORD* seq_ids2 = (DWORD*)malloc((num3 + num2) * 4);
 	memcpy(seq_ids2, seq_ids, num2 * 4);
-	READ(f, seq_ids2 + num2, num3 * 4, &a);
+	READP(seq_ids2 + num2, num3 * 4);
 
-	bbox* bbox_p = new bbox;
-	bbox_p->p1 = { ar.x1, ar.y1, ar.z1 };
-	bbox_p->p2 = { ar.x2, ar.y2, ar.z2 };
-	bbox_p->rot = rot;
-	bbox_p->Color = { 0.0f, 0.0f, 0.0f, 1.0f };
+	bbox* bbox_p = bbox_from_asura_bb(&ar, rot, Colors::Black);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "patrol area ? (140)\n");
 
 	g_bboxes.push_back({ { pos.x + 0.2f, pos.y + 0.2f, pos.z + 0.2f }, { pos.x - 0.2f, pos.y - 0.2f, pos.z - 0.2f }, { 1.0f, 0.0f, 1.0f, 1.0f } });
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n flags: %x \n", seq_id, g_curr_file, num1);
-	//dbgprint("ent 140", "%f %f %f %d %d\n", pos.x, pos.y, pos.z, num2, num3);
+
 	Create_entity(name, data, 140, seq_id, pos, Colors::Magenta, nullptr, bbox_p, num2 + num3, seq_ids2);
 }
 
 void load_enti_141(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x40);
+	SFPS(0x40);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
-	SFPC(f, 0x24);
+	READ(some_float_data);
+	SFPC(0x24);
 	DWORD type;
-	READ(f, &type, 4, &a);
+	READ(type);
 	int skip_bytes = type == 1 ? 0x23 : 0x115;
-	SFPC(f, skip_bytes);
+	SFPC(skip_bytes);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(f, seq_ids, 8, &a);
+	READP(seq_ids, 8);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Colonist (141)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
@@ -1769,30 +1647,28 @@ void load_enti_141(HANDLE f, DWORD seq_id)
 void load_enti_142(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x40);
+	SFPS(0x40);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
-	SFPC(f, 0x24);
+	READ(some_float_data);
+	SFPC(0x24);
 	DWORD type;
-	READ(f, &type, 4, &a);
+	READ(type);
 	int skip_bytes = type == 1 ? 0x23 : 0xD8;
-	SFPC(f, skip_bytes);
+	SFPC(skip_bytes);
 	DWORD* seq_ids = (DWORD*)malloc(8);
-	READ(f, seq_ids, 8, &a);
+	READP(seq_ids, 8);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
-	sprintf(name, "Entity soldier (142)\n");
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Marine (142)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
 	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
@@ -1816,27 +1692,26 @@ void load_enti_142(HANDLE f, DWORD seq_id)
 void load_enti_144(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x3C);
+	SFPS(0x3C);
 	DWORD flags;
-	READ(f, &flags, 4, &a);
+	READ(flags);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(128);
-	ZeroMemory(name, 128);
+	READ(pos);
+	
+
 	
 	DWORD state;
-	SFPC(f, 4);
-	READ(f, &state, 4, &a);
+	SFPC(4);
+	READ(state);
 	XMFLOAT3 angles;
-	READ(f, &angles, 12, &a);
+	READ(angles);
 	DWORD check;
-	READ(f, &check, 4, &a);
+	READ(check);
 	DWORD type = check & 0xff; // first byte
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n angles?: %f %f %f", seq_id, g_curr_file, flags,
-			angles.x, angles.y, angles.z);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n angles?: %f %f %f", seq_id, g_curr_file, flags, angles.x, angles.y, angles.z);
 	sprintf(name, "Entity obstacle (144) type %d\n", type);
 
 	DWORD count;
@@ -1846,34 +1721,34 @@ void load_enti_144(HANDLE f, DWORD seq_id)
 	switch (type)
 	{
 	case 1:
-		READ(f, &count, 4, &a);
+		READ(count);
 		seq_ids = (DWORD*)malloc(count * 4);
-		READ(f, seq_ids, count * 4, &a);
+		READP(seq_ids, count * 4);
 		Create_entity(name, data, 144, seq_id, pos, Colors::Cyan, nullptr, nullptr, count, seq_ids);
 		break;
 	case 2:
 	case 3:
-		SFPC(f, 4);
-		READ(f, &pos2, 12, &a);
+		SFPC(4);
+		READ(pos2);
 		g_lines.push_back({ pos, pos2, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) });
-		SFPC(f, 12);
-		READ(f, &count, 4, &a);
+		SFPC(12);
+		READ(count);
 		seq_ids = (DWORD*)malloc(count * 4);
-		READ(f, seq_ids, count * 4, &a);
+		READP(seq_ids, count * 4);
 		Create_entity(name, data, 144, seq_id, pos, Colors::Cyan, nullptr, nullptr, count, seq_ids);
 		break;
 	case 4:
-		SFPC(f, 4);
-		READ(f, &pos2, 12, &a);
+		SFPC(4);
+		READ(pos2);
 		g_lines.push_back({ pos, pos2, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) });
-		SFPC(f, 12);
+		SFPC(12);
 		XMFLOAT3 pos3;
-		READ(f, &pos3, 12, &a);
+		READ(pos3);
 		g_lines.push_back({ pos, pos3, XMFLOAT4(0.2f, 0.7f, 0.7f, 1.0f) });
-		SFPC(f, 12);
-		READ(f, &count, 4, &a);
+		SFPC(12);
+		READ(count);
 		seq_ids = (DWORD*)malloc(count * 4);
-		READ(f, seq_ids, count * 4, &a);
+		READP(seq_ids, count * 4);
 		Create_entity(name, data, 144, seq_id, pos, Colors::Cyan, nullptr, nullptr, count, seq_ids);
 	}
 }
@@ -1881,20 +1756,18 @@ void load_enti_144(HANDLE f, DWORD seq_id)
 void load_enti_145(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x30);
+	SFPS(0x30);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4);
+	READ(num);
+	SFPC(num * 4);
 
 	DWORD flags;
-	READ(f, &flags, 4, &a);
+	READ(flags);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(128);
-	ZeroMemory(name, 128);
-
+	READ(pos);
+	
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n f", seq_id, g_curr_file, flags);
 	sprintf(name, "some waypoint? (145)\n");
 
@@ -1904,30 +1777,28 @@ void load_enti_145(HANDLE f, DWORD seq_id)
 void load_enti_146(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4);
+	READ(num);
+	SFPC(num * 4);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 10);
+	READ(pos);
+	READ(rot);
+	SFPC(10);
 	DWORD num1;
-	READ(f, &num1, 4, &a);
+	READ(num1);
 	for (int i = 0; i < num1; i++)
 	{
 		XMFLOAT3 pos2;
-		READ(f, &pos2, 12, &a);
-		SFPC(f, 16); // rotator
+		READ(pos2);
+		SFPC(16); // rotator
 		g_lines.push_back({ pos, pos2, {0.0f, 0.0f, 1.0f, 1.0f} });
 	}
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
-	sprintf(name, "alien hidding spot (146)\n");
 
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "alien hidding spot (146)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 
 	Create_entity(name, data, 146, seq_id, pos, Colors::Magenta);
@@ -1936,21 +1807,19 @@ void load_enti_146(HANDLE f, DWORD seq_id)
 void load_enti_149(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x30);
+	SFPS(0x30);
 	int num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4 + 12);
+	READ(num1);
+	SFPC(num1 * 4 + 12);
 	DWORD id[3];
-	READ(f, id, 12, &a);
+	READP(id, 12);
 	float f1;
-	READ(f, &f1, 4, &a);
+	READ(f1);
 
 
-	char* data = (char*)malloc(512);
-	ZeroMemory(data, 512);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n id1: %d \n id2: %d \n id3: %d \n float: %f \n", seq_id, g_curr_file, id[0], id[1], id[2], f1);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
 	sprintf(name, "Entity Monster properties ? (149)\n");
 	Create_global_entity(name, data, 149, seq_id);
 }
@@ -1958,26 +1827,21 @@ void load_enti_149(HANDLE f, DWORD seq_id)
 void load_enti_156(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x34);
+	SFPS(0x34);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 0x29);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(0x29);
 	DWORD hash;
-	READ(f, &hash, 4, &a);
+	READ(hash);
 
-
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
-	sprintf(name, "Entity Collectable (156)\n");
-
-	
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Collectable (156)\n");
 
 	entity_prop* prop = new entity_prop;
 	ZeroMemory(prop, sizeof(entity_prop));
@@ -1988,9 +1852,8 @@ void load_enti_156(HANDLE f, DWORD seq_id)
 
 	hash_tree_node2* node = search_by_hash2(model_hashs, prop->model_hash);
 	if (!node)
-	{
 		node = g_default_model; // Default mdl
-	}
+
 	model_info* mi = (model_info*)node->ptr;
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Model_name: %s \n", seq_id, g_curr_file, mi->mdl_name);
@@ -2001,21 +1864,20 @@ void load_enti_156(HANDLE f, DWORD seq_id)
 void load_enti_157(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x30);
+	SFPS(0x30);
 	XMFLOAT3 pos;
 	DWORD flags;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &flags, 4, &a);
-	READ(f, &pos, 12, &a);
-	SFPC(f, 12);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(flags);
+	READ(pos);
+	SFPC(12);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(f, seq_ids, 4, &a);
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	READP(seq_ids, 4);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity Target point (157)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n", seq_id, g_curr_file, flags);
@@ -2026,21 +1888,19 @@ void load_enti_157(HANDLE f, DWORD seq_id)
 void load_enti_158(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x4C);
+	SFPS(0x4C);
 	XMFLOAT3 pos;
 	DWORD flags;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &flags, 4, &a);
-	READ(f, &pos, 12, &a);
-	SFPC(f, 12);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(flags);
+	READ(pos);
+	SFPC(12);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(f, seq_ids, 4, &a);
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	READP(seq_ids, 4);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity Mission Target (158)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n", seq_id, g_curr_file, flags);
@@ -2051,33 +1911,29 @@ void load_enti_158(HANDLE f, DWORD seq_id)
 void load_enti_162(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x3C);
+	SFPS(0x3C);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
+	READ(some_float_data);
 	DWORD hash;
-	SFPC(f, 8);
-	READ(f, &hash, 4, &a);
-	SFPC(f, 0xBF);
+	SFPC(8);
+	READ(hash);
+	SFPC(0xBF);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(f, seq_ids, 4, &a);
+	READP(seq_ids, 4);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity battery_station (162)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
-	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
-	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	entity_prop* prop = new entity_prop;
 	ZeroMemory(prop, sizeof(entity_prop));
 	prop->visible = 1;
@@ -2091,33 +1947,29 @@ void load_enti_162(HANDLE f, DWORD seq_id)
 void load_enti_163(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x3C);
+	SFPS(0x3C);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	READ(f, &rot, 16, &a);
-	SFPC(f, 25);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
 	XMFLOAT2 some_float_data;
-	READ(f, &some_float_data, 8, &a);
+	READ(some_float_data);
 	DWORD hash;
-	SFPC(f, 8);
-	READ(f, &hash, 4, &a);
-	SFPC(f, 0xBF);
+	SFPC(8);
+	READ(hash);
+	SFPC(0xBF);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(f, seq_ids, 4, &a);
+	READP(seq_ids, 4);
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity ??? (163)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
-	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
-	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	entity_prop* prop = new entity_prop;
 	ZeroMemory(prop, sizeof(entity_prop));
 	prop->visible = 1;
@@ -2131,29 +1983,27 @@ void load_enti_163(HANDLE f, DWORD seq_id)
 void load_enti_166(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	XMFLOAT3 pos;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	SFPC(f, 8);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	SFPC(8);
 	DWORD num2;
-	READ(f, &num2, 4, &a);
+	READ(num2);
 	for (int i = 0; i < num2; i++)
 	{
-		SFPC(f, 8);
+		SFPC(8);
 		asura_bbox ar;
 		XMFLOAT4 rot;
-		READ(f, &ar, 24, &a);
-		READ(f, &rot, 16, &a);
+		READ(ar);
+		READ(rot);
 		//g_bboxes.push_back({ {ar.x1, ar.y1, ar.z1 }, {ar.x2, ar.y2, ar.z2 }, {1.0f, 0.0f, 0.0f, 1.0f}, rot }); make for futher less messy
 	}
 
-	char* data = (char*)malloc(1024);
-	ZeroMemory(data, 1024);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity Zone_area (166)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
@@ -2163,7 +2013,7 @@ void load_enti_166(HANDLE f, DWORD seq_id)
 
 
 	DWORD num3;
-	READ(f, &num3, 4, &a);
+	READ(num3);
 	DWORD* seq_ids = (DWORD*)malloc(num3 * 4);
 	for (int i = 0; i < num3; i++)
 	{
@@ -2172,14 +2022,14 @@ void load_enti_166(HANDLE f, DWORD seq_id)
 		XMFLOAT3 pos_;
 		DWORD id3;
 	
-		READ(f, &id1, 4, &a);
-		READ(f, &id2, 4, &a);
-		READ(f, seq_ids + i, 4, &a);
-		READ(f, &pos_, 12, &a);
+		READ(id1);
+		READ(id2);
+		READP(seq_ids + i, 4);
+		READ(pos_);
 
 		//g_bboxes.push_back({ {pos_.x + 0.2f, pos_.y + 0.2f, pos_.z + 0.2f },{ pos_.x - 0.2f, pos_.y - 0.2f, pos_.z - 0.2f },{ 1.0f, 0.0f, 0.0f, 1.0f }}); // translation point ?
 
-		READ(f, &id3, 4, &a);
+		READ(id3);
 		//sprintf(data2, "%d -> { %d, %d, %d } \n", i, id1, id2, id3);
 		strcat(data, data2);
 	}
@@ -2190,18 +2040,17 @@ void load_enti_166(HANDLE f, DWORD seq_id)
 void load_enti_169(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x2C);
+	SFPS(0x2C);
 	DWORD num;
-	READ(f, &num, 4, &a);
-	SFPC(f, num * 4);
+	READ(num);
+	SFPC(num * 4);
 	DWORD* seq_ids = (DWORD*)malloc(4);
-	READ(f, seq_ids, 4, &a);
+	READP(seq_ids, 4);
 	XMFLOAT3 pos;
-	READ(f, &pos, 12, &a);
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(128);
-	ZeroMemory(name, 128);
+	READ(pos);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
 	sprintf(name, "specific point (169)\n");
@@ -2212,26 +2061,24 @@ void load_enti_169(HANDLE f, DWORD seq_id)
 void load_enti_170(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(f, 0x38);
+	SFPS(0x38);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(f, &num1, 4, &a);
-	SFPC(f, num1 * 4);
-	READ(f, &pos, 12, &a);
-	SFPC(f, 0x30);
+	READ(num1);
+	SFPC(num1 * 4);
+	READ(pos);
+	SFPC(0x30);
 	asura_bbox bb;
-	READ(f, &bb, 24, &a);
-	READ(f, &rot, 16, &a);
+	READ(bb);
+	READ(rot);
 
 	g_bboxes.push_back({ { bb.x1, bb.y1, bb.z1 },{ bb.x2, bb.y2, bb.z2 },{ 1.0f, 0.0f, 0.0f, 1.0f }, rot }); 
 
 	// There so many connections followed by this CODE: Short (id) byte (id2)
 
-	char* data = (char*)malloc(256);
-	ZeroMemory(data, 256);
-	char* name = (char*)malloc(64);
-	ZeroMemory(name, 64);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity In door area (170)\n");
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
@@ -2239,17 +2086,20 @@ void load_enti_170(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 170, seq_id, pos, Colors::Red);
 }
 
-void load_effect(HANDLE file, DWORD seq_id)
+void load_effect(HANDLE f, DWORD seq_id)
 {
-	DWORD bytes_readen = 0;
+	DWORD a = 0;
 	//SetFilePointer(file, 0x34, NULL, FILE_BEGIN); // effect name HASH
-	SetFilePointer(file, 0x38, NULL, FILE_BEGIN);
+	//SetFilePointer(file, 0x38, NULL, FILE_BEGIN);
+	SFPS(0x38);
 	XMFLOAT3 pos;
 	XMFLOAT3 dir;
-	ReadFile(file, &pos, sizeof(XMFLOAT3), &bytes_readen, NULL);
-	SetFilePointer(file, 0x48, NULL, FILE_BEGIN);
-	ReadFile(file, &dir, sizeof(XMFLOAT3), &bytes_readen, NULL);
-
+	//ReadFile(file, &pos, sizeof(XMFLOAT3), &bytes_readen, NULL);
+	READ(pos);
+	//SetFilePointer(file, 0x48, NULL, FILE_BEGIN);
+	SFPS(0x48);
+	//ReadFile(file, &dir, sizeof(XMFLOAT3), &bytes_readen, NULL);
+	READ(dir); // i dont think its direction.
 	g_bboxes.push_back({ XMFLOAT3(pos.x + 0.1f, pos.y + 0.1f, pos.z + 0.1f),XMFLOAT3(pos.x - 0.1f, pos.y - 0.1f, pos.z - 0.1f), XMFLOAT4(1.0f,1.0f,0.0f,1.0f) }); // small yellow bbox
 	XMVECTOR norm_dir = XMLoadFloat3(&dir);
 	XMVECTOR pos_v = XMLoadFloat3(&pos);
@@ -2308,7 +2158,7 @@ void load_smsg_file(wchar_t* file_name)
 		DWORD upper;
 	};
 	asura_header24 header;
-	READ(f, &header, 24, &a);
+	READ(header);
 
 
 	if (header.magic != (DWORD)'GSMS' || header.upper >= 2 || header.upper < 0 || header.type1 != 7)
@@ -2333,38 +2183,38 @@ void load_smsg_file(wchar_t* file_name)
 	for (int i = 0; i < header.Count; i++)
 	{
 		uint8_t b1;
-		READ(f, &b1, 1, &a);
+		READ(b1);
 		if (b1)
 		{
 			SMSG_entry entry;
-			READ(f, &entry, sizeof(entry), &a);
+			READ(entry);
 			//dbgprint("SMSG", "entry: %d %d %d (%d) -> \n",entry.dw1, entry.type, entry.dw2, entry.Count);
 			void* mem = malloc(sizeof(SMSG_subentry) * entry.Count + 4);
 			*(DWORD*)mem = entry.Count;
 			for (int j = 0; j < entry.Count; j++)
 			{
 				SMSG_subentry subentry;
-				READ(f, &subentry, sizeof(SMSG_subentry), &a);
-				dbgprint("SMSG", "%d : {%hu, %hu -> %d} \n", i, subentry.w1, subentry.w2, subentry.seq_id);
+				READ(subentry);
+				//dbgprint("SMSG", "%d : {%hu, %hu -> %d} \n", i, subentry.w1, subentry.w2, subentry.seq_id);
 				if (entry.type >= 6)
-					SFPC(f, 4); //unk dword
+					SFPC(4); //unk dword
 				switch (subentry.w1)
 				{
 				case 0x7B:
-					SFPC(f, 84);
+					SFPC(84);
 					break;
 				case 0x7C:
 				case 0x7D:
 				case 0x7E:
 				case 0x7F:
-					SFPC(f, 40); // 32 + 8 unk
+					SFPC(40); // 32 + 8 unk
 					break;
 				case 0x80:
-					SFPC(f, 80);
+					SFPC(80);
 					break;
 				default:
 					WORD w2 = (subentry.w2 + 3) & 0xFFFFFFFC;
-					SFPC(f, w2);
+					SFPC(w2);
 					break;
 				}
 				memcpy((DWORD*)mem + 1 + j * 4, &subentry, sizeof(subentry));
@@ -2406,12 +2256,6 @@ int load_smsg(const wchar_t* folder_path)
 
 void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 {
-	DWORD bytes_readen = 0;
-	//dbgprint("Entity", "Load point entity: %d\n", entity_id);
-	DWORD offset = e_info[entity_id].pos_offset;
-
-	//deal with special cases
-	DWORD offset2 = 0;
 	switch (entity_id)
 	{
 	case 7:
@@ -2536,38 +2380,18 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 		break;
 	}
 
-	SetFilePointer(file, offset + offset2, NULL, FILE_BEGIN);
-	XMFLOAT3 pos;
-	ReadFile(file, &pos, sizeof(pos), &bytes_readen, NULL);
-	g_bboxes.push_back({ XMFLOAT3(pos.x + 0.2f, pos.y + 0.2f, pos.z + 0.2f),XMFLOAT3(pos.x - 0.2f, pos.y - 0.2f, pos.z - 0.2f), XMFLOAT4(0.0f,1.0f,1.0f,1.0f) }); // small cyan bbox
-
 	return;
 }
 
 void load_area_entity(HANDLE file, DWORD entity_id)
 {
-	DWORD bytes_readen = 0;
-	//dbgprint("Entity", "Load point entity: %d\n", entity_id);
-	DWORD offset = e_info[entity_id].pos_offset;
-	DWORD offset2 = e_info[entity_id].pos2_offset;
-	//deal with special cases
-	DWORD offset3 = 0;
+
 	switch (entity_id)
 	{
 	
 	default:
 		break;
 	}
-
-	SetFilePointer(file, offset + offset3, NULL, FILE_BEGIN);
-	XMFLOAT3 pos;
-	ReadFile(file, &pos, sizeof(pos), &bytes_readen, NULL);
-	SetFilePointer(file, offset2 + offset3, NULL, FILE_BEGIN);
-	XMFLOAT3 pos2;
-	ReadFile(file, &pos2, sizeof(pos2), &bytes_readen, NULL);
-
-	g_bboxes.push_back({ pos, pos2, XMFLOAT4(1.0f,1.0f,1.0f,1.0f) }); // small cyan bbox
-
 	return;
 }
 
@@ -2579,11 +2403,10 @@ void load_default_entity(DWORD ent_id, DWORD seq_id, wchar_t* file_name)
 		g_default_column = 0.0f;
 		g_default_row += 1.0f;
 	}
-	char* data  = (char*)malloc(128);
-	ZeroMemory(data, 128);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, file_name);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
 	sprintf(name, "Entity %d \n", ent_id);
 	Create_entity(name, data, ent_id, seq_id, { g_default_column, 0.0f,  g_default_row});
 	g_default_column += 1.0f;
@@ -2628,12 +2451,10 @@ void load_global_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 		break;
 	}
 
-	char* data = (char*)malloc(128);
-	ZeroMemory(data, 128);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
-	char* name = (char*)malloc(24);
-	ZeroMemory(name, 24);
-	sprintf(name, "Global Entity %d \n", entity_id);
+	sprintf(name, "Global %d \n", entity_id);
 	Create_global_entity(name, data, entity_id, seq_id);
 
 	return;
@@ -2646,10 +2467,10 @@ void load_entity(wchar_t* file_name)
 	lstrcat(file_path, file_name);
 	g_curr_file = file_name;
 	//dbgprint("Entity", "Trying load %ws \n", file_path);
-	DWORD bytes_readen = 0;
-	HANDLE file = CreateFileW(file_path, GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	DWORD a = 0;
+	HANDLE f = CreateFileW(file_path, GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	ENTI_header file_header;
-	ReadFile(file, &file_header, 24, &bytes_readen, NULL);
+	READ(file_header);
 	if (GetLastError() != ERROR_SUCCESS)
 	{
 		dbgprint("Entity", "Opening file Error: %d\n", GetLastError());
@@ -2676,19 +2497,19 @@ void load_entity(wchar_t* file_name)
 		load_default_entity(ent_id, file_header.seq_id, file_name);
 		break;
 	case ENTITY_GLOBAL:
-		load_global_entity(file, ent_id, file_header.seq_id);
+		load_global_entity(f, ent_id, file_header.seq_id);
 		break;
 	case ENTITY_AREA: // actualy not used yet
-		load_area_entity(file, ent_id);
+		load_area_entity(f, ent_id);
 		break;
 	case ENTITY_POINT:
-		load_point_entity(file, ent_id, file_header.seq_id);
+		load_point_entity(f, ent_id, file_header.seq_id);
 		break;
 	default:
 		dbgprint("Entity", "Error in switch case condition: type = %d \n", type);
 	}
 
-	CloseHandle(file);
+	CloseHandle(f);
 	return;
 }
 
