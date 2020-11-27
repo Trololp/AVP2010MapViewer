@@ -1,0 +1,37 @@
+This game translate long strings into hashes and put it inside binary trees.
+
+Hashing is done by multiplaying 31 every char inside string and adding it to sum (DWORD var). this is lead to
+quicky overflow value and i think this make string not longer recoverable.
+
+//I just paste it from decompiler
+DWORD hash_from_str(DWORD init, char* str) // init almost always is 0
+{
+	DWORD result; // eax@1
+	char *v3; // esi@1
+	char i; // cl@2
+	int v5; // edx@7
+	int v6; // eax@7
+
+	result = init;
+	v3 = str;
+	if (str)
+	{
+		for (i = *str; i; result = v5 + v6)
+		{
+			if ((i - 'A') > 0x19u)
+			{
+				if (i == '\\')
+					i = '/';
+			}
+			else
+			{
+				i += 32;
+			}
+			v5 = 31 * result;
+			v6 = i;
+			i = (v3++)[1];
+		}
+	}
+	return result;
+}
+

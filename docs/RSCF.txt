@@ -1,0 +1,31 @@
+RSCF - (Resource File ?)
+
+Header have following format
+
+Chunk header:
+	DWORD magic; 	- Always 'RSCF'
+	DWORD size_file;
+	DWORD type; 	- various
+	DWORD type2;	- various
+	DWORD unk;	- Depends on what this RSCF file contains
+	DWORD RSCF_Type; - Depends on what this RSCF file contains
+	DWORD (size_file - header_size)	
+	CStr_padded Name; - Name of file inside container.
+
+unk and RSCF_Type:
+	0, 4 - unk (not in game files) by code it just loads and do nothing to it
+	0, 6 - unk (not in game files) same as 0, 4
+	0, 7 - Cpt.RSCF (Carpet) - this is grass flour 	
+	0, 8 - Bot.RSCF (Botanicals)
+	0, B - Env.RSCF (Enviroment)
+	0, C - (Material Response Texture.RSCF)
+	0, D - (Static Decals.RSCF)
+	0, E - (Material response pixel shaders.RSCF)
+	0, F - (Models)
+
+
+	2, 0 - Image - that already unpacked by QuickBMS script
+	3, 0 - sound - that already unpacked by QuickBMS script
+	6, 0 - Unknown - by code entire file is string. then it concatenate with locale string
+			 and passes to _mkgmtime(str) func. idk.
+

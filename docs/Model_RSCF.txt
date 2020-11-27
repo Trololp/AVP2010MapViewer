@@ -1,0 +1,52 @@
+This is resource file (See RSCF.txt) with RSCF_Type = 0xF.
+File describes single model.
+
+File format:
+
+.. RSCF_header ..
+.. Model_header ..
+.. mat_model_info structs ..
+.. Vertex buffer ..
+.. Index buffer ..
+
+Model_header:
+
+#pragma pack(push, 1)
+struct model_header
+{
+	DWORD model_mesh_info_count; // amount of different materials used
+	DWORD vertex_count;
+	DWORD index_count;
+	DWORD unk;
+	DWORD count_unk_chunks;
+	bool  unk_bool;
+};
+#pragma pack(pop) // This structure inside file is not padded. sizeof(struct) = 21
+
+Model_mat_info:
+
+struct model_mat_info
+{
+	DWORD mat_hash; // Hash of material name
+	DWORD unk;
+	DWORD points_count;
+	DWORD some_offset;
+	DWORD unk2;
+	DWORD unk3;
+};
+
+vertex have this format:
+
+struct model_vtx
+{
+	XMFLOAT4 Pos;
+	UINT8 BlendIndices[4];
+	SHORT BlendWeight[4];
+	SHORT Tangent[4];
+	SHORT Binormal[4];
+	SHORT Normal[4];
+	XMFLOAT2 TexCoord1;
+	float TextCoord2;
+};
+
+indexes are unsinged SHORT

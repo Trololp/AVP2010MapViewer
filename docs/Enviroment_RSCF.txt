@@ -1,0 +1,59 @@
+This is resource file (See RSCF.txt) with RSCF_Type = 0xB.
+File describes entire map.
+
+File format:
+
+.. RSCF_header ..
+.. Env_header ..
+.. Mesh_info structs ..
+.. Vertex buffer ..
+.. Index buffer ..
+
+After chunk header, follow this header.
+
+struct Env_header
+{
+	DWORD num_vertex_buf; // its is amount 1
+	DWORD size_vertex_buf; // count vertex inside buffer
+	DWORD num_index_buf; // its is amount 1
+	DWORD size_index_buf; // indexes count
+	DWORD Total_meshes; // count of mesh info structs
+};
+
+map_mesh_info is structure describes model or some part of it with unique material.
+
+struct Map_mesh_info
+{
+	DWORD triangles_count; 
+	DWORD Vertex_buf_num; // always 0
+	DWORD Min_vertex_index;
+	DWORD Num_vertices;
+	DWORD Index_buf_num; // always 0
+	DWORD start_index;
+	DWORD mat1_hash; // this is material name hash
+	DWORD mat2_hash;
+	DWORD unk3; //no clue flags ? or internal id of mesh on map
+	float bound_x; 
+	float bound_x_;
+	float bound_y;
+	float bound_y_;
+	float bound_z;
+	float bound_z_; // this if boundary block of mesh
+};
+
+vertex format
+
+struct avp_vtx
+{
+	XMFLOAT3 Pos; // vertex position
+	UINT8 COLOR[4]; //rgba - dont know what is it. its always? black
+	SHORT Normal[4];
+	SHORT Tangent1[4];
+	SHORT Tangent2[4];
+	XMFLOAT4 TexCoord1; // this is diffuse uv coord
+	XMFLOAT4 TexCoord2;
+	XMFLOAT4 TexCoord3;
+	XMFLOAT4 TexCoord4;
+};
+
+indexes are unsigned short

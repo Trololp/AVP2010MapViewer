@@ -1,0 +1,42 @@
+MARE - material file describes material used in game.
+
+format:
+
+.. chunk_header .. // type1 is 21
+.. count of entries .. // unsighned int 
+.. MARE_entries ..
+
+MARE entry:
+
+struct MARE_ENTRY
+{
+	DWORD mat_hash;	// hash from material name (unfortunately for us, there no material names in plain text exist)
+	unsigned long int num; // sequence number of entry from 0 to count of entries
+	DWORD Hash1; // All this hashes made from string path to texture without extension
+	DWORD Hash2;
+	DWORD Hash3;
+	DWORD Hash4;
+	DWORD Hash5;
+	float a;	//alot stuff not known
+	float b[4];
+	DWORD c[3];
+	DWORD Hash6;
+	DWORD d;
+	DWORD e[4];
+	DWORD f[2];
+	DWORD h[3][4];
+	DWORD g;
+	DWORD i[6];
+	DWORD j[3];
+	DWORD l[6];
+	DWORD Default_mat_id;
+	DWORD Hash7;
+	DWORD m;
+	DWORD Hash8;
+	DWORD n;
+	DWORD Hash9;
+	DWORD Hash10;
+	DWORD k[4];
+	DWORD pad[16];
+};
+

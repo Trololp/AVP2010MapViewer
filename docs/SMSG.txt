@@ -1,0 +1,58 @@
+SMGS - system message ?
+File describes message_id that can be found is some entities, like triggers, etc.
+
+format:
+..chunk_header.. type = 7 type2 = 0
+..SMSG_header..
+..content..
+
+SMSG_header:
+struct smsg_header {
+	DWORD Count; // count of entries
+	DWORD upper; // special value if == 0 (msg_id = msg_id in file) else (msg_id = msg_id + 30000)
+};
+
+Entries:
+if entry exist there will be 1 byte set to value 01 else 00.
+
+struct SMSG_entry
+{
+	DWORD dw1;// 0
+	DWORD type; // this is 7 in all files i found
+	DWORD dw2; // 0
+	DWORD Count; //count of subentries following next
+};
+
+struct SMSG_subentry
+{
+	WORD w1; // type (this is action id that will be called to entity)
+	WORD w2; // count (count for specific data following next)
+	DWORD seq_id; // entity sequence id
+	float f1; // maybe durration ?
+	float f2; // maybe durration ?
+	DWORD unk;
+};
+
+for specific activation id there will be different amount of specific data
+SFPC(amount) - skip file position from current position. Because its unknown yet
+what is this data mean.
+
+switch (subentry.w1)
+{
+	case 0x7B:
+		SFPC(84);
+		break;
+	case 0x7C:
+	case 0x7D:
+	case 0x7E:
+	case 0x7F:
+		SFPC(40); // 32 + 8 unk
+		break;
+	case 0x80:
+		SFPC(80);
+		break;
+	default:
+		WORD w2 = (subentry.w2 + 3) & 0xFFFFFFFC; 
+		SFPC(w2);
+		break;
+}

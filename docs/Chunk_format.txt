@@ -1,0 +1,13 @@
+Every chunk that extracted from *.pc or *.asr file have following format.
+
+	00	04		08	0C
+00	Magic	SizeofChunk	Type1	Type2
+10	???	???		???	???
+...	Chunk Content ...
+
+Magic is sequence of 4 chars that describes what is this chunk are.
+example: 'RSCF' - resource file or 'MTRL' - material etc.
+
+SizeofChunk - size of chunk with header.
+
+Type1 and Type2 is additional values that describes chunk format version ?
