@@ -1,0 +1,29 @@
+EMOD - (E... model ?)
+
+EMOD found in enviroment directory. Have meaningful names of objects. Maybe somehow handle invisible collision brushes.
+Header have following format
+
+Chunk header:
+	DWORD magic; 	- Always 'EMOD'
+	DWORD size_file;
+	DWORD type; 	- 6
+	DWORD type2;	- 0
+	DWORD count;	- Count of entrys
+	CStr_padded Name; - Name of enviroment example 'Lab'.
+
+EMOD_entry
+	CStr_padded name; - Name of entry.
+	XMVECTOR3f  vec_pos; - x,y,z of some point
+	DWORD unk1; - 0
+	DWORD unk2; - 1
+	DWORD unk3; - 0
+	DWORD size1; - always 0x44
+	DWORD unk4; - always 9
+	DWORD zeros[5];
+	WORD flag; - some flag, almost always 0x4
+	WORD unk; - always -1 (FFFF)
+	DWORD unk5;
+	Asura_bbox bb; - asura bbox is bounding box with these format of 2 points
+			(x1, x2, y1, y2, z1, z2)
+	DWORD unk_hash; - can be hash or not.
+	DWORD zeros2[2];

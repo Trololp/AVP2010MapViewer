@@ -22,176 +22,177 @@ struct ENTI_header
 Entity ids: (many is unknown yet, every name is not original)
 
 	id	Description
-	1	message_like_trigger
-	2	
-	3	cutscene start
-	4	
-	5	
-	6	
-	7	Prop
-	8	
-	9	
-	10	
-	11	Call message
-	12	
-	13	
-	14	Unknown
-	15	
-	16	
-	17	
-	18	
-	19	
-	20	Some trigger near doors
-	21	Movable obj
-	22	
-	23	
-	24	
-	25	
-	26	
-	27	
-	28	
-	29	
-	30	
-	31	
-	32	Trigger Hurt
-	33	Statical effect
-	34	Multimanager
-	35	Trigger (dynamic)
-	36	
-	37	
-	38	Unknown
-	39	
-	40	
-	41	Unknown
-	42	Unknown
-	43	
-	44	
-	45	
-	46	
-	47	
-	48	
-	49	
-	50	
-	51	
-	52	
-	53	
-	54	
-	55	
-	56	
-	57	
-	58	
-	59	
-	60	
-	61	
-	62	
-	63	Path point
-	64	Path controller
-	65	
-	66	Unknown
-	67	
-	68	Properties of 69
-	69	Teleport location
-	70	Debug teleports
-	71	Special fx (projectors)
-	72	
-	73	Unknown
-	74	Console commands
-	75	Special fx (light shafts)
-	76	
-	77	Trigger 
-	78	Triggers
-	79	
-	80	
-	81	
-	82	
-	83	Light obj (with model)
-	84	Like 11 but with hash
-	85	Unknown
-	86	
-	87	
-	88	
-	89	
-	90	
-	91	
-	92	Alien
-	93	
-	94	Facehugger
-	95	
-	96	
-	97	Predator
-	98	
-	99	
-	100	waypoint controller
-	101	
-	102	
-	103	
-	104	
-	105	
-	106	
-	107	
-	108	
-	109	
-	110	
-	111	
-	112	
-	113	
-	114	waypoint
-	115	
-	116	
-	117	
-	118	
-	119	
-	120	
-	121	
-	122	
-	123	
-	124	
-	125	
-	126	Checkpoint
-	127	
-	128	
-	129	
-	130	GameScores?
-	131	
-	132	
-	133	some event
-	134	
-	135	Combat_android
-	136	Obstacle obj
-	137	
-	138	Predator spots?
-	139	
-	140	patrol area ?
-	141	Colonist
-	142	Marine
-	143	
-	144	Obstacle points
-	145	some waypoint?
-	146	alien hidding spot
-	147	
-	148	
-	149	NPC property
-	150	
-	151	
-	152	
-	153	
-	154	
-	155	
-	156	Collectable (Marine & Predator)
-	157	Target_point (for NPC)
-	158	Mission Target
-	159	
-	160	
-	161	
-	162	Battery_station
-	163	Unknown
-	164	
-	165	
-	166	Zone_area
-	167	
-	168	
-	169	specific point
-	170	In door area
-	171	
-	172	
-	173	
+	1	message_like_trigger	
+	2		
+	3	cutscene start	
+	4		
+	5		
+	6		
+	7	Prop	
+	8		
+	9		
+	10		
+	11	Call message	Maybe calls some global message
+	12		
+	13		
+	14	Unknown	Invisible
+	15		
+	16		
+	17		
+	18		
+	19		
+	20	Some trigger near doors	near doors
+	21	Movable obj	
+	22		
+	23		
+	24		
+	25		
+	26		
+	27		
+	28		
+	29		
+	30		
+	31		
+	32	Trigger Hurt	Global no pos area boundaries
+	33	Statical effect	
+	34	Multimanager	Global
+	35	Trigger (dynamic)	Point maybe sphere trigger
+	36		
+	37		
+	38	Unknown	Global
+	39		
+	40		
+	41	Unknown	Point
+	42	Timer sequence	Global
+	43		
+	44		
+	45		
+	46		
+	47		
+	48		
+	49		
+	50		
+	51		
+	52			
+	53			
+	54		
+	55		
+	56		
+	57		
+	58		
+	59		
+	60		
+	61		
+	62		
+	63	Path point	
+	64	Path controller	
+	65		
+	66	Unknown	Global
+	67		
+	68	Properties of 69	
+	69	Teleport location	
+	70	Debug teleports	0x58
+	71	Special fx (projectors)	
+	72		
+	73	Unknown	Global
+	74	Console commands	
+	75	Special fx (light shafts)	
+	76		
+	77	Trigger 	
+	78	Triggers	
+	79		
+	80		
+	81		
+	82		
+	83	Light obj (with model)	
+	84	Like 11 but with hash	Global
+	85	Dialogue sequence	hash DLIG and DLLN hashes
+	86		
+	87		
+	88		
+	89		
+	90		
+	91		
+	92	Alien	
+	93		
+	94	Facehugger	
+	95		
+	96		
+	97	Predator	
+	98		
+	99		
+	100	waypoint controller	
+	101		
+	102		
+	103		
+	104		
+	105		
+	106		
+	107		
+	108		
+	109		
+	110		
+	111		
+	112		
+	113		
+	114	waypoint	
+	115		
+	116		
+	117		
+	118		
+	119		
+	120		
+	121		
+	122	Computer console	
+	123		
+	124	Some waypoint controller	
+	125		
+	126	Checkpoint	
+	127		
+	128		
+	129		
+	130	GameScores?	
+	131		
+	132	unknown	
+	133	some event	
+	134		
+	135	Combat_android	
+	136	Obstacle obj	
+	137		
+	138	Predator spots?	
+	139		
+	140	patrol area ?	
+	141	Colonist	
+	142	Marine	
+	143		
+	144	Obstacle points	
+	145	some waypoint?	
+	146	alien hidding spot	
+	147	spawn_property?	spawner 
+	148	Some waypoint controller	
+	149	NPC property	I think start up animation or smth
+	150		
+	151	Sentry Gun	
+	152		
+	153		
+	154		
+	155		
+	156	Collectable (Marine & Predator)	
+	157	Target_point (for NPC)	aiming at that
+	158	Mission Target	Mission targeting sprite 
+	159		
+	160		
+	161		
+	162	Battery_station	Object that interact with batteries
+	163	Unknown	Not found yet (its model)
+	164		
+	165	Retina scaner or button pad	
+	166	Zone_area	With some area boundaries
+	167		
+	168		
+	169	specific point	
+	170	In door area	area
+	171		
+	172		
+	173	Computer	
+
