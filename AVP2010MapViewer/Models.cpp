@@ -187,6 +187,7 @@ void Read_model(const wchar_t* model_name, int skip)
 		mdl_info->pIndexBuff = i_buff;
 		
 		DWORD hash = hash_from_str(0, name_str);
+		//dbgprint("debug", "%s - %d (%x) \n", name_str, hash, hash);
 		hash_tree_node2* h_n = new hash_tree_node2;
 		h_n->hash = hash;
 		h_n->ptr = mdl_info;

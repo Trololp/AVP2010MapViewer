@@ -52,6 +52,7 @@ struct MARE_ENTRY
 };
 
 
+
 extern ID3D11Device*           g_pd3dDevice;
 extern Map_mesh_info*			Mesh_info_structs;
 extern ID3D11Buffer*           g_pVertexBuffer_env;
@@ -70,11 +71,13 @@ int Read_map(const wchar_t* file_name, DWORD* g_total_meshes)
 	if (GetLastError() != ERROR_SUCCESS)
 	{
 		dbgprint("RSCF_Parse_Enviroment", "Opening file Error: %d\n", GetLastError());
+		CloseHandle(file);
 		return 0;
 	}
 	if (*asura_header != (DWORD)'FCSR' || *(asura_header + 5) != (DWORD)0xB)
 	{
 		dbgprint("RSCF_Parse_Enviroment", "Opening file Error: BAD_HEADER (HEADER: %08x Type %02d BytesReaden: %d)\n", *asura_header, *(asura_header + 5), bytes_readen);
+		CloseHandle(file);
 		return 0;
 	}
 	free(asura_header);
@@ -139,6 +142,7 @@ int Read_map(const wchar_t* file_name, DWORD* g_total_meshes)
 	if (FAILED(hr))
 	{
 		dbgprint("RSCF_Parse_Enviroment", "Create index buffer failed !!!\n");
+		CloseHandle(file);
 		return 0;
 		_aligned_free(indexes);
 	}
@@ -169,11 +173,13 @@ int Read_MARE(const wchar_t* file_name, int type)
 	if (int i = GetLastError() != ERROR_SUCCESS)
 	{
 		dbgprint("Materials", "Opening file Error: %d\n", i);
+		CloseHandle(file);
 		return 0;
 	}
 	if (file_header.magic != (DWORD)'ERAM' || (file_header.type != 21))
 	{
 		dbgprint("Materials", "Opening file Error: INCORRECT FILE HEADER (%ws)\n", file_path);
+		CloseHandle(file);
 		return 0;
 	}
 

@@ -31,10 +31,13 @@ struct SMSG_entry
 struct SMSG_subentry
 {
 	WORD w1; // type
-	WORD w2; // count
-	DWORD seq_id;
+	WORD w2; // data count [bytes]
+	DWORD seq_id; // entity id that will be called
 	float f1;
-	float f2;
+	float f2; // delay
+	// also skipping unk dword in the end
+	void* data = nullptr; // 'this is hack' in original file data will continue after subentry.
+						  // there is no field inside original file
 };
 
 struct entity_prop
@@ -61,6 +64,7 @@ struct entity
 	DWORD seq_id;
 	XMFLOAT3 pos;
 	XMFLOAT4 color;
+	int ent_id2;
 	int connect_count;
 	bool connected;
 	DWORD* connected_list; //seq ids

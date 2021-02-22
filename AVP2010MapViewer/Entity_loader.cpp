@@ -2,12 +2,8 @@
 #include "Debug.h"
 #include "Hash_tree.h"
 #include "Models.h"
+#include "Console.h"
 
-//Macro
-#define SFPS(pos) SetFilePointer(f, pos, 0, FILE_BEGIN)
-#define SFPC(pos) SetFilePointer(f, pos, 0, FILE_CURRENT)
-#define READ(v) ReadFile(f, &(v), sizeof(v), &a, NULL)
-#define READP(p, n) ReadFile(f, p, n, &a, NULL)
 
 typedef struct {
 	DWORD id = 0;
@@ -20,6 +16,24 @@ struct e_act
 	WORD msgid;
 };
 
+DWORD Command_find_entity(DWORD*);
+DWORD Command_dump_smsg(DWORD*);
+
+Command cmd_find_entity = {
+	"find",
+	CONCMD_RET_ZERO,
+	CONARG_INT,
+	Command_find_entity,
+	nullptr
+};
+
+Command cmd_dump_smsg = {
+	"dump_smsg",
+	CONCMD_RET_ZERO,
+	CONARG_END,
+	Command_dump_smsg,
+	nullptr
+};
 
 extern std::vector<bbox> g_bboxes;
 extern std::vector<line> g_lines;
@@ -33,6 +47,9 @@ extern hash_tree_node2*		g_default_model;
 extern int read_padded_str(HANDLE file, char* dest);
 extern wchar_t* g_path2;
 std::vector<entity_p> g_entity_p;
+extern DWORD					g_selected_entity_id;
+extern Console*				g_pConsole;
+
 
 float g_default_row = 0.0f;
 float g_default_column = 0.0f;
@@ -91,7 +108,7 @@ entity_info e_info[180] = {
 	{ 39, ENTITY_UNKNOWN },
 	{ 40, ENTITY_UNKNOWN },
 	{ 41, ENTITY_UNKNOWN },
-	{ 42, ENTITY_UNKNOWN },
+	{ 42, ENTITY_GLOBAL },
 	{ 43, ENTITY_UNKNOWN },
 	{ 44, ENTITY_UNKNOWN },
 	{ 45, ENTITY_UNKNOWN },
@@ -134,7 +151,7 @@ entity_info e_info[180] = {
 	{ 82, ENTITY_UNKNOWN },
 	{ 83, ENTITY_POINT },
 	{ 84, ENTITY_UNKNOWN },
-	{ 85, ENTITY_UNKNOWN },
+	{ 85, ENTITY_GLOBAL },
 	{ 86, ENTITY_UNKNOWN },
 	{ 87, ENTITY_UNKNOWN },
 	{ 88, ENTITY_UNKNOWN },
@@ -171,9 +188,9 @@ entity_info e_info[180] = {
 	{ 119, ENTITY_UNKNOWN },
 	{ 120, ENTITY_UNKNOWN },
 	{ 121, ENTITY_UNKNOWN },
-	{ 122, ENTITY_UNKNOWN },
+	{ 122, ENTITY_POINT },
 	{ 123, ENTITY_UNKNOWN },
-	{ 124, ENTITY_UNKNOWN },
+	{ 124, ENTITY_POINT },
 	{ 125, ENTITY_UNKNOWN },
 	{ 126, ENTITY_POINT },
 	{ 127, ENTITY_UNKNOWN },
@@ -196,11 +213,11 @@ entity_info e_info[180] = {
 	{ 144, ENTITY_POINT },
 	{ 145, ENTITY_POINT },
 	{ 146, ENTITY_POINT },
-	{ 147, ENTITY_UNKNOWN },
-	{ 148, ENTITY_UNKNOWN },
+	{ 147, ENTITY_GLOBAL },
+	{ 148, ENTITY_POINT },
 	{ 149, ENTITY_GLOBAL },
 	{ 150, ENTITY_UNKNOWN },
-	{ 151, ENTITY_UNKNOWN },
+	{ 151, ENTITY_POINT },
 	{ 152, ENTITY_UNKNOWN },
 	{ 153, ENTITY_UNKNOWN },
 	{ 154, ENTITY_UNKNOWN },
@@ -214,15 +231,15 @@ entity_info e_info[180] = {
 	{ 162, ENTITY_POINT },
 	{ 163, ENTITY_POINT },
 	{ 164, ENTITY_UNKNOWN },
-	{ 165, ENTITY_UNKNOWN },
+	{ 165, ENTITY_POINT },
 	{ 166, ENTITY_POINT },
-	{ 167, ENTITY_UNKNOWN },
+	{ 167, ENTITY_POINT },
 	{ 168, ENTITY_UNKNOWN },
 	{ 169, ENTITY_POINT },
 	{ 170, ENTITY_POINT },
 	{ 171, ENTITY_UNKNOWN },
 	{ 172, ENTITY_UNKNOWN },
-	{ 173, ENTITY_UNKNOWN },
+	{ 173, ENTITY_POINT },
 	{ 174, ENTITY_UNKNOWN },
 	{ 175, ENTITY_UNKNOWN },
 	{ 176, ENTITY_UNKNOWN },
@@ -233,6 +250,7 @@ entity_info e_info[180] = {
 
 
 int ent_id2 = 0;
+
 void Create_entity(char* name, char* data, DWORD ent_id, DWORD seq_id, XMFLOAT3 pos, XMVECTOR color = Colors::White, entity_prop* model = nullptr, bbox* bbox = nullptr, int connected_count = 0, DWORD* connected_list = nullptr)
 {
 	entity ent;
@@ -242,6 +260,7 @@ void Create_entity(char* name, char* data, DWORD ent_id, DWORD seq_id, XMFLOAT3 
 	ent.seq_id = seq_id;
 	ent.connected = false;
 	ent.pos = pos;
+	ent.ent_id2 = ent_id2;
 	XMStoreFloat4(&(ent.color), color);
 	if (model)
 		ent.model = model;
@@ -306,6 +325,77 @@ entity* Search_for_entity(DWORD seq_id)
 	return &(g_entities[(*it).id]);
 }
 
+DWORD Command_find_entity(DWORD* args)
+{
+	DWORD ent_id = args[0];
+	entity* pEnt = Search_for_entity(ent_id);
+	if (!pEnt)
+		return 0;
+	g_selected_entity_id = pEnt->ent_id2;
+	Entity_update_vertex_buffer(g_selected_entity_id);
+	float* args2 = (float*)malloc(16 * 4);
+
+	args2[0] = pEnt->pos.x;
+	args2[1] = pEnt->pos.y;
+	args2[2] = pEnt->pos.z;
+	Console_command_tp((DWORD*)args2);
+	g_pConsole->is_active = false;
+	free(args2);
+	return 0;
+}
+
+DWORD Command_dump_smsg(DWORD* args)
+{
+	void* entries_ptr = nullptr;
+	for (int msg_id = 0; msg_id < SMSG_count1; msg_id++)
+	{
+		entries_ptr = SMSG_ptr1[msg_id];
+		if (entries_ptr == nullptr)
+		{
+			dbgprint("Dump_smsg", "MSGID: %d\n", msg_id);
+			return 0;
+		}
+		DWORD count = *(DWORD*)entries_ptr;
+		SMSG_subentry* entries = (SMSG_subentry*)((DWORD*)entries_ptr + 1);
+		dbgprint("Dump_smsg", "MSGID: %d\n", msg_id);
+		for (int i = 0; i < count; i++)
+		{
+			entity* ent_p = Search_for_entity(entries[i].seq_id);
+			if (ent_p != nullptr)
+			{
+				dbgprint("Dump_smsg", "%d: act:(%04x %hu) %.5f ent: %d %s", i, entries[i].w1, entries[i].w2, entries[i].f1, entries[i].seq_id, ent_p->name);
+			}else
+			{
+				dbgprint("Dump_smsg", "%d: act:(%04x %hu) %.5f ent: %d unknown \n", i, entries[i].w1, entries[i].w2, entries[i].f1, entries[i].seq_id);
+			}
+			if (entries[i].data != nullptr)
+			{
+				switch (entries[i].w1)
+				{
+				case 0x7B:
+					Dump_hex("Dump_smsg", entries[i].data, 84);
+					break;
+				case 0x7C:
+				case 0x7D:
+				case 0x7E:
+				case 0x7F:
+					Dump_hex("Dump_smsg", entries[i].data, 40);
+					break;
+				case 0x80:
+					Dump_hex("Dump_smsg", entries[i].data, 80);
+					break;
+				default:
+					WORD w2 = (entries[i].w2 + 3) & 0xFFFFFFFC;
+					if(w2)
+						Dump_hex("Dump_smsg", entries[i].data, w2);
+					break;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
 //Returns pointer to array of seq_ids of entities affected by that msgid + some additional space if needed
 DWORD* search_in_SMSG(WORD msgid, int additional_ids, DWORD* founded)
 {
@@ -348,6 +438,173 @@ DWORD* search_in_SMSG(WORD msgid, int additional_ids, DWORD* founded)
 		seq_ids_buff[i] = entries[i].seq_id;
 	}
 	return seq_ids_buff;
+}
+
+char* dump_msg(WORD msgid)
+{
+	//return (char*)"no dump !\n";
+	if (msgid == 0xFFFF)
+		return (char*)"no data \n";
+
+	if (msgid < 0 || msgid > 60000)
+		return (char*)"no data \n";
+
+	void* entries_ptr = nullptr;
+	if (msgid < 30000)
+	{
+		if (msgid >= SMSG_count1)
+		{
+			dbgprint("SMSG", "check 1 msg_id = %d\n", msgid);
+			return (char*)"no data \n";
+		}
+		entries_ptr = SMSG_ptr1[msgid];
+	}
+	else
+	{
+		if (msgid - 30000 >= SMSG_count2)
+		{
+			dbgprint("SMSG", "check 2 msg_id = %d (%d)\n", msgid, msgid - 30000);
+			return (char*)"no data \n";
+		}
+		entries_ptr = SMSG_ptr2[msgid - 30000];
+	}
+	uint32_t count = *(DWORD*)entries_ptr;
+	int founded = count; // give information about size of buffer
+	if (count > 1000)
+	{
+		dbgprint("SMSG", "check  count = %d for msg_id = %d\n", count, msgid);
+		return (char*)"Unknown \n";
+	}
+	char* buffer = (char*)malloc(1024);
+	ZeroMemory(buffer, 1024);
+	char msg_id_line[64];
+	sprintf_s(msg_id_line, sizeof(msg_id_line), "msg_id: %05d\nID Cnt ent_id delay? \n", msgid);
+	strcat_s(buffer, 1024, msg_id_line);
+	SMSG_subentry* entries = (SMSG_subentry*)((DWORD*)entries_ptr + 1);
+	if (count >= 15)
+		count = 15;
+	for (int i = 0; i < count; i++)
+	{
+		char new_line[64];
+
+		sprintf_s(new_line, sizeof(new_line), "0x%04x %02d %07d %.5f \n", entries[i].w1, entries[i].w2, entries[i].seq_id, entries[i].f1);
+		strcat_s(buffer, 1024, new_line);
+	}
+	return buffer;
+}
+
+char* BE_messages(HANDLE f)
+{
+	DWORD a = 0;
+	int count;
+	READ(count);
+	DWORD* msgs = (DWORD*)malloc(count * 4);
+	READP(msgs, count * 4);
+
+	char* buffer = (char*)malloc(1024);
+	ZeroMemory(buffer, 1024);
+	strcat_s(buffer, 1024, "BE data\n");
+
+	for (int i = 0; i < count; i++)
+	{
+		char new_line[1024];
+
+		sprintf_s(new_line, sizeof(new_line), "On event_id : 0x%04x \n %s \n", msgs[i] & 0xFFFF, dump_msg(msgs[i] >> 16));
+		strcat_s(buffer, 1024, new_line);
+	}
+	return buffer;
+}
+
+char* Actor_name_from_hash(DWORD hash)
+{
+	char* actor_name = (char*)"Unknown";
+	switch (hash)
+	{
+	case 56865079: 
+		actor_name = (char*)"Male ShotGun B02";
+		break;
+	case 56885259:
+		actor_name = (char*)"Male ShotGun W01";
+		break;
+
+	case 130498614:
+		actor_name = (char*)"Colonist_bluesuit1";
+		break;
+	case 130498615:
+		actor_name = (char*)"Colonist_bluesuit2";
+		break; 
+	case 130498616:
+		actor_name = (char*)"Colonist_bluesuit3";
+		break;
+	case 130498617:
+		actor_name = (char*)"Colonist_bluesuit4_US";
+		break;
+	case 394465882:
+		actor_name = (char*)"Male PulseRifle W01";
+		break;
+	case 394465883:
+		actor_name = (char*)"Male PulseRifle W02 No Head for M04";
+		break;
+	case 394445702:
+		actor_name = (char*)"Male PulseRifle B02";
+		break;
+	case 394451467:
+		actor_name = (char*)"Male PulseRifle H01";
+		break;
+	case 1020718497:
+		actor_name = (char*)"ConstructionWorker_head1";
+		break;
+	case 1020718498:
+		actor_name = (char*)"ConstructionWorker_head2";
+		break;
+	case 1020718499:
+		actor_name = (char*)"ConstructionWorker_head3";
+		break;
+	case 1463773938:
+		actor_name = (char*)"Warrior_Alien_Always_Block";
+		break;
+	case 1469093676:
+		actor_name = (char*)"Warrior_Alien_Always_Heavy";
+		break;
+	case 1472912251:
+		actor_name = (char*)"Warrior_Alien_Always_Light";
+		break;
+	case 1573742133:
+		actor_name = (char*)"SentryGun_SingleBarrel_AttackCivilians";
+		break;
+	case 2135828582:
+		actor_name = (char*)"Female PulseRifle B01";
+		break;
+	case 2233643625:
+		actor_name = (char*)"Warrior_Alien_GrappleTest";
+		break;
+	case 245379434:
+		actor_name = (char*)"MarineAI_GrappleTests";
+		break;
+	case 2928489064:
+		actor_name = (char*)"Colonist_bluesuit1_chestburst";
+		break;
+	case 1334834821:
+		actor_name = (char*)"FaceHugger Variant 01";
+		break;
+	case 2446227059:
+		actor_name = (char*)"Warrior_Alien_Tutorial"; 
+		break;
+	case 2988985991:
+		actor_name = (char*)"Male Generic B01";
+		break;
+	case 3725945502:
+		actor_name = (char*)"Facehugger_A05";
+		break;
+	case 4250767021:
+		actor_name = (char*)"SentryGun SingleBarrel";
+		break;
+	
+
+	default:
+		break;
+	}
+	return actor_name;
 }
 
 void Perform_connections()
@@ -514,8 +771,8 @@ void Entity_update_vertex_buffer(DWORD id)
 
 void Alloc_name_and_data_str(char** name, char** data)
 {
-	*data = (char*)malloc(512);
-	ZeroMemory(*data, 512);
+	*data = (char*)malloc(2048);
+	ZeroMemory(*data, 2048);
 	*name = (char*)malloc(128);
 	ZeroMemory(*name, 128);
 }
@@ -562,8 +819,8 @@ void load_enti_1(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Entity message_like_trigger (1)\n");
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n msgid: %d \n time?: %f %f \n ", seq_id, g_curr_file, msgids[2], f1, f2);
+	sprintf(name, "message_like_trigger (1)\n");
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n %s \n time?: %f %f \n ", seq_id, g_curr_file, dump_msg(msgids[2]), f1, f2);
 
 	Create_global_entity(name, data, 1, seq_id, Colors::Purple, founded, seq_ids);
 }
@@ -577,7 +834,7 @@ void load_enti_3(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Entity cutscene start (3)\n");
+	sprintf(name, "cutscene start (3)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Name: %s \n ", seq_id, g_curr_file, str1);
 
 	Create_global_entity(name, data, 3, seq_id, Colors::LightGreen);
@@ -587,11 +844,13 @@ void load_prop(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
 	
-	//SetFilePointer(file, 0x58, NULL, FILE_BEGIN);
+	SFPS(0x54);
+	DWORD BE_flags;
+	READ(BE_flags);
+	const char* BE_str = ((BE_flags & 1)) ? "enabled" : "disabled";
+
 	SFPS(0x58);
-	int i;
-	READ(i);
-	SFPC(i * 4);
+	char* BE_data = BE_messages(f);
 
 	entity_prop* prop = new entity_prop;
 	prop->visible = 1;
@@ -617,7 +876,7 @@ void load_prop(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Movable: %s \n Special: %x \n Flags: %d \n Model_name: \"%s\" \n", seq_id, g_curr_file, str, prop->special, prop->group_id, mi->mdl_name);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Entity %s \n Movable: %s \n Flags: %d \n Model_name: \"%s\" \n %s \n", seq_id, g_curr_file, BE_str, str, prop->group_id, mi->mdl_name, BE_data);
 	sprintf(name, "Entity Prop (7)\n");
 	Create_entity(name, data, 7, seq_id, prop->pos, Colors::White, prop);
 }
@@ -648,11 +907,20 @@ void load_enti_11(HANDLE f, DWORD seq_id)
 	ZeroMemory(seq_ids, totaly_found * 4);
 	SFPS(0x40);
 
+	char* msg_str = (char*)malloc(256);
+	ZeroMemory(msg_str, 256);
+	char* temp_str = (char*)malloc(16);
+	ZeroMemory(temp_str, 16);
+
 	for (int i = 0; i < count; i++)
 	{
 		WORD msgid;
 		READ(msgid);
 		SFPC(6);
+
+		sprintf(temp_str, " msg:%d \n", msgid);
+		strcat(msg_str, temp_str);
+
 		found = 0;
 		DWORD* seq_ids2 = search_in_SMSG(msgid, 0, &found);
 		if (seq_ids2 == nullptr)
@@ -662,10 +930,15 @@ void load_enti_11(HANDLE f, DWORD seq_id)
 	}
 	found = totaly_found;
 
+	
+
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Entity message (11)\n");
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n%s \n", seq_id, g_curr_file, msg_str);
+
+	free(temp_str);
+	free(msg_str);
 
 	Create_global_entity(name, data, 11, seq_id, Colors::Purple, found, seq_ids);
 }
@@ -772,13 +1045,14 @@ void load_enti_32(HANDLE f, DWORD seq_id)
 		XMFLOAT4 rot;
 		READ(bb);
 		READ(rot);
+		//bbox_p = bbox_from_asura_bb(&bb, rot, Colors::DarkBlue);
 		g_bboxes.push_back({ { bb.x1,bb.y1, bb.z1 },{ bb.x2,bb.y2, bb.z2 }, XMFLOAT4(0.2f, 0.2f, 0.8f, 1.0f), rot });
 	}
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Trigger Hurt (32)\n");
+	sprintf(name, "Trigger_hurt (%d)\n", seq_id);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Damage: %f \n", seq_id, g_curr_file, f1);
-	Create_global_entity( name, data, 32, seq_id);
+	Create_global_entity(name, data, 32, seq_id);
 }
 
 void load_enti_34(HANDLE f, DWORD seq_id)
@@ -799,7 +1073,7 @@ void load_enti_34(HANDLE f, DWORD seq_id)
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
-	sprintf(name, "Entity Multimanager (34)\n");
+	sprintf(name, "Multimanager (34)\n");
 	Create_global_entity(name, data, 34, seq_id, Colors::Purple, seq_id_count, seq_ids);
 }
 
@@ -832,6 +1106,78 @@ void load_enti_35(HANDLE f, DWORD seq_id)
 	sprintf(name, "Trigger (dynamic) (35)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n radius: %f \n", seq_id, g_curr_file, f1);
 	Create_entity(name, data, 35, seq_id, pos, Colors::Red, nullptr, bbox_p, founded, seq_ids);
+}
+
+void load_enti_42(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x30);
+	char* BE_data = BE_messages(f);
+	
+	DWORD timer_enabled; // will it work from begining ? or need activation ?
+	DWORD will_cycle; // 1 if cycle
+	DWORD count;
+	READ(timer_enabled);
+	READ(will_cycle);
+	READ(count);
+
+	DWORD found = 0;
+	DWORD totaly_found = 0;
+	DWORD current_pos = 0;
+	DWORD* seq_ids = nullptr;
+
+	for (int i = 0; i < count; i++)
+	{
+		SFPC(8);
+		WORD msgid;
+		READ(msgid);
+		SFPC(2);
+		found = 0;
+		search_in_SMSG(msgid, 0, &found);
+		totaly_found += found;
+	}
+	//dbgprint("e_act", "count %d totaly_found %d", count, totaly_found);
+	seq_ids = (DWORD*)malloc(totaly_found * 4);
+	ZeroMemory(seq_ids, totaly_found * 4);
+	SFPS(0x40);
+
+	char* msg_str = (char*)malloc(512);
+	ZeroMemory(msg_str, 512);
+	char* temp_str = (char*)malloc(32);
+	ZeroMemory(temp_str, 32);
+
+	for (int i = 0; i < count; i++)
+	{
+		WORD msgid;
+		WORD is_entry_enabled;
+		float delay;
+		DWORD hash;
+		READ(hash);
+		READ(delay);
+		READ(msgid);
+		READ(is_entry_enabled);
+
+		sprintf(temp_str, "%x %d %.5f %d\n", hash, msgid, delay, is_entry_enabled);
+		strcat(msg_str, temp_str);
+
+		found = 0;
+		DWORD* seq_ids2 = search_in_SMSG(msgid, 0, &found);
+		if (seq_ids2 == nullptr)
+			continue;
+		memcpy(seq_ids + current_pos, seq_ids2, found * 4);
+		current_pos += found;
+	}
+	found = totaly_found;
+
+	free(temp_str);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Timer sequence (42)\n");
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n BE_data: %s \n enabled: %d \n cycle: %d \n hash msgid delay enabled \n %s \n", \
+		seq_id, g_curr_file, BE_data, timer_enabled, will_cycle, msg_str);
+	free(msg_str);
+	Create_global_entity(name, data, 42, seq_id, Colors::Cyan, found, seq_ids);
 }
 
 //Waypoints
@@ -1018,7 +1364,7 @@ void load_enti_74(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Entity console var (74)\n");
+	sprintf(name, "console var (74)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n command: %s \n", seq_id, g_curr_file, str1);
 
 	Create_global_entity( name, data, 74, seq_id, Colors::LightGreen, founded, seq_ids);
@@ -1075,6 +1421,16 @@ void load_enti_78(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
 
+	//SFPS(0x30); // BE flags (need to create BE parsing function)
+	//DWORD BE_flags;
+	//READ(BE_flags);
+	//const char* str = ((BE_flags & 1)) ? "enabled" : "disabled";
+	SFPS(0x38);
+	DWORD trigger_enabled;
+	DWORD flags;
+	READ(trigger_enabled);
+	READ(flags);
+	const char* str = ((trigger_enabled & 1)) ? "enabled" : "disabled";
 	SFPS(0x40);
 
 	DWORD founded = 0;
@@ -1105,8 +1461,8 @@ void load_enti_78(HANDLE f, DWORD seq_id)
 
 			char* name = nullptr; char* data = nullptr;
 			Alloc_name_and_data_str(&name, &data);
-			sprintf(name, "Entity (78)\n");
-			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Type 1 \n msgid: %d \n", seq_id, g_curr_file, msgids[2]);
+			sprintf(name, "Trigger (78)\n");
+			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Trigger %s \n flags: %x\n Type 1 \n  %s \n", seq_id, g_curr_file, str, flags, dump_msg(msgids[2]));
 
 			Create_entity(name, data, 78, seq_id, pos, Colors::Red, nullptr, bbox_p, founded, seq_ids);
 			return;
@@ -1125,8 +1481,8 @@ void load_enti_78(HANDLE f, DWORD seq_id)
 
 			char* name = nullptr; char* data = nullptr;
 			Alloc_name_and_data_str(&name, &data);
-			sprintf(name, "Entity (78)\n");
-			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Type 2 \n radius: %f \n msgid: %d \n", seq_id, g_curr_file, value, msgids[2]);
+			sprintf(name, "Trigger (78)\n");
+			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Trigger %s \n flags: %x\n Type 2 \n radius: %f \n %s \n", seq_id, g_curr_file, str, flags, value, dump_msg(msgids[2]));
 
 			Create_entity(name, data, 78, seq_id, pos, Colors::Red, nullptr, bbox_p, founded, seq_ids);
 			return;
@@ -1140,8 +1496,8 @@ void load_enti_78(HANDLE f, DWORD seq_id)
 
 			char* name = nullptr; char* data = nullptr;
 			Alloc_name_and_data_str(&name, &data);
-			sprintf(name, "Entity (78)\n");
-			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Type 3 \n msgid: %d \n", seq_id, g_curr_file, msgids[2]);
+			sprintf(name, "Trigger (78)\n");
+			sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Trigger %s \n flags: %x\n Type 3 \n %s \n", seq_id, g_curr_file, str, flags, dump_msg(msgids[2]));
 
 			Create_entity(name, data, 78, seq_id, pos, Colors::Red, nullptr, nullptr, founded, seq_ids);
 			return;
@@ -1157,13 +1513,15 @@ void load_enti_83(HANDLE f, DWORD seq_id)
 	DWORD num1;
 	READ(num1);
 	SFPC(num1 * 4);
-	DWORD hash;
+	DWORD hash;  // this is hash from CONA chunk
 	READ(hash);
 
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	READ(pos);
 	READ(rot);
+
+
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
@@ -1176,29 +1534,55 @@ void load_enti_83(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 83, seq_id, pos, Colors::Yellow, nullptr, bbox_p);
 }
 
+void load_enti_85(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x2C);
+	char* BE_data = BE_messages(f);
+	DWORD DLLN_counts; //dialogu lines count
+	SFPS(0x52);
+	READ(DLLN_counts);
+	SFPC(0x13 * DLLN_counts); // dont interessting right now
+	DWORD amount;
+	READ(amount);
+	DWORD* seq_ids = (DWORD*)malloc(amount * 4);
+	for (int i = 0; i < amount; i++)
+	{
+		SFPC(4);//skip DLLN hash
+		READ(seq_ids[i]);
+	}
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Dialogue sequence (85)\n");
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n BE_data: %s \n Lines: %d \n", seq_id, g_curr_file, BE_data, amount);
+	Create_global_entity(name, data, 85, seq_id, Colors::Cyan, amount, seq_ids);
+}
+
 void load_enti_92(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(0x3C);
+	SFPS(0x30);
+	DWORD hash;
+	READ(hash);
+	SFPC(8);
+	char* BE_data = BE_messages(f);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	DWORD num1;
-	READ(num1);
-	SFPC(num1 * 4);
 	READ(pos);
 	READ(rot);
 	SFPC(25);
-	XMFLOAT2 some_float_data;
-	READ(some_float_data);
+	XMFLOAT2 hp;
+	READ(hp);
 	SFPC(116);
 	DWORD* seq_ids = (DWORD*)malloc(8);
 	READP(seq_ids, 8);
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Entity alien (92)\n");
+	sprintf(name, "alien (%d)\n", seq_id);
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s\n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, Actor_name_from_hash(hash), hp.x, hp.y, BE_data);
 	bbox* bbox_p = new bbox;
 	bbox_p->p1 = { pos.x + 0.4f, pos.y - 1.0f, pos.z + 0.4f };
 	bbox_p->p2 = { pos.x - 0.4f, pos.y - 0.0f, pos.z - 0.4f };
@@ -1218,26 +1602,27 @@ void load_enti_92(HANDLE f, DWORD seq_id)
 void load_enti_94(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(0x3C);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	DWORD num1;
-	READ(num1);
-	SFPC(num1 * 4);
+	SFPS(0x30);
+	DWORD hash;
+	READ(hash);
+	SFPC(8);
+	char* BE_data = BE_messages(f);
 	READ(pos);
 	READ(rot);
 	SFPC(25);
-	XMFLOAT2 some_float_data;
-	READ(some_float_data);
+	XMFLOAT2 hp;
+	READ(hp);
 	SFPC(104);
 	DWORD* seq_ids = (DWORD*)malloc(8);
 	READP(seq_ids, 8);
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Facehugger (94)\n");
+	sprintf(name, "Facehugger (%d)\n", seq_id);
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s\n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, Actor_name_from_hash(hash), hp.x, hp.y, BE_data);
 	bbox* bbox_p = new bbox;
 	bbox_p->p1 = { pos.x + 0.3f, pos.y - 0.2f, pos.z + 0.3f };
 	bbox_p->p2 = { pos.x - 0.3f, pos.y - 0.0f, pos.z - 0.3f };
@@ -1350,6 +1735,64 @@ void load_enti_100(HANDLE f, DWORD seq_id)
 
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n Reversible: %s \n", seq_id, g_curr_file, flags, str);
 	Create_entity(name, data, 64, seq_id, pos, Colors::Cyan, nullptr, nullptr, 2, seq_ids);
+}
+
+void load_enti_122(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x34);
+	XMFLOAT3 pos;
+	XMFLOAT4 rot;
+	char* BE_data = BE_messages(f);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
+	XMFLOAT2 hp;
+	READ(hp);
+	DWORD hash;
+	SFPC(8);
+	READ(hash);
+	SFPC(0x43);
+	asura_bbox bb;
+	XMFLOAT4 rot2;
+	READ(bb);
+	READ(rot2);
+	bbox* bbox_p = bbox_from_asura_bb(&bb, rot, Colors::Purple); // Activation zone
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "retinal_scanner (%d)\n", seq_id);
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, hp.x, hp.y, BE_data);
+	entity_prop* prop = new entity_prop;
+	ZeroMemory(prop, sizeof(entity_prop));
+	prop->visible = 1;
+	prop->model_hash = hash;
+	prop->pos = pos;
+	prop->angle = rot;
+
+	Create_entity(name, data, 122, seq_id, pos, Colors::Purple, prop, bbox_p);
+}
+
+void load_enti_124(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x3C);
+	char* BE_data = BE_messages(f);
+
+	DWORD flags;
+	READ(flags);
+	XMFLOAT3 pos;
+	READ(pos);
+	SFPC(0x52);
+	DWORD* seq_ids = (DWORD*)malloc(4);
+	READP(seq_ids, 4);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n %s \n", seq_id, g_curr_file, flags, BE_data);
+	sprintf(name, "124 (%d)\n", seq_id);
+
+	Create_entity(name, data, 124, seq_id, pos, Colors::Cyan, nullptr, nullptr, 1, seq_ids);
 }
 
 void load_enti_126(HANDLE f, DWORD seq_id)
@@ -1602,17 +2045,18 @@ void load_enti_140(HANDLE f, DWORD seq_id)
 void load_enti_141(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(0x40);
+	SFPS(0x34);
+	DWORD hash;
+	READ(hash);
+	SFPC(8);
+	char* BE_data = BE_messages(f);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	DWORD num1;
-	READ(num1);
-	SFPC(num1 * 4);
 	READ(pos);
 	READ(rot);
 	SFPC(25);
-	XMFLOAT2 some_float_data;
-	READ(some_float_data);
+	XMFLOAT2 hp;
+	READ(hp);
 	SFPC(0x24);
 	DWORD type;
 	READ(type);
@@ -1625,7 +2069,7 @@ void load_enti_141(HANDLE f, DWORD seq_id)
 	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "Colonist (141)\n");
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s\n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, Actor_name_from_hash(hash), hp.x, hp.y, BE_data);
 	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
 	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	bbox* bbox_p = new bbox;
@@ -1647,17 +2091,19 @@ void load_enti_141(HANDLE f, DWORD seq_id)
 void load_enti_142(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(0x40);
+	SFPS(0x34);
+	DWORD hash;
+	READ(hash);
+	SFPC(8);
+	char* BE_data = BE_messages(f);
+
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	DWORD num1;
-	READ(num1);
-	SFPC(num1 * 4);
 	READ(pos);
 	READ(rot);
 	SFPC(25);
-	XMFLOAT2 some_float_data;
-	READ(some_float_data);
+	XMFLOAT2 hp;
+	READ(hp);
 	SFPC(0x24);
 	DWORD type;
 	READ(type);
@@ -1668,9 +2114,9 @@ void load_enti_142(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Marine (142)\n");
+	sprintf(name, "Marine (%d)\n", seq_id);
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s\n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, Actor_name_from_hash(hash), hp.x, hp.y, BE_data);
 	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
 	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	bbox* bbox_p = new bbox;
@@ -1804,6 +2250,69 @@ void load_enti_146(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 146, seq_id, pos, Colors::Magenta);
 }
 
+void load_enti_147(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x2C);
+	char* BE_dump = (char*)BE_messages(f);
+	int d1;
+	int d2;
+	float f1;
+	float f2;
+	DWORD seq_id1;
+	//skip
+	DWORD hash;
+	//skip hash - "Actor initializaton"
+	//skip 12
+	int num;
+	READ(d1);
+	READ(d2);
+	READ(f1);
+	READ(f2);
+	READ(seq_id1);
+	SFPC(4);
+	READ(hash);
+	SFPC(16);
+	READ(num);
+	DWORD* seq_ids = (DWORD*)malloc((1 + num) * 4);
+	seq_ids[0] = seq_id1;
+	for (int i = 0; i < num; i++)
+	{
+		READP(seq_ids + 1 + i, 4);
+		SFPC(4);
+	}
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s \n BE_data: %s \n d1: %d \n d2: %d \n f1: %f \n f2: %f", seq_id, g_curr_file, Actor_name_from_hash(hash), BE_dump, d1, d2, f1, f2);
+	sprintf(name, "spawn_property? (147)\n");
+
+	Create_global_entity(name, data, 147, seq_id, Colors::Magenta, num + 1, seq_ids);
+}
+
+void load_enti_148(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x34);
+	DWORD num;
+	READ(num);
+	SFPC(num * 4);
+
+	DWORD flags;
+	READ(flags);
+	XMFLOAT3 pos;
+	READ(pos);
+	SFPC(0x20);
+	DWORD* seq_ids = (DWORD*)malloc(4);
+	READP(seq_ids, 4);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n", seq_id, g_curr_file, flags);
+	sprintf(name, "some waypoint? (148)\n");
+
+	Create_entity(name, data, 145, seq_id, pos, Colors::Cyan, nullptr, nullptr, 1, seq_ids);
+}
+
 void load_enti_149(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
@@ -1819,9 +2328,56 @@ void load_enti_149(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n id1: %d \n id2: %d \n id3: %d \n float: %f \n", seq_id, g_curr_file, id[0], id[1], id[2], f1);
-	sprintf(name, "Entity Monster properties ? (149)\n");
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n id1: %d \n id2: %d \n id3: %d \n sense_radius: %f \n", seq_id, g_curr_file, id[0], id[1], id[2], f1);
+	sprintf(name, "Monster idle_state? (149)\n");
 	Create_global_entity(name, data, 149, seq_id);
+}
+
+void load_enti_151(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x30);
+	DWORD hash;
+	READ(hash);
+	//skip 'Taav' and flags
+	SFPC(8);
+	char* BE_data = BE_messages(f);
+	XMFLOAT3 pos;
+	XMFLOAT4 rot;
+	READ(pos);
+	READ(rot);
+	SFPC(25);
+	XMFLOAT2 hp;
+	READ(hp);
+	SFPC(0x24);
+	DWORD type;
+	READ(type);
+	int skip_bytes = type == 8 ? 0x44 : 0x44;
+	SFPC(skip_bytes);
+	DWORD* seq_ids = (DWORD*)malloc(8);
+	READP(seq_ids, 8);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Sentry Gun (151)\n");
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n Actor: %s \n %s \n", seq_id, g_curr_file, hp.x, hp.y, Actor_name_from_hash(hash), BE_data);
+	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
+	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
+	bbox* bbox_p = new bbox;
+	bbox_p->p1 = { pos.x + 0.3f, pos.y - 1.2f, pos.z + 0.3f };
+	bbox_p->p2 = { pos.x - 0.3f, pos.y + 0.0f, pos.z - 0.3f };
+	bbox_p->rot = rot;
+	bbox_p->Color = { 1.0f, 0.0f, 1.0f, 1.0f };
+
+	entity_prop* prop = new entity_prop;
+	ZeroMemory(prop, sizeof(entity_prop));
+	prop->visible = 1;
+	prop->model_hash = hash_from_str(0, (char*)"sentry_gun");
+	prop->pos = pos;
+	prop->angle = rot;
+
+	Create_entity(name, data, 151, seq_id, pos, Colors::Yellow, prop, bbox_p, 2, seq_ids);
 }
 
 void load_enti_156(HANDLE f, DWORD seq_id)
@@ -1980,6 +2536,44 @@ void load_enti_163(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 163, seq_id, pos, Colors::Red, prop, nullptr, 1, seq_ids);
 }
 
+void load_enti_165(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x3C);
+	XMFLOAT3 pos;
+	XMFLOAT4 rot;
+	char* BE_data = BE_messages(f);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
+	XMFLOAT2 hp;
+	READ(hp);
+	DWORD hash;
+	SFPC(8);
+	READ(hash);
+	SFPC(0x43);
+	asura_bbox bb;
+	XMFLOAT4 rot2;
+	READ(bb);
+	READ(rot2);
+	bbox* bbox_p = bbox_from_asura_bb(&bb, rot, Colors::Purple); // Activation zone
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Retina_scan (%d)\n", seq_id);
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, hp.x, hp.y, BE_data);
+	entity_prop* prop = new entity_prop;
+	ZeroMemory(prop, sizeof(entity_prop));
+	prop->visible = 1;
+	prop->model_hash = hash;
+	prop->pos = pos;
+	prop->angle = rot;
+
+	Create_entity(name, data, 165, seq_id, pos, Colors::Purple, prop, bbox_p);
+}
+
+
 void load_enti_166(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
@@ -2037,6 +2631,29 @@ void load_enti_166(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 166, seq_id, pos, Colors::Cyan, nullptr, nullptr, num3, seq_ids);
 }
 
+void load_enti_167(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x30);
+	DWORD num;
+	READ(num);
+	SFPC(num * 4);
+
+	DWORD flags;
+	READ(flags);
+	XMFLOAT3 pos;
+	READ(pos);
+	SFPC(0x4);
+	DWORD* seq_ids = (DWORD*)malloc(4);
+	READP(seq_ids, 4);
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n", seq_id, g_curr_file, flags);
+	sprintf(name, "167 (%d)\n", seq_id);
+
+	Create_entity(name, data, 167, seq_id, pos, Colors::Cyan, nullptr, nullptr, 1, seq_ids);
+}
+
 void load_enti_169(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
@@ -2085,6 +2702,44 @@ void load_enti_170(HANDLE f, DWORD seq_id)
 
 	Create_entity(name, data, 170, seq_id, pos, Colors::Red);
 }
+
+void load_enti_173(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x38);
+	XMFLOAT3 pos;
+	XMFLOAT4 rot;
+	char* BE_data = BE_messages(f);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
+	XMFLOAT2 hp;
+	READ(hp);
+	DWORD hash;
+	SFPC(8);
+	READ(hash);
+	SFPC(0x43);
+	asura_bbox bb;
+	XMFLOAT4 rot2;
+	READ(bb);
+	READ(rot2);
+	bbox* bbox_p = bbox_from_asura_bb(&bb, rot, Colors::Purple); // Activation zone
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Computer (%d)\n", seq_id);
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, hp.x, hp.y, BE_data);
+	entity_prop* prop = new entity_prop;
+	ZeroMemory(prop, sizeof(entity_prop));
+	prop->visible = 1;
+	prop->model_hash = hash;
+	prop->pos = pos;
+	prop->angle = rot;
+
+	Create_entity(name, data, 173, seq_id, pos, Colors::Purple, prop, bbox_p);
+}
+
 
 void load_effect(HANDLE f, DWORD seq_id)
 {
@@ -2135,7 +2790,7 @@ int load_enti(const wchar_t* folder_path)
 
 void load_smsg_file(wchar_t* file_name)
 {
-	dbgprint("SMSG", "!!!!!!!!!!!!!!!!!!!!!!!!! MESSAGE LIST !!!!!!!!!!!!!!!!!!!!!!!!! \n");
+	//dbgprint("SMSG", "!!!!!!!!!!!!!!!!!!!!!!!!! MESSAGE LIST !!!!!!!!!!!!!!!!!!!!!!!!! \n");
 	wchar_t file_path[MAX_PATH] = { 0 };
 	wsprintf(file_path, L"%ws\\SMSG_chunk\\", g_path2);
 	lstrcat(file_path, file_name);
@@ -2194,30 +2849,50 @@ void load_smsg_file(wchar_t* file_name)
 			for (int j = 0; j < entry.Count; j++)
 			{
 				SMSG_subentry subentry;
-				READ(subentry);
+				READ(subentry.w1);
+				READ(subentry.w2);
+				READ(subentry.seq_id);
+				READ(subentry.f1);
+				READ(subentry.f2);
 				//dbgprint("SMSG", "%d : {%hu, %hu -> %d} \n", i, subentry.w1, subentry.w2, subentry.seq_id);
 				if (entry.type >= 6)
 					SFPC(4); //unk dword
+				void* mem_data = nullptr;
 				switch (subentry.w1)
 				{
 				case 0x7B:
-					SFPC(84);
+					mem_data = malloc(84);
+					READP(mem_data, 84);
+					subentry.data = mem_data;
+					//SFPC(84);
 					break;
 				case 0x7C:
 				case 0x7D:
 				case 0x7E:
 				case 0x7F:
-					SFPC(40); // 32 + 8 unk
+					mem_data = malloc(40);
+					READP(mem_data, 40);
+					subentry.data = mem_data; // 32 + 8 unk
+					//SFPC(40);
 					break;
 				case 0x80:
-					SFPC(80);
+					mem_data = malloc(80);
+					READP(mem_data, 80);
+					subentry.data = mem_data;
+					//SFPC(80);
 					break;
 				default:
 					WORD w2 = (subentry.w2 + 3) & 0xFFFFFFFC;
-					SFPC(w2);
+					if (w2)
+					{
+						mem_data = malloc(w2);
+						READP(mem_data, w2);
+						subentry.data = mem_data;
+					}
+					//SFPC(w2);
 					break;
 				}
-				memcpy((DWORD*)mem + 1 + j * 4, &subentry, sizeof(subentry));
+				memcpy((DWORD*)mem + 1 + j*(sizeof(subentry)/4), &subentry, sizeof(subentry));
 			}
 
 			if (header.upper)
@@ -2230,6 +2905,7 @@ void load_smsg_file(wchar_t* file_name)
 			}
 		}
 	}
+	CloseHandle(f);
 }
 
 int load_smsg(const wchar_t* folder_path)
@@ -2262,7 +2938,7 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 		load_prop(file, seq_id);
 		return;
 	case 14:
-		//load_enti_14(file, seq_id); // unknown invisible in game
+		//load_enti_14(file, seq_id); // some trigger 
 		return;
 	case 20:
 		//load_enti_20(file, seq_id);// some trigger near doors
@@ -2318,6 +2994,12 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 	case 114:
 		load_enti_114(file, seq_id);// NPC waypoints
 		return;
+	case 122:
+		load_enti_122(file, seq_id); // Computer console
+		return;
+	case 124:
+		load_enti_124(file, seq_id); // Some waypoint controller
+		return;
 	case 126:
 		load_enti_126(file, seq_id);
 		return;
@@ -2334,10 +3016,10 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 		load_enti_138(file, seq_id); // Predator spots
 		return;
 	case 140:
-		load_enti_140(file, seq_id); // 
+		load_enti_140(file, seq_id); // patrol area
 		return;
 	case 141:
-		load_enti_141(file, seq_id);
+		load_enti_141(file, seq_id);// Colonist
 		return;
 	case 142:
 		load_enti_142(file, seq_id);// Marine
@@ -2350,6 +3032,12 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 		return;
 	case 146:
 		load_enti_146(file, seq_id);// alien hidding spots
+		return;
+	case 148:
+		load_enti_148(file, seq_id);// Some waypoint controller
+		return;
+	case 151:
+		load_enti_151(file, seq_id);// Sentry Gun
 		return;
 	case 156:
 		load_enti_156(file, seq_id); // Collectable
@@ -2366,14 +3054,23 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 	case 163:
 		load_enti_163(file, seq_id); // 
 		return;
+	case 165:
+		load_enti_165(file, seq_id); // Retina scaner or button pad.
+		return;
 	case 166:
 		load_enti_166(file, seq_id); // Areas
 		return;
+	case 167:
+		load_enti_167(file, seq_id); // Some waypoint
+		return;
 	case 169:
-		load_enti_169(file, seq_id);
+		load_enti_169(file, seq_id); // 
 		return;
 	case 170:
 		//load_enti_170(file, seq_id);// indoor area
+		return;
+	case 173:
+		load_enti_173(file, seq_id); // Computer
 		return;
 
 	default:
@@ -2418,31 +3115,40 @@ void load_global_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 	switch (entity_id)
 	{
 	case 1:
-		load_enti_1(file, seq_id);
+		load_enti_1(file, seq_id); // trigger start ?
 		return;
 	case 3:
-		load_enti_3(file, seq_id);
+		load_enti_3(file, seq_id); // cutscene
 		return;
 	case 11:
-		load_enti_11(file, seq_id);
+		load_enti_11(file, seq_id); // call message
 		return;
 	case 32:
-		load_enti_32(file, seq_id);
+		load_enti_32(file, seq_id); // trigger hurt
 		return;
 	case 34:
-		load_enti_34(file, seq_id);
+		load_enti_34(file, seq_id); // multimanager
+		return;
+	case 42:
+		load_enti_42(file, seq_id); // Timer sequence
 		return;
 	case 68:
-		load_enti_68(file, seq_id);
+		load_enti_68(file, seq_id); // Properties of 69
 		return;
 	case 74:
-		load_enti_74(file, seq_id);
+		load_enti_74(file, seq_id); // console command
+		return;
+	case 85:
+		load_enti_85(file, seq_id); // Dialogue sequence
 		return;
 	case 130:
-		load_enti_130(file, seq_id);
+		load_enti_130(file, seq_id); // gamescores ?
 		return;
 	case 133:
-		load_enti_133(file, seq_id);
+		load_enti_133(file, seq_id); // some event
+		return;
+	case 147:
+		load_enti_147(file, seq_id); // spawner
 		return;
 	case 149:
 		load_enti_149(file, seq_id);
@@ -2483,7 +3189,7 @@ void load_entity(wchar_t* file_name)
 	}
 	DWORD ent_id = file_header.ent_id;
 	ent_id = file_header.ent_id > 0x8000 ? ent_id - 0x7FA5 : ent_id;
-	if (ent_id > 173 || ent_id <= 0)
+	if (ent_id > 178 || ent_id <= 0)
 	{
 		dbgprint("Entity", "Ent_id > 173 or <= 0: %ws \n", file_name);
 		return;
@@ -2512,4 +3218,5 @@ void load_entity(wchar_t* file_name)
 	CloseHandle(f);
 	return;
 }
+
 

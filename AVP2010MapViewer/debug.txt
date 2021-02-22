@@ -1,0 +1,2383 @@
+19.02.2021 17:48 (Init) | Executable Started !
+19.02.2021 17:48 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+19.02.2021 17:48 (Materials) | MARE Header: 362 materials in file
+19.02.2021 17:48 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+19.02.2021 17:48 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+19.02.2021 17:48 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+19.02.2021 17:48 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+19.02.2021 17:48 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+19.02.2021 17:48 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+19.02.2021 17:48 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+19.02.2021 17:48 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+19.02.2021 17:48 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+19.02.2021 17:48 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+19.02.2021 17:48 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+19.02.2021 17:48 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+19.02.2021 17:48 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+19.02.2021 17:48 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+19.02.2021 17:48 (Materials) | Not found match with texture hash 3f00c4 and material hash a99beb8d 
+19.02.2021 17:48 (EMOD) | E:\Aliens vs Predator\Envs\Lab\Lab\EMOD_chunk\723.EMOD
+19.02.2021 17:48 (EMOD_Parse) | Opening file Error: 183
+19.02.2021 17:48 (Init) | Read EMOD failed 
+19.02.2021 17:48 (Helpers) | Bbox: count: 1
+19.02.2021 17:48 (Helpers) | Lines: count: 0
+19.02.2021 17:48 (Helpers) | Lines CreateBuffer failed ! 
+19.02.2021 17:48 (Init) | lines failed !
+19.02.2021 17:48 (Console) | Created !!! 
+19.02.2021 17:49 (Init) | Executable Started !
+19.02.2021 17:49 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+19.02.2021 17:49 (Materials) | MARE Header: 362 materials in file
+19.02.2021 17:49 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+19.02.2021 17:49 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+19.02.2021 17:49 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+19.02.2021 17:49 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+19.02.2021 17:49 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+19.02.2021 17:49 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+19.02.2021 17:49 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+19.02.2021 17:49 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+19.02.2021 17:49 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+19.02.2021 17:49 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+19.02.2021 17:49 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+19.02.2021 17:49 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+19.02.2021 17:49 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+19.02.2021 17:49 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+19.02.2021 17:49 (Materials) | Not found match with texture hash c7bd3c8 and material hash 2ddabf5f 
+19.02.2021 17:49 (EMOD) | E:\Aliens vs Predator\Envs\Lab\Lab\EMOD_chunk\723.EMOD
+19.02.2021 17:49 (EMOD_Parse) | Opening file Error: 183
+19.02.2021 17:49 (Init) | Read EMOD failed 
+19.02.2021 17:49 (Helpers) | Bbox: count: 1
+19.02.2021 17:49 (Helpers) | Lines: count: 0
+19.02.2021 17:49 (Helpers) | Lines CreateBuffer failed ! 
+19.02.2021 17:49 (Init) | lines failed !
+19.02.2021 17:49 (Console) | Created !!! 
+19.02.2021 17:50 (Init) | Executable Started !
+19.02.2021 17:50 (RSCF_Parse_Enviroment) | Opening file Error: 6
+19.02.2021 17:50 (Init) | Read Map Failed
+19.02.2021 17:50 (Init) | Executable Started !
+19.02.2021 17:50 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4795 total_indexes: 1252080 total_vertexes: 595510
+19.02.2021 17:50 (Materials) | MARE Header: 276 materials in file
+19.02.2021 17:50 (Materials) | Not found match with texture hash c626aa17 and material hash 3d13f4b5 
+19.02.2021 17:50 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+19.02.2021 17:50 (Materials) | Not found match with texture hash 0 and material hash 88f6bd5e 
+19.02.2021 17:50 (Materials) | Not found match with texture hash 0 and material hash f395b551 
+19.02.2021 17:50 (Materials) | Not found match with texture hash 698c670 and material hash ffbadff0 
+19.02.2021 17:50 (EMOD) | E:\Aliens vs Predator\Envs\Jungle\Jungle\EMOD_chunk\595.EMOD
+19.02.2021 17:50 (EMOD_Parse) | Opening file Error: 183
+19.02.2021 17:50 (Init) | Read EMOD failed 
+19.02.2021 17:50 (Helpers) | Bbox: count: 1
+19.02.2021 17:50 (Helpers) | Lines: count: 0
+19.02.2021 17:50 (Helpers) | Lines CreateBuffer failed ! 
+19.02.2021 17:50 (Init) | lines failed !
+19.02.2021 17:50 (Console) | Created !!! 
+19.02.2021 17:57 (Init) | Executable Started !
+19.02.2021 17:57 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4795 total_indexes: 1252080 total_vertexes: 595510
+19.02.2021 17:57 (Materials) | MARE Header: 276 materials in file
+19.02.2021 17:57 (Materials) | Not found match with texture hash c626aa17 and material hash 3d13f4b5 
+19.02.2021 17:57 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+19.02.2021 17:57 (Materials) | Not found match with texture hash 0 and material hash 88f6bd5e 
+19.02.2021 17:57 (Materials) | Not found match with texture hash 0 and material hash f395b551 
+19.02.2021 17:57 (Materials) | Not found match with texture hash 95d2cf0 and material hash 1bd5dd70 
+19.02.2021 17:57 (EMOD) | E:\Aliens vs Predator\Envs\Jungle\Jungle\EMOD_chunk\595.EMOD
+19.02.2021 17:57 (EMOD_Parse) | Opening file Error: 183
+19.02.2021 17:57 (Init) | Read EMOD failed 
+19.02.2021 17:57 (Helpers) | Bbox: count: 1
+19.02.2021 17:57 (Helpers) | Lines: count: 0
+19.02.2021 17:57 (Helpers) | Lines CreateBuffer failed ! 
+19.02.2021 17:57 (Init) | lines failed !
+19.02.2021 17:57 (Console) | Created !!! 
+19.02.2021 17:58 (Init) | Executable Started !
+19.02.2021 17:58 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4795 total_indexes: 1252080 total_vertexes: 595510
+19.02.2021 17:58 (Materials) | MARE Header: 276 materials in file
+19.02.2021 17:58 (Materials) | Not found match with texture hash c626aa17 and material hash 3d13f4b5 
+19.02.2021 17:58 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+19.02.2021 17:58 (Materials) | Not found match with texture hash 0 and material hash 88f6bd5e 
+19.02.2021 17:58 (Materials) | Not found match with texture hash 0 and material hash f395b551 
+19.02.2021 17:58 (Materials) | Not found match with texture hash b3e2ea0 and material hash 5a586dbd 
+19.02.2021 17:58 (EMOD) | E:\Aliens vs Predator\Envs\Jungle\Jungle\EMOD_chunk\595.EMOD
+19.02.2021 17:58 (EMOD_Parse) | Opening file Error: 183
+19.02.2021 17:58 (Init) | Read EMOD failed 
+19.02.2021 17:58 (Helpers) | Bbox: count: 1
+19.02.2021 17:58 (Helpers) | Lines: count: 0
+19.02.2021 17:58 (Helpers) | Lines CreateBuffer failed ! 
+19.02.2021 17:58 (Init) | lines failed !
+19.02.2021 17:58 (Console) | Created !!! 
+19.02.2021 18:03 (Init) | Executable Started !
+19.02.2021 18:03 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4795 total_indexes: 1252080 total_vertexes: 595510
+19.02.2021 18:03 (Materials) | MARE Header: 276 materials in file
+19.02.2021 18:03 (Materials) | Not found match with texture hash c626aa17 and material hash 3d13f4b5 
+19.02.2021 18:03 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+19.02.2021 18:03 (Materials) | Not found match with texture hash 0 and material hash 88f6bd5e 
+19.02.2021 18:03 (Materials) | Not found match with texture hash 0 and material hash f395b551 
+19.02.2021 18:03 (Materials) | Not found match with texture hash 252b318 and material hash 17defc43 
+19.02.2021 18:03 (EMOD) | E:\Aliens vs Predator\Envs\Jungle\Jungle\EMOD_chunk\595.EMOD
+19.02.2021 18:03 (EMOD_Parse) | Opening file Error: BAD_HEADER (HEADER: 00000548 Type 25964 BytesReaden: 20)
+19.02.2021 18:03 (Init) | Read EMOD failed 
+19.02.2021 18:03 (Helpers) | Bbox: count: 1
+19.02.2021 18:03 (Helpers) | Lines: count: 0
+19.02.2021 18:03 (Helpers) | Lines CreateBuffer failed ! 
+19.02.2021 18:03 (Init) | lines failed !
+19.02.2021 18:03 (Console) | Created !!! 
+19.02.2021 18:04 (Init) | Executable Started !
+19.02.2021 18:04 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+19.02.2021 18:04 (Materials) | MARE Header: 362 materials in file
+19.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+19.02.2021 18:04 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+19.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+19.02.2021 18:04 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+19.02.2021 18:04 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+19.02.2021 18:04 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+19.02.2021 18:04 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+19.02.2021 18:04 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+19.02.2021 18:04 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+19.02.2021 18:04 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+19.02.2021 18:04 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+19.02.2021 18:04 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+19.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+19.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+19.02.2021 18:04 (Materials) | Not found match with texture hash bffbfd8 and material hash ccdf12d2 
+19.02.2021 18:04 (EMOD) | E:\Aliens vs Predator\Envs\Lab\Lab\EMOD_chunk\723.EMOD
+19.02.2021 18:04 (EMOD) | Package name: ãˇUãÏ]Îêêêêêˇ%<
+3uêêêêêãˇUãÏQQÉ}
+19.02.2021 18:04 (EMOD) | name: alien_statue_big_mossy pos: 93.745697 1.535388 184.206100 flags: 4 
+19.02.2021 18:04 (EMOD) | name: anti_pred_posts pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: arge_window_maintenanceroom_055 pos: 18.068129 24.686613 117.918732 flags: 4 
+19.02.2021 18:04 (EMOD) | name: barrier_railing_04 pos: -5.120742 22.637455 102.244263 flags: 4 
+19.02.2021 18:04 (EMOD) | name: barrier_railing_05 pos: -5.120742 22.637455 98.244560 flags: 4 
+19.02.2021 18:04 (EMOD) | name: barrier_railing_07 pos: 5.120748 22.637455 98.244560 flags: 4 
+19.02.2021 18:04 (EMOD) | name: barrier_railing_10 pos: 5.120748 22.637455 102.244263 flags: 4 
+19.02.2021 18:04 (EMOD) | name: BenCollision pos: 83.174026 -5.772602 41.947002 flags: 42 
+19.02.2021 18:04 (EMOD) | name: bracket_01 pos: 76.261093 -2.999999 4.143488 flags: 4 
+19.02.2021 18:04 (EMOD) | name: bracket_02 pos: 76.261093 -1.499998 4.143488 flags: 4 
+19.02.2021 18:04 (EMOD) | name: bracket_03 pos: 76.261093 -1.499998 -4.143488 flags: 4 
+19.02.2021 18:04 (EMOD) | name: bracket_04 pos: 76.261093 -2.999999 -4.143488 flags: 4 
+19.02.2021 18:04 (EMOD) | name: bracket_05 pos: 52.261093 -2.999999 2.792052 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_1_switchroom02 pos: 19.076487 19.298624 25.674759 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_1_switchroom03 pos: 19.076487 19.298624 25.674759 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Cargo_1_switchroom_00 pos: 19.076487 19.298624 25.674759 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Cargo_1_switchroom_01 pos: 19.076487 19.298624 25.674759 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Cargo_ceiling_00 pos: 41.526630 14.591094 26.002316 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_ceiling_01 pos: 33.969032 14.591075 33.523121 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_ceiling_02 pos: 41.526630 14.591094 26.002316 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_doorframe pos: 48.000053 19.374516 26.003181 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_railings00 pos: 62.009323 21.436115 29.623726 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_railings02 pos: 62.009323 21.436115 29.623726 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_railings05 pos: 62.009151 21.436396 21.381866 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargo_railings_03 pos: 62.009151 21.436396 21.381866 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cargocorridor_04 pos: 64.028915 -14.272179 91.393143 flags: 4 
+19.02.2021 18:04 (EMOD) | name: CargoCorridorCorner_05 pos: 42.003628 14.499998 34.003815 flags: 42 
+19.02.2021 18:04 (EMOD) | name: Cargocrossroads_03 pos: 74.003052 14.500005 25.999973 flags: 42 
+19.02.2021 18:04 (EMOD) | name: ceiling_911 pos: 27.118084 -11.875884 1.062500 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ceiling_912 pos: 27.000002 -11.875651 -6.062499 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ceiling_mesh_cover_01 pos: 53.999886 -9.622150 9.008127 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ceiling_mesh_cover_02 pos: 72.005241 -8.153363 8.509288 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ceiling_vent_ent_01 pos: 24.995659 -11.194475 2.981120 flags: 5 
+19.02.2021 18:04 (EMOD) | name: ceiling_vent_ent_02 pos: 24.995659 -11.194475 -7.016550 flags: 5 
+19.02.2021 18:04 (EMOD) | name: COL_anti_pred_fence pos: 89.813927 3.947172 131.784866 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_cargo_annex_rails pos: 47.108189 16.344522 17.452562 flags: 650 
+19.02.2021 18:04 (EMOD) | name: COL_duct_56 pos: 46.984818 15.961007 14.333753 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_guardrails_1 pos: -0.000074 22.999111 101.999977 flags: 74 
+19.02.2021 18:04 (EMOD) | name: COL_lab_ext_rails pos: 63.993725 -19.557552 103.902519 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_lab_ext_rails04 pos: 11.010688 4.776011 106.973389 flags: 106 
+19.02.2021 18:04 (EMOD) | name: COL_lab_ext_rails05 pos: 50.447334 -20.125740 97.023674 flags: 106 
+19.02.2021 18:04 (EMOD) | name: COL_lab_ext_rails06 pos: 90.445168 -10.128874 101.027420 flags: 106 
+19.02.2021 18:04 (EMOD) | name: COL_lab_land_01 pos: 63.993725 -19.557552 103.902519 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_lab_land_02 pos: 63.993725 -19.557552 103.902519 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_lab_land_04 pos: 146.600830 -21.587694 31.757168 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_lab_land_05 pos: 63.993725 -19.557552 103.902519 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_lab_land_06_J pos: 3.630327 -8.226227 107.387527 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_Lab_New_StairRail pos: 63.993725 -19.557552 103.902519 flags: 106 
+19.02.2021 18:04 (EMOD) | name: COL_LiftShaft_4x4_01a_wz02 pos: 41.999020 -12.062510 88.709564 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_monorail_station_elev pos: 0.000000 18.496140 64.000000 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_monorail_station_left pos: 0.000000 18.496140 64.000000 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_monorail_station_left_02 pos: 0.000000 18.496140 64.000000 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_monorail_station_right pos: 0.000000 18.496140 64.000000 flags: 42 
+19.02.2021 18:04 (EMOD) | name: Col_monorail_station_right02 pos: 0.000000 18.496140 64.000000 flags: 42 
+19.02.2021 18:04 (EMOD) | name: col_pod_01_int_01 pos: 3.630327 -8.226227 107.387527 flags: 42 
+19.02.2021 18:04 (EMOD) | name: col_pod_01_int_02 pos: 63.260448 -15.486059 103.650963 flags: 42 
+19.02.2021 18:04 (EMOD) | name: col_pod_01_int_03 pos: 115.287483 -2.982297 118.213982 flags: 42 
+19.02.2021 18:04 (EMOD) | name: col_pod_2_inside pos: 57.891193 -15.689070 84.537910 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_pod_89 pos: 63.184181 -19.557552 103.902519 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_pod_exteior_99 pos: 63.993725 -19.557552 103.902519 flags: 42 
+19.02.2021 18:04 (EMOD) | name: col_pod_gen_rails pos: 23.760647 16.827574 126.131126 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_podrails_04 pos: 25.435188 11.428460 104.032539 flags: 1610 
+19.02.2021 18:04 (EMOD) | name: COL_podrails_05 pos: 64.870430 -13.472904 94.082687 flags: 1642 
+19.02.2021 18:04 (EMOD) | name: COL_podrails_06 pos: 104.023941 -3.483335 103.088295 flags: 1610 
+19.02.2021 18:04 (EMOD) | name: COL_pods_01 pos: 63.993725 -19.557552 103.902519 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_pred_door_01 pos: 63.993725 -19.557552 103.902519 flags: 10 
+19.02.2021 18:04 (EMOD) | name: COL_rail_entrance pos: 3.630327 -8.226227 107.387527 flags: 10 
+19.02.2021 18:04 (EMOD) | name: COL_rails_service_01 pos: 39.569973 21.461002 21.907652 flags: 554 
+19.02.2021 18:04 (EMOD) | name: COL_scientist_corridor pos: 97.782784 -4.499998 15.741764 flags: 0 
+19.02.2021 18:04 (EMOD) | name: COL_station_gantry_1_railing_2 pos: 0.000000 11.373002 69.974701 flags: 1642 
+19.02.2021 18:04 (EMOD) | name: COL_station_gantry_2_railing pos: 0.000000 11.373002 70.026299 flags: 1642 
+19.02.2021 18:04 (EMOD) | name: COL_station_platform_railing_1 pos: -12.896738 21.424961 50.006527 flags: 106 
+19.02.2021 18:04 (EMOD) | name: COL_station_platform_railing_2 pos: 12.896738 21.424961 50.006527 flags: 106 
+19.02.2021 18:04 (EMOD) | name: COL_station_tunnel pos: 0.000000 18.496136 64.000000 flags: 42 
+19.02.2021 18:04 (EMOD) | name: col_switchroom02 pos: 17.087296 19.999180 29.054567 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_wz_corr_end01 pos: 25.766800 -3.536638 34.359028 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_wz_corr_end03 pos: 99.762932 -3.535430 84.362450 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COL_wz_corr_end05 pos: 30.000357 -4.370138 61.625355 flags: 42 
+19.02.2021 18:04 (EMOD) | name: coll_colony_12 pos: 85.984726 -7.003263 86.536758 flags: 42 
+19.02.2021 18:04 (EMOD) | name: Coll_eggroom_railing pos: 65.000023 -1.699784 0.662797 flags: 1642 
+19.02.2021 18:04 (EMOD) | name: Coll_Medlabs_00 pos: 29.999472 -4.999188 27.999748 flags: 10 
+19.02.2021 18:04 (EMOD) | name: Coll_Medlabs_01 pos: 29.999472 -4.999188 27.999748 flags: 10 
+19.02.2021 18:04 (EMOD) | name: Coll_Medlabs_02 pos: 29.999472 -4.999188 27.999748 flags: 10 
+19.02.2021 18:04 (EMOD) | name: Coll_Medlabs_04 pos: 82.489510 -7.133009 -21.000011 flags: 10 
+19.02.2021 18:04 (EMOD) | name: Coll_Medlabs_08 pos: 29.999472 -4.999188 27.999748 flags: 10 
+19.02.2021 18:04 (EMOD) | name: Coll_Medlabs_artifact pos: 32.763493 -9.499668 -33.746262 flags: 2 
+19.02.2021 18:04 (EMOD) | name: Coll_queen_uppercor pos: 83.174026 -5.772602 41.947002 flags: 42 
+19.02.2021 18:04 (EMOD) | name: Coll_queenroom_left pos: 83.174026 -5.772602 41.947002 flags: 42 
+19.02.2021 18:04 (EMOD) | name: Coll_queenroom_right pos: 83.174026 -5.772602 41.947002 flags: 34 
+19.02.2021 18:04 (EMOD) | name: Coll_queenshaft pos: 83.174026 -5.772602 41.947002 flags: 42 
+19.02.2021 18:04 (EMOD) | name: COLMESH_monorail pos: 0.000000 23.499989 45.200001 flags: 2 
+19.02.2021 18:04 (EMOD) | name: COLMESH_PlatformEdge_01 pos: -0.000507 22.999105 76.111855 flags: 298 
+19.02.2021 18:04 (EMOD) | name: COLMESH_PlatformEdge_02 pos: -0.000507 23.999107 45.199997 flags: 778 
+19.02.2021 18:04 (EMOD) | name: COLMESH_PlatformEdge_03 pos: 0.000000 23.999105 -4.911843 flags: 810 
+19.02.2021 18:04 (EMOD) | name: control_ceiling_ent_01 pos: -9.022438 -6.152136 -19.028746 flags: 5 
+19.02.2021 18:04 (EMOD) | name: control_ceiling_ent_02 pos: -9.022438 -6.152136 -13.018848 flags: 5 
+19.02.2021 18:04 (EMOD) | name: control_ceiling_ent_03 pos: 61.000820 -6.250617 -42.999607 flags: 5 
+19.02.2021 18:04 (EMOD) | name: control_crawlspace_01 pos: -8.881920 -6.871939 -16.000000 flags: 4 
+19.02.2021 18:04 (EMOD) | name: control_poly_03 pos: 35.250252 -4.999188 -41.250542 flags: 4 
+19.02.2021 18:04 (EMOD) | name: control_poly_05 pos: 33.999748 -4.999188 -41.999466 flags: 4 
+19.02.2021 18:04 (EMOD) | name: control_upper_01 pos: 53.000000 -10.000046 -36.500034 flags: 4 
+19.02.2021 18:04 (EMOD) | name: cooridoor_plain_11 pos: 49.000034 -10.000002 -16.499981 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corr_station_lift_01 pos: -6.663302 11.301641 78.000320 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corr_station_lift_02 pos: -16.849892 10.905001 78.000237 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corridoor_plain_01 pos: 5.999748 -4.999188 -9.999468 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corridoor_plain_02 pos: 19.200001 -10.151990 26.799995 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corridoor_plain_03 pos: 5.999748 -4.999188 -9.999468 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corridoor_plain_04 pos: 54.000313 -4.999192 -37.999420 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corridoor_sec_778 pos: 11.127184 -4.999998 -2.000820 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corridoor_side_110 pos: 39.276909 -4.997654 -29.999249 flags: 4 
+19.02.2021 18:04 (EMOD) | name: corridoor_side_111 pos: 30.000549 -4.997654 -20.723146 flags: 4 
+19.02.2021 18:04 (EMOD) | name: crawlspace_452 pos: 73.123024 -6.875653 -22.000002 flags: 4 
+19.02.2021 18:04 (EMOD) | name: debris pos: 104.000015 -3.698443 93.126709 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_732 pos: 72.000130 2.275002 13.000011 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_733 pos: 63.999664 1.750000 9.008301 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_734 pos: 72.000130 2.275002 13.399785 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_735 pos: 72.517807 2.275002 15.140963 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_736 pos: 73.741310 2.275002 19.140966 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_737 pos: 68.000099 2.275002 21.140955 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_738 pos: 64.000099 2.275002 21.140955 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_739 pos: 60.000103 2.275002 21.140955 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_740 pos: 60.000103 2.275002 21.140955 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_741 pos: 54.000137 2.275002 21.140955 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_742 pos: 55.482471 2.275002 19.140953 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_743 pos: 54.000137 2.275002 15.140956 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_745 pos: 56.000141 2.275002 14.140962 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_746 pos: 56.000141 2.275002 13.000011 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_747 pos: 54.000137 2.275002 1.999998 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_748 pos: 55.482471 2.275002 1.999998 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_751 pos: 52.758961 2.275002 -5.217000 flags: 4 
+19.02.2021 18:04 (EMOD) | name: decorative_edge_752 pos: 72.000130 2.275002 2.734679 flags: 4 
+19.02.2021 18:04 (EMOD) | name: door pos: 63.999992 2.000001 28.000250 flags: 4 
+19.02.2021 18:04 (EMOD) | name: door_access_small01 pos: 14.149034 10.399840 109.949677 flags: 4 
+19.02.2021 18:04 (EMOD) | name: door_access_small02 pos: 53.585529 -14.501638 99.999924 flags: 4 
+19.02.2021 18:04 (EMOD) | name: door_access_small03 pos: 114.413467 -4.511816 104.003723 flags: 4 
+19.02.2021 18:04 (EMOD) | name: doorway_68 pos: 75.000092 -14.337574 77.001335 flags: 4 
+19.02.2021 18:04 (EMOD) | name: doorway_888 pos: 40.000145 15.651011 39.999905 flags: 4 
+19.02.2021 18:04 (EMOD) | name: doorway_889 pos: 54.999828 15.649338 40.000072 flags: 4 
+19.02.2021 18:04 (EMOD) | name: doorway_890 pos: 48.000092 15.647626 32.000156 flags: 4 
+19.02.2021 18:04 (EMOD) | name: doorway_891 pos: 47.997887 15.652270 20.492628 flags: 4 
+19.02.2021 18:04 (EMOD) | name: doorway_912 pos: 75.000092 -14.337574 42.999039 flags: 4 
+19.02.2021 18:04 (EMOD) | name: duct_ex_01 pos: 51.961720 -2.249999 -0.200336 flags: 4 
+19.02.2021 18:04 (EMOD) | name: duct_ex_102 pos: 76.261093 -2.249999 -0.200337 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eev_rocks05 pos: 97.171875 11.319715 206.508301 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_02 pos: 68.000099 3.402708 20.267467 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_03 pos: 72.000145 3.402708 20.267467 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_06 pos: 72.000145 3.402708 14.140974 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_07 pos: 64.000099 3.402708 20.267467 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_08 pos: 60.000103 3.402708 20.267467 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_10 pos: 69.000137 3.402708 14.140963 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_11 pos: 69.000137 3.402708 2.734690 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_12 pos: 59.000137 3.402708 2.734690 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_13 pos: 59.000137 3.402708 14.140963 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_14 pos: 73.499474 3.402708 2.734679 flags: 4 
+19.02.2021 18:04 (EMOD) | name: egg_support_15 pos: 55.000126 3.402708 -4.733353 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom ceiling pos: 52.254135 -7.999999 22.754494 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_coll pos: 65.000023 -1.699784 0.662797 flags: 42 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_01 pos: 52.667797 1.487466 1.734680 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_02 pos: 54.000137 1.487466 -5.065687 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_03 pos: 54.452255 2.000001 0.015096 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_04 pos: 56.666866 1.187286 8.513091 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_05 pos: 57.332005 1.362286 8.513092 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_06 pos: 54.452255 2.000001 17.118704 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_07 pos: 60.000103 1.487466 19.808647 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_08 pos: 56.000103 1.487466 19.808647 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_09 pos: 64.000099 1.487466 19.808647 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_10 pos: 68.667786 1.362286 8.513092 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_11 pos: 71.332458 1.187286 8.513091 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_12 pos: 68.000099 1.487466 19.808647 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_13 pos: 75.331146 1.487466 3.734681 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_14 pos: 70.320930 1.487449 2.402363 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_railings_15 pos: 71.999184 1.487466 22.473314 flags: 4 
+19.02.2021 18:04 (EMOD) | name: eggroom_walls pos: 52.254135 3.750001 22.754494 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ex_corner_01 pos: 19.067181 -43.644726 216.085037 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ex_corner_02 pos: 19.069956 -43.644726 216.085037 flags: 4 
+19.02.2021 18:04 (EMOD) | name: exterior_pipes_big pos: 16.351067 -69.257477 69.943214 flags: 4 
+19.02.2021 18:04 (EMOD) | name: frame_type_07 pos: 59.000462 19.499846 26.003679 flags: 4 
+19.02.2021 18:04 (EMOD) | name: frame_type_09 pos: 33.998547 19.499954 50.997421 flags: 4 
+19.02.2021 18:04 (EMOD) | name: frame_type_10 pos: 49.240356 19.499846 26.003679 flags: 4 
+19.02.2021 18:04 (EMOD) | name: frame_type_11 pos: 33.998543 19.499952 41.237305 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gantry_07 pos: 70.000877 -5.772388 22.754097 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gantry_08 pos: 57.999016 -5.772388 22.754097 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gantry_pod03 pos: 95.279533 -3.128813 107.508850 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gantry_pod04 pos: 72.670540 -13.125463 103.505150 flags: 4 
+19.02.2021 18:04 (EMOD) | name: giant_pipes_side01 pos: 16.349117 -69.519310 62.981152 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gr_decal_01 pos: 9.973374 15.249174 61.976322 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gr_decal_02 pos: -14.498349 18.494373 44.024822 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gr_decal_07 pos: 14.501368 18.494373 99.954071 flags: 4 
+19.02.2021 18:04 (EMOD) | name: gr_decal_08 pos: 18.041313 20.126553 44.002399 flags: 4 
+19.02.2021 18:04 (EMOD) | name: hex_room pos: 69.708214 19.449932 26.700129 flags: 4 
+19.02.2021 18:04 (EMOD) | name: hive bottom03 pos: 63.999664 3.250000 8.437831 flags: 4 
+19.02.2021 18:04 (EMOD) | name: hudson03 pos: 0.000000 -1.000000 0.000000 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_00 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_01 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_02 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_03 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_04 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_05 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_07 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_09 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_10 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_central_terrain_11 pos: 62.000481 -8.000008 65.999527 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_mesh_terrain_00 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_mesh_terrain_01 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_mesh_terrain_02 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_mesh_terrain_03 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_mesh_terrain_04 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_MonoRail_Entrance pos: -7.250281 18.163305 73.750397 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_New_StairWell pos: 41.863686 13.628920 122.821228 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_pod_06 pos: 24.538322 6.642267 113.396065 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Lab_pod_06_gantry pos: 15.643141 11.776007 113.454880 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_podbase01 pos: 30.555363 16.597368 116.642952 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Lab_pyramid_section_01 pos: 62.000481 -8.000008 65.999527 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_pyramid_section_01_true pos: 62.000481 -8.000008 65.999527 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_pyramid_section_022 pos: 62.000481 -8.000008 65.999527 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_pyramid_section_022_true pos: 62.000481 -8.000008 65.999527 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_pyramid_section_03 pos: 62.000481 -8.000008 65.999527 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_rend_monorail_frame01 pos: -5.426039 24.086582 163.902298 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_rend_monorail_frame02 pos: -5.426039 24.086582 163.902298 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_SafetyWires_06 pos: 18.247023 5.088194 126.451195 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_SafetyWires_07 pos: 57.683659 -19.813559 116.501488 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Lab_SafetyWires_08 pos: 97.681503 -9.816690 120.505226 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_alien_test_03 pos: 70.757042 -6.875653 -44.000004 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_alien_test_04 pos: 86.000015 -6.871939 -42.000000 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_00 pos: 30.000326 -12.002038 27.052797 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_01 pos: 34.052395 -12.003337 11.999841 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_02 pos: 13.999133 -12.000162 -11.000640 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_03 pos: 40.181126 -12.003263 -12.375846 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_04 pos: 46.001701 -12.003151 -35.011543 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_05 pos: 70.000610 -12.000128 -29.999855 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_06 pos: 30.000301 -11.999964 -15.999960 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_07 pos: 0.179242 -9.621126 -15.999862 flags: 4 
+19.02.2021 18:04 (EMOD) | name: labs_ceilingvent_08 pos: 16.946289 -12.002515 6.998746 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close00 pos: 196.043106 -63.637653 26.675928 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close01 pos: 196.043106 -63.637653 26.675928 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close02 pos: -8.729904 -60.020088 266.189331 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close03 pos: -8.729904 -60.020088 266.189331 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close04 pos: -8.729904 -60.020088 266.189331 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close05 pos: -8.729904 -60.020088 266.189331 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close06 pos: 235.878586 -63.284069 214.390854 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close07 pos: 235.878586 -63.284069 214.390854 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close10 pos: 235.878586 -63.284069 214.390854 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close11 pos: 103.026489 -35.303185 387.127014 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close12 pos: 103.026489 -35.303185 387.127014 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Close13 pos: 103.026489 -35.303185 387.127014 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far00 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far01 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far02 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far03 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far04 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far05 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far06 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far07 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far08 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far09 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far10 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far11 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far12 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far13 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far14 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far15 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far16 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far17 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far18 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far19 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far20 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Far21 pos: 135.446198 -163.331284 366.739319 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med00 pos: 262.553802 -92.036446 40.892590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med01 pos: 262.553802 -92.036446 40.892590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med02 pos: 262.553802 -92.036446 40.892590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med03 pos: 262.553802 -92.036446 40.892590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med04 pos: 262.553802 -92.036446 40.892590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med05 pos: 262.553802 -92.036446 40.892590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med06 pos: 262.553802 -92.036446 40.892590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med07 pos: 46.610363 -90.990982 53.890244 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med08 pos: 46.610363 -90.990982 53.890244 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med09 pos: 46.610363 -90.990982 53.890244 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med10 pos: 46.610363 -90.990982 53.890244 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med11 pos: 46.610363 -90.990982 53.890244 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med12 pos: 46.610363 -90.990982 53.890244 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med13 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med14 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med15 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med16 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med17 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med18 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med19 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med20 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med21 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med22 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Labs_vista_Med23 pos: -186.848145 -85.096260 191.828659 flags: 4 
+19.02.2021 18:04 (EMOD) | name: landscape_side_00 pos: 156.514008 -20.299911 97.993996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: landscape_side_01 pos: 156.514008 -20.299911 97.993996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: landscape_side_02 pos: 156.514008 -20.299911 97.993996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: landscape_side_03 pos: 156.514008 -20.299911 97.993996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: landscape_side_04 pos: 156.514008 -20.299911 97.993996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: landscape_side_05 pos: 156.514008 -20.299911 97.993996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: landscape_side_06 pos: 156.514008 -20.299911 97.993996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: large_window_maintenanceroom_02 pos: 63.918930 -15.668721 75.781509 flags: 4 
+19.02.2021 18:04 (EMOD) | name: large_window_maintenanceroom_03 pos: 19.584650 25.418596 117.999580 flags: 4 
+19.02.2021 18:04 (EMOD) | name: lift_door_06 pos: 66.536697 -1.010652 62.047016 flags: 4 
+19.02.2021 18:04 (EMOD) | name: lift_door_07 pos: 60.323456 -0.550598 62.082809 flags: 4 
+19.02.2021 18:04 (EMOD) | name: lift_entrance_04a pos: -16.849892 10.905001 78.000237 flags: 4 
+19.02.2021 18:04 (EMOD) | name: lift_entrance_qr_a pos: 42.006783 2.056573 89.599548 flags: 4 
+19.02.2021 18:04 (EMOD) | name: lift_entrance_qr_b pos: 42.006783 2.056573 89.599548 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Line01 pos: 51.716488 -2.326891 17.074150 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Line44 pos: 58.772133 -11.683023 51.885494 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Line45 pos: 51.716488 -2.098537 17.074150 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Line48 pos: 76.283279 -2.326891 16.945393 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Line49 pos: 76.283279 -2.098537 16.945393 flags: 4 
+19.02.2021 18:04 (EMOD) | name: LPad_03 pos: -60.000019 -15.130653 130.140503 flags: 4 
+19.02.2021 18:04 (EMOD) | name: markings pos: -10.011544 22.275347 57.999664 flags: 4 
+19.02.2021 18:04 (EMOD) | name: markings01 pos: 10.011538 22.275347 57.999664 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_artifact_01 pos: 30.000277 -9.093251 -27.999264 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_artifact_02 pos: 34.739388 -9.093251 -33.249928 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_cable_00 pos: 27.768698 -7.911397 19.144531 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_cont_a_01 pos: 63.801853 -4.553224 -41.541588 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_cont_a_02 pos: 74.563988 -4.801680 -42.084152 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_cont_b_01 pos: 74.677170 -5.086005 -17.993771 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_cont_b_01_corridor pos: 79.740204 -4.591872 -3.337533 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_cont_ctrl pos: 85.724953 -4.602679 -42.084015 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_00 pos: 30.000103 -6.129814 27.799986 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_01 pos: 33.800728 -6.129814 12.774747 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_02 pos: 14.760588 -6.129814 10.562945 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_03 pos: 61.999893 -4.593505 -20.224876 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_04 pos: 25.999451 -4.498348 -15.524869 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_05 pos: 27.994570 -6.129726 -16.000120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_06 pos: 43.520256 -6.129726 -17.500801 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_07 pos: 56.000561 -6.999001 -29.137377 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_08 pos: 46.020386 -6.129680 -41.637074 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_09 pos: 56.000561 -6.999001 -29.137377 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_10 pos: 76.429520 -6.129726 -29.479992 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_11 pos: 76.429520 -6.129726 -29.479992 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_corridor_enterance pos: 27.968390 -4.094878 42.550240 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_gantry_01 pos: 35.758835 -7.725000 -3.997782 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_gantry_02 pos: 56.002224 -7.725000 -47.758823 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_medical pos: -0.000428 -4.593493 -15.999770 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_medical_ctrl pos: -9.774876 -4.591495 -16.319218 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_00 pos: 44.000004 -7.000002 16.124968 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_01 pos: 34.125011 -7.000002 16.125013 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_02 pos: 34.125000 -7.000002 33.999653 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_03 pos: 25.874985 -7.000002 33.999653 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_04 pos: 25.874998 -7.000002 16.125011 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_05 pos: 14.000001 -7.000002 16.124968 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_06 pos: 11.874996 -7.000002 14.000004 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_07 pos: 11.874996 -7.000002 -2.003037 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_08 pos: 11.874996 -7.000002 -20.124998 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_09 pos: 48.125000 -6.999828 -11.874999 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_10 pos: 48.125000 -7.000002 -25.874989 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_11 pos: 48.124973 -7.512364 -35.999985 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_12 pos: 58.001495 -7.000002 -34.124855 flags: 4 
+19.02.2021 18:04 (EMOD) | name: med_rail_13 pos: 58.001495 -7.000002 -25.875387 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_research pos: 39.175079 -4.591952 28.001087 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_00 pos: 25.310640 -12.724927 -1.023424 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_01 pos: 3.371320 -6.995602 -9.248771 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_02 pos: 19.176020 -4.129785 -4.829263 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_03 pos: 29.999062 -4.997518 -11.276647 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_theater_04 pos: 30.000265 -9.000444 -11.429292 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_05 pos: 32.999981 -4.498404 -2.000202 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_06 pos: 32.999981 -11.091070 -2.000191 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_theater_07 pos: 35.412338 -8.527779 -7.179599 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_08 pos: 32.999981 -11.091070 -2.000191 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_theater_09 pos: 35.412338 -8.527779 -7.179599 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_10 pos: 29.999868 -9.104584 7.475556 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_11 pos: 20.524366 -9.104584 -2.000125 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_12 pos: 43.977310 -4.593468 -1.349879 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_theater_13 pos: 30.356026 -5.499044 -1.999939 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Med_upper_corridor pos: 72.107750 -9.093028 -24.000294 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_upper_corridor_02 pos: 44.168640 -9.000792 -39.999760 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_upper_corridor_03 pos: 30.000277 -9.093251 -27.999264 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_upper_corridor_04 pos: 24.023291 -9.591866 -26.650087 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_upperdoor_00 pos: 7.000652 -6.999996 -1.999997 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_upperdoor_01 pos: 21.000652 -6.999996 27.999996 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Med_xray pos: 21.174423 -4.591952 27.663998 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_02 pos: 73.803413 -2.386158 208.960938 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_03 pos: 95.092743 -1.589835 215.183487 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_09 pos: 36.310684 3.289516 146.002930 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_10 pos: 48.007973 -14.748944 152.172699 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_11 pos: 3.755918 -50.249573 176.373947 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_12 pos: -93.844200 -11.192508 185.536331 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_14 pos: -16.843431 -33.174866 189.449524 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mega_root_15 pos: 65.122543 -13.005461 188.222427 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mesh_cover_02 pos: 51.573063 -0.999998 14.719506 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mesh_cover_03 pos: 76.186668 -2.683923 11.295281 flags: 4 
+19.02.2021 18:04 (EMOD) | name: mess01 pos: 99.999947 -7.999998 77.876724 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_L_upper_00 pos: -5.000988 10.406426 84.248940 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_L_upper_01 pos: -7.250281 18.163305 73.750397 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_lift_A_00 pos: 30.007170 12.055267 72.099762 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_lift_A_01 pos: 30.007170 12.055267 72.099762 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_lift_A_02 pos: 30.007166 18.007042 72.413094 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_R_upper_00 pos: 7.087446 16.823830 70.242035 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_R_upper_01 pos: 10.125027 16.823830 84.187805 flags: 4 
+19.02.2021 18:04 (EMOD) | name: monorail_station_right01 pos: 7.087446 16.823830 70.242035 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object01 pos: 51.971416 19.725121 26.002499 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object02 pos: 77.119324 -12.500066 42.996803 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object05 pos: 64.000000 -5.499660 77.248993 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Object06 pos: 52.528862 15.779165 33.223099 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object07 pos: 85.124443 -4.250241 52.000111 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object08 pos: 63.999653 -12.500150 35.917397 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object09 pos: 43.353886 -10.560039 40.274826 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object10 pos: 34.002453 19.372972 40.007599 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object11 pos: 52.977306 -9.522940 23.615005 flags: 42 
+19.02.2021 18:04 (EMOD) | name: Object12 pos: 63.999329 -9.124218 42.205357 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object13 pos: 48.845753 -11.948895 67.999977 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object14 pos: 47.928585 -10.382379 52.000031 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object15 pos: 75.633835 -12.724930 59.997784 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object16 pos: 45.999344 -12.812557 39.999783 flags: 170 
+19.02.2021 18:04 (EMOD) | name: Object17 pos: 66.262268 -9.017838 32.412224 flags: 106 
+19.02.2021 18:04 (EMOD) | name: Object18 pos: 83.174026 -5.772602 41.947002 flags: 106 
+19.02.2021 18:04 (EMOD) | name: Object19 pos: 83.174026 -5.772602 41.947002 flags: 1642 
+19.02.2021 18:04 (EMOD) | name: Object20 pos: 83.174026 -5.772602 41.947002 flags: 106 
+19.02.2021 18:04 (EMOD) | name: Object22 pos: 43.244450 -3.000530 -33.715149 flags: 12 
+19.02.2021 18:04 (EMOD) | name: Object23 pos: 41.814240 -10.485230 59.905590 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object24 pos: 63.999329 -9.124218 42.205357 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object25 pos: 63.458252 19.594057 25.999821 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object26 pos: 73.998558 19.600014 48.099998 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object27 pos: 73.972900 19.594057 38.098804 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object28 pos: 58.776009 -1.660082 62.199997 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object29 pos: 37.999962 -8.000018 52.871822 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object30 pos: 10.257916 21.436115 64.325546 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object31 pos: 10.257916 21.436115 64.325546 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object32 pos: -10.257916 21.436115 64.325546 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object35 pos: -14.038554 22.201401 90.109200 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object36 pos: -3.347007 25.379372 83.993568 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object37 pos: -5.596995 25.149553 52.000530 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object38 pos: 5.595314 25.129368 51.999981 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object39 pos: 3.363057 25.129370 83.993576 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object40 pos: -24.099945 12.052897 78.001114 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object42 pos: 74.796928 -2.249999 -0.200336 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object43 pos: 56.852592 2.744021 2.329513 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object44 pos: 51.745655 -1.550091 -0.207927 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object45 pos: 74.908348 -0.143360 16.987564 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object46 pos: 67.999672 3.649938 11.746199 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object47 pos: 72.767792 2.402709 17.140961 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object48 pos: 63.999664 3.250000 8.437831 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object49 pos: 74.831459 -2.249998 -0.200335 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object50 pos: 74.499657 -2.249999 -0.200336 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object51 pos: 60.889175 3.876973 -0.200507 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123243 pos: 45.999901 -1.497785 64.000435 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123251 pos: 89.997505 -1.497785 64.000435 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123304 pos: 80.000313 -10.382379 52.000057 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123806 pos: 85.475830 -10.560038 53.900524 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123808 pos: 85.999680 -2.999937 76.000191 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123809 pos: 85.999680 -8.000319 76.000191 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123815 pos: 64.000694 60.886154 53.013351 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123817 pos: 75.935760 -11.948895 67.999977 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123818 pos: 63.966824 -11.948896 52.000389 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123831 pos: 63.999722 -0.550850 62.029316 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123840 pos: 64.000710 2.000000 43.922371 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123871 pos: 70.095718 19.499554 44.000000 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123925 pos: 64.000000 -0.499690 61.878208 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123954 pos: 64.027100 -0.553107 62.051796 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123969 pos: 63.956249 5.202212 52.992283 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123970 pos: 54.515163 -3.042521 8.437831 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123971 pos: 73.484116 -3.042521 8.437831 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123972 pos: 73.484116 -6.461577 8.437831 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123973 pos: 51.670650 -1.999998 15.008063 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123983 pos: 51.626797 -0.063898 15.577982 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123989 pos: 74.812386 2.000001 18.803471 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123990 pos: 74.295921 2.000001 14.241171 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123991 pos: 64.149666 3.649938 5.099125 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123995 pos: 70.000877 -5.051226 20.849779 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123996 pos: 63.956245 22.526573 52.992275 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object5123997 pos: 108.003441 -12.001284 68.274681 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object52 pos: 60.653709 3.236641 -0.200507 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object53 pos: 53.385735 -6.461577 8.437831 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object54 pos: 60.999676 3.509727 10.987927 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object55 pos: 53.150448 2.020464 19.022297 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object56 pos: 85.438347 11.289880 185.100800 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object57 pos: 51.670650 -1.999998 19.008059 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object58 pos: 64.096306 -2.187491 -0.205904 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object59 pos: 79.997337 12.040949 184.147476 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object60 pos: 77.641922 11.687759 184.651413 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object61 pos: 105.427856 -29.861435 240.332855 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object62 pos: 102.868050 11.201746 201.565903 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object64 pos: 92.991913 2.526004 184.098419 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object68 pos: 64.000053 1.999919 36.000294 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object71 pos: 64.000053 1.999919 36.000294 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object82 pos: 46.509197 -4.411138 60.000450 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object86 pos: 66.270447 -17.765831 65.236473 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object87 pos: 61.255348 -17.572546 65.262749 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object88 pos: 63.999992 -12.400141 32.130020 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object90 pos: 52.977486 -9.522281 23.619795 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object911 pos: 58.000366 4.500101 44.011696 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Object93 pos: 81.331032 -3.772516 47.591217 flags: 4 
+19.02.2021 18:04 (EMOD) | name: outside_edge pos: 23.000854 18.167814 125.394775 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pipe pos: 58.772133 -11.839196 67.656715 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pipe_a_01 pos: 74.908348 -0.143360 16.987564 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pipe_a_03 pos: 73.006805 -0.252857 16.664555 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod07 pos: 104.024185 -8.262556 107.450035 flags: 0 
+19.02.2021 18:04 (EMOD) | name: pod1 pos: 63.974815 -18.259211 103.446312 flags: 0 
+19.02.2021 18:04 (EMOD) | name: pod_04_int pos: 54.785568 -13.660637 102.778969 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_06_int pos: 15.349066 11.240841 112.728722 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_07_int pos: 113.213455 -3.670815 106.782768 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_annex01 pos: 24.592421 10.626030 101.342888 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_railings_101 pos: 30.562271 11.424611 111.839882 flags: 0 
+19.02.2021 18:04 (EMOD) | name: pod_railings_102 pos: 18.632050 11.424613 106.077942 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_railings_104 pos: 55.000340 -13.476867 102.682487 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_railings_105 pos: 69.998772 -13.476867 101.890129 flags: 0 
+19.02.2021 18:04 (EMOD) | name: pod_railings_106 pos: 58.068596 -13.473598 96.128685 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_railings_110 pos: 109.896667 -3.477083 100.131882 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_railings_112 pos: 97.966393 -3.487045 105.893929 flags: 0 
+19.02.2021 18:04 (EMOD) | name: pod_railings_116 pos: 112.998611 -3.487045 106.686287 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pod_sign_01 pos: 25.675135 8.072182 104.571983 flags: 4 
+19.02.2021 18:04 (EMOD) | name: podbase02 pos: 109.992867 1.692547 110.696922 flags: 4 
+19.02.2021 18:04 (EMOD) | name: podbase1 pos: 69.991852 -8.304104 106.693207 flags: 4 
+19.02.2021 18:04 (EMOD) | name: pred_colume_01 pos: 135.000137 2.232212 116.946098 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Predator_Gate_Low01 pos: 112.275352 11.942173 204.123322 flags: 0 
+19.02.2021 18:04 (EMOD) | name: Predator_Gate_Low02 pos: 112.275352 11.942173 196.320770 flags: 0 
+19.02.2021 18:04 (EMOD) | name: queen_approuch_01 pos: 38.221336 -13.657366 86.331772 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_approuch_05 pos: 38.221336 -13.657366 86.331772 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_approuch_06 pos: 77.779045 -13.657366 86.331688 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_ceiling_00 pos: 47.928585 -10.382379 52.000031 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_ceiling_01 pos: 47.928585 -10.382379 52.000031 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_ceiling_02 pos: 80.000313 -10.382379 52.000057 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_ceiling_03 pos: 80.000313 -10.382379 52.000057 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_cor_02 pos: 64.000252 -4.250257 62.000378 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_cor_06 pos: 85.124443 -4.250241 52.000111 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_glass_01 pos: 64.096779 -15.396642 78.165680 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_glass_02 pos: 64.096741 -15.396642 75.494461 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_00 pos: 94.011856 -4.562436 46.124832 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_01 pos: 94.011856 -4.562436 46.124832 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_02 pos: 85.124443 -4.250241 52.000111 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_03 pos: 85.872894 -4.561989 72.000252 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_04 pos: 41.875298 -4.561989 72.000252 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_05 pos: 64.000252 -4.250257 62.000378 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_06 pos: 33.987892 -4.562436 54.124855 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_lowercorridors_07 pos: 33.987892 -4.562436 54.124855 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_shaft_detail03 pos: 64.000000 -0.384450 44.123230 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_shaft_detail_02 pos: 64.000000 -0.384450 44.123230 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_spawnroom_00 pos: 72.999527 3.152672 65.608635 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queen_spawnroom_01 pos: 55.000240 3.152672 65.608635 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queencor_end pos: 41.875298 -4.561989 72.000252 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_main_left_a pos: 63.999992 4.779747 51.865402 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_main_left_b pos: 58.191795 -3.934262 32.988800 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_main_left_strut pos: 63.999992 -5.250037 31.604315 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_main_right_a pos: 63.999992 4.779747 51.865402 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_main_right_b pos: 63.999992 4.779747 51.865402 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_main_right_strut pos: 63.999992 4.779747 51.865402 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_stairs_01 pos: 84.555969 -3.050022 64.000130 flags: 4 
+19.02.2021 18:04 (EMOD) | name: queenroom_stairs_02 pos: 43.457024 -3.050023 64.000122 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Ren_garage06 pos: 64.017906 -18.738382 59.565559 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ren_ops_65 pos: 86.000160 -6.679013 81.558601 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree09 pos: 94.365799 -0.393365 190.691559 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree10 pos: 85.040688 -9.927994 176.090515 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree11 pos: 65.699913 -16.373363 150.922043 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree12 pos: 105.599976 -14.465403 140.897171 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree13 pos: -34.497093 0.477317 182.931824 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree14 pos: 34.753689 -16.373363 140.665024 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree15 pos: -30.447714 -6.573862 155.520615 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree16 pos: -57.009220 -14.681896 175.533844 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree17 pos: 91.027100 -3.034588 146.899261 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree18 pos: -12.655128 10.088614 130.552582 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree19 pos: 154.351654 -11.705329 112.697281 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree21 pos: -13.245164 -43.027340 161.765625 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Canopy_Tree22 pos: 22.962351 -50.439533 176.222534 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_carg pos: 41.526630 14.591094 26.002316 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_CorridorCorner pos: 82.326057 11.859401 176.986771 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_CorridorCorner01 pos: -53.359280 8.807963 216.866043 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_jungleruinsexitgate02 pos: 81.140488 0.519939 174.009460 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_marine_exit pos: 116.476013 4.227612 200.321533 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_monorail_101 pos: -0.000001 19.999987 16.000019 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_monorail_rail pos: 0.003108 27.144697 162.269073 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_monorail_rail19 pos: -0.000001 19.999987 16.000019 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_monorail_rail_02 pos: 0.000000 25.803267 81.993736 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_monorail_rail_03 pos: -0.000015 27.144690 70.384857 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_plaza_wall_back_04 pos: 72.628731 -3.594267 178.091064 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_plaza_wall_back_05 pos: 123.553436 -9.624835 213.565628 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_plaza_wall_decoration_01 pos: 122.219070 -16.530922 214.134171 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_ruins_bits_01 pos: 61.753166 16.714745 133.464645 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_ruins_bits_02 pos: 61.753166 17.769663 133.464645 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_ruins_bits_03 pos: 64.345398 18.148113 112.841064 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_terraces_arch_01 pos: 104.436775 4.262012 130.681107 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_terraces_arch_02 pos: 119.732841 2.239880 130.867538 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_terraces_arch_03 pos: 135.000137 2.232212 116.946098 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_tunnelmono_03 pos: 0.003169 23.236315 193.726959 flags: 4 
+19.02.2021 18:04 (EMOD) | name: rend_Wall_top03 pos: 77.106316 -4.989911 173.973694 flags: 4 
+19.02.2021 18:04 (EMOD) | name: room_railings_05 pos: 46.665405 -3.767732 51.999935 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ruins_blocks_01 pos: -20.367067 17.016735 135.201004 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ruins_blocks_02 pos: 5.976249 6.999976 132.017120 flags: 4 
+19.02.2021 18:04 (EMOD) | name: ruins_blocks_03 pos: 43.236080 17.091566 137.569122 flags: 4 
+19.02.2021 18:04 (EMOD) | name: scaffold_girder_128 pos: -9.999985 18.813494 69.998985 flags: 4 
+19.02.2021 18:04 (EMOD) | name: scaffold_girder_131 pos: -9.999985 18.813494 49.998970 flags: 4 
+19.02.2021 18:04 (EMOD) | name: scaffold_girder_135 pos: -9.999985 18.813494 85.999001 flags: 4 
+19.02.2021 18:04 (EMOD) | name: scaffold_girder_136 pos: 9.999828 18.813494 49.998970 flags: 4 
+19.02.2021 18:04 (EMOD) | name: scaffold_girder_137 pos: 9.999828 18.813494 69.998985 flags: 4 
+19.02.2021 18:04 (EMOD) | name: scaffold_girder_138 pos: 9.999828 18.813494 85.999001 flags: 4 
+19.02.2021 18:04 (EMOD) | name: security_02 pos: 99.999947 -7.999998 77.876724 flags: 4 
+19.02.2021 18:04 (EMOD) | name: security_03 pos: 108.101334 -5.510799 59.619816 flags: 4 
+19.02.2021 18:04 (EMOD) | name: security_04 pos: 99.999947 -7.999998 77.876724 flags: 4 
+19.02.2021 18:04 (EMOD) | name: security_05 pos: 105.999672 -13.366693 60.000778 flags: 4 
+19.02.2021 18:04 (EMOD) | name: service_area_101 pos: 33.999729 19.725227 43.968369 flags: 4 
+19.02.2021 18:04 (EMOD) | name: service_area_102 pos: 36.582710 19.768396 19.130199 flags: 4 
+19.02.2021 18:04 (EMOD) | name: service_area_spawn_03 pos: 48.002243 16.449306 21.199757 flags: 4 
+19.02.2021 18:04 (EMOD) | name: service_corner_02 pos: 39.831669 19.743614 32.001778 flags: 4 
+19.02.2021 18:04 (EMOD) | name: service_rails_up_01 pos: 34.003593 18.962164 40.001476 flags: 4 
+19.02.2021 18:04 (EMOD) | name: service_rails_up_02 pos: 47.993023 18.962164 26.003653 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape01 pos: 64.096306 -2.187491 -0.205904 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape02 pos: 54.135872 -2.169101 -0.205904 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape03 pos: 54.099831 -1.731137 0.590681 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape04 pos: 74.499657 -2.249999 -0.200336 flags: 5 
+19.02.2021 18:04 (EMOD) | name: Shape05 pos: 67.456146 1.182002 -0.989297 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape06 pos: 64.000099 3.402708 20.230637 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape07 pos: 75.875603 -2.927061 -0.200335 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape08 pos: 70.061249 5.202212 52.992275 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape14 pos: 70.061249 5.202212 52.992275 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape15 pos: 70.061249 5.202212 52.992275 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape16 pos: 63.956249 5.400045 53.087105 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape17 pos: 63.948662 5.233620 52.989491 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape19 pos: 54.099831 -1.731137 -1.145293 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape20 pos: 64.002678 -8.124997 -4.133000 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape24 pos: 55.863491 -7.874998 3.867365 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape25 pos: 59.776176 -5.352777 -0.132771 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape26 pos: 68.229179 -5.352777 -0.132771 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape27 pos: 72.141869 -5.352777 -0.132771 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape28 pos: 69.745827 -0.714334 1.218696 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape29 pos: 69.745827 -0.714334 -1.624701 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape30 pos: 60.586960 2.924966 -1.609372 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape31 pos: 60.586960 2.924966 1.189638 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape32 pos: 69.785515 3.402708 2.850441 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape34 pos: 64.002678 -8.124997 3.867238 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape35 pos: 64.002678 -8.124997 15.007586 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape36 pos: 70.061249 22.526573 52.992275 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape37 pos: 63.956245 22.724403 53.087105 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape38 pos: 63.948654 22.557983 52.989498 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape39 pos: 70.061249 22.526573 52.992275 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Shape40 pos: 63.970818 22.190228 52.992809 flags: 4 
+19.02.2021 18:04 (EMOD) | name: shutter_03 pos: 51.999653 -2.999998 1.867132 flags: 4 
+19.02.2021 18:04 (EMOD) | name: side_lift pos: 73.998558 19.600014 48.099998 flags: 4 
+19.02.2021 18:04 (EMOD) | name: sign pos: -9.492184 19.999998 49.997952 flags: 4 
+19.02.2021 18:04 (EMOD) | name: sign01 pos: 9.485840 19.999998 49.997952 flags: 4 
+19.02.2021 18:04 (EMOD) | name: sign_security_pod_01 pos: 6.451470 9.068641 93.989746 flags: 4 
+19.02.2021 18:04 (EMOD) | name: staion_chunk_01 pos: 10.125027 16.823830 84.187805 flags: 4 
+19.02.2021 18:04 (EMOD) | name: start_rocks pos: 85.924049 -0.586765 183.644089 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_android_spawn_01 pos: 10.125027 16.823830 84.187805 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_chunk_02 pos: -10.125272 16.823830 84.242531 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_ent_01 pos: 10.000247 18.213741 106.000435 flags: 0 
+19.02.2021 18:04 (EMOD) | name: station_gantry_03 pos: 63.999493 -7.724999 34.241356 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_gantry_04 pos: 75.633835 -12.724930 59.997784 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_gantry_1 pos: 0.000000 12.274662 85.999992 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_gantry_1_railing pos: 0.000000 12.274662 85.999992 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_gantry_2 pos: 0.000000 12.274662 54.000999 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_gantry_2_railing pos: 0.000000 12.274662 54.000999 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_junction_01 pos: 30.124878 18.401087 59.999958 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_markings_05 pos: 10.004747 23.500006 71.232452 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_markings_06 pos: -10.004809 23.500008 71.232452 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_power_cable_10 pos: 11.554451 23.451712 65.230270 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_power_cable_11 pos: -11.558679 23.451714 65.763153 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_railings_02 pos: 11.691740 21.436115 49.897511 flags: 4 
+19.02.2021 18:04 (EMOD) | name: station_railings_1 pos: -11.691740 22.201401 69.995071 flags: 4 
+19.02.2021 18:04 (EMOD) | name: steps_367 pos: 56.717609 3.224172 17.118702 flags: 4 
+19.02.2021 18:04 (EMOD) | name: steps_368 pos: 56.706348 3.224172 0.015096 flags: 4 
+19.02.2021 18:04 (EMOD) | name: steps_369 pos: 56.717609 3.224172 0.015096 flags: 4 
+19.02.2021 18:04 (EMOD) | name: stone_work_210 pos: 30.476154 17.499178 137.224472 flags: 4 
+19.02.2021 18:04 (EMOD) | name: support_01 pos: 63.999664 -1.749783 9.008301 flags: 4 
+19.02.2021 18:04 (EMOD) | name: support_02 pos: 63.999664 -1.749783 -7.062122 flags: 4 
+19.02.2021 18:04 (EMOD) | name: switch_airlock_01 pos: 26.365597 15.650998 40.001060 flags: 4 
+19.02.2021 18:04 (EMOD) | name: switch_room_02a02 pos: 51.994667 12.000001 38.123268 flags: 4 
+19.02.2021 18:04 (EMOD) | name: switchroom_door01 pos: 19.076487 19.298624 25.674759 flags: 4 
+19.02.2021 18:04 (EMOD) | name: vent_alienstart pos: 97.803917 -6.987020 -37.628448 flags: 4 
+19.02.2021 18:04 (EMOD) | name: vent_alienstart_02 pos: 93.812447 -6.988127 -26.375128 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Vent_Vis pos: 28.354195 -7.626460 46.798496 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Vent_Vis02 pos: 93.001160 -12.245022 -27.571138 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Vent_Vis_02 pos: 28.354195 -7.626460 46.798496 flags: 4 
+19.02.2021 18:04 (EMOD) | name: Vis_blocking_mesh pos: 12.060883 10.985637 67.451340 flags: 3 
+19.02.2021 18:04 (EMOD) | name: wall_panel_101 pos: 70.000023 -2.999779 22.979361 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wall_panels_100 pos: 57.999016 -2.999779 22.979361 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_roof_front_right_02 pos: 9.570202 -87.745796 54.708782 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_roof_left_02 pos: 28.566759 -87.746429 54.708511 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_roof_side_left_02 pos: 30.537863 -101.760109 -12.631525 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_roof_side_right_01 pos: 17.620667 -57.448578 216.085037 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_roof_side_right_02 pos: 7.599271 -101.760109 -12.631528 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_top_left pos: 19.068569 -87.745796 54.708778 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_top_mid pos: 19.068569 -92.426910 54.708778 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wgz_top_right pos: 19.068567 -87.745796 54.708771 flags: 4 
+19.02.2021 18:04 (EMOD) | name: window_03 pos: 25.360792 18.749287 29.001190 flags: 5 
+19.02.2021 18:04 (EMOD) | name: window_04 pos: 50.446598 15.241491 26.011206 flags: 4 
+19.02.2021 18:04 (EMOD) | name: window_05 pos: 33.973900 15.241509 42.490692 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_chunk_wway_mid07 pos: 104.000015 -3.698443 93.126709 flags: 0 
+19.02.2021 18:04 (EMOD) | name: wz_corr_chunk_wway_mid08 pos: 104.000000 -3.698443 82.873276 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_end04 pos: 104.000023 -3.698442 85.126724 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_end06 pos: 30.000311 -4.095192 61.999924 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_end07 pos: 104.000023 -3.698442 85.126724 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_end08 pos: 104.000092 -4.347983 79.248772 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_wway_end03 pos: 104.000023 -3.698442 85.126724 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_wway_end09 pos: 103.999992 -3.698442 90.873260 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_wway_end_pipes pos: 104.000023 -3.698442 85.126724 flags: 4 
+19.02.2021 18:04 (EMOD) | name: wz_corr_wway_end_pipes_left pos: 104.000023 -3.698442 85.126724 flags: 4 
+19.02.2021 18:04 (Helpers) | Bbox: count: 1
+19.02.2021 18:04 (Helpers) | Lines: count: 0
+19.02.2021 18:04 (Helpers) | Lines CreateBuffer failed ! 
+19.02.2021 18:04 (Init) | lines failed !
+19.02.2021 18:04 (Console) | Created !!! 
+20.02.2021 13:11 (Init) | Executable Started !
+20.02.2021 13:11 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+20.02.2021 13:11 (Materials) | MARE Header: 362 materials in file
+20.02.2021 13:11 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+20.02.2021 13:11 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+20.02.2021 13:11 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+20.02.2021 13:11 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+20.02.2021 13:11 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+20.02.2021 13:11 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+20.02.2021 13:11 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+20.02.2021 13:11 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+20.02.2021 13:11 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+20.02.2021 13:11 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+20.02.2021 13:11 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+20.02.2021 13:11 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+20.02.2021 13:11 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+20.02.2021 13:11 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+20.02.2021 13:11 (Materials) | Not found match with texture hash a527048 and material hash fc3bc43b 
+20.02.2021 13:11 (EMOD) | Package name: Lab
+20.02.2021 13:11 (Helpers) | Bbox: count: 690
+20.02.2021 13:11 (Helpers) | Lines: count: 0
+20.02.2021 13:11 (Helpers) | Lines CreateBuffer failed ! 
+20.02.2021 13:11 (Init) | lines failed !
+20.02.2021 13:11 (Console) | Created !!! 
+20.02.2021 13:36 (Init) | Executable Started !
+20.02.2021 13:36 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+20.02.2021 13:36 (Materials) | MARE Header: 362 materials in file
+20.02.2021 13:36 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+20.02.2021 13:36 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+20.02.2021 13:36 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+20.02.2021 13:36 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+20.02.2021 13:36 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+20.02.2021 13:36 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+20.02.2021 13:36 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+20.02.2021 13:36 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+20.02.2021 13:36 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+20.02.2021 13:36 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+20.02.2021 13:36 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+20.02.2021 13:36 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+20.02.2021 13:36 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+20.02.2021 13:36 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+20.02.2021 13:36 (Materials) | Not found match with texture hash ab94250 and material hash cfc7afe 
+20.02.2021 13:36 (EMOD) | Package name: Lab
+20.02.2021 13:36 (Helpers) | Bbox: count: 690
+20.02.2021 13:36 (Helpers) | Lines: count: 0
+20.02.2021 13:36 (Helpers) | Lines CreateBuffer failed ! 
+20.02.2021 13:36 (Init) | lines failed !
+20.02.2021 13:36 (Console) | Created !!! 
+20.02.2021 13:37 (Init) | Executable Started !
+20.02.2021 13:37 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+20.02.2021 13:37 (Materials) | MARE Header: 362 materials in file
+20.02.2021 13:37 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+20.02.2021 13:37 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+20.02.2021 13:37 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+20.02.2021 13:37 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+20.02.2021 13:37 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+20.02.2021 13:37 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+20.02.2021 13:37 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+20.02.2021 13:37 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+20.02.2021 13:37 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+20.02.2021 13:37 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+20.02.2021 13:37 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+20.02.2021 13:37 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+20.02.2021 13:37 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+20.02.2021 13:37 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+20.02.2021 13:37 (Materials) | Not found match with texture hash 86afd28 and material hash b2d0b323 
+20.02.2021 13:37 (EMOD) | Package name: Lab
+20.02.2021 13:37 (Helpers) | Bbox: count: 1
+20.02.2021 13:37 (Helpers) | Lines: count: 0
+20.02.2021 13:37 (Helpers) | Lines CreateBuffer failed ! 
+20.02.2021 13:37 (Init) | lines failed !
+20.02.2021 13:37 (Console) | Created !!! 
+21.02.2021 17:37 (Init) | Executable Started !
+21.02.2021 17:37 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+21.02.2021 17:37 (Materials) | MARE Header: 362 materials in file
+21.02.2021 17:37 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+21.02.2021 17:37 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+21.02.2021 17:37 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+21.02.2021 17:37 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+21.02.2021 17:37 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+21.02.2021 17:37 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+21.02.2021 17:37 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+21.02.2021 17:37 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+21.02.2021 17:37 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+21.02.2021 17:37 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+21.02.2021 17:37 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+21.02.2021 17:37 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+21.02.2021 17:37 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+21.02.2021 17:37 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+21.02.2021 17:37 (Materials) | Not found match with texture hash 5e77e30 and material hash 35b1b868 
+21.02.2021 17:37 (EMOD) | Package name: Lab
+21.02.2021 17:37 (Helpers) | Bbox: count: 1
+21.02.2021 17:37 (Helpers) | Lines: count: 0
+21.02.2021 17:37 (Helpers) | Lines CreateBuffer failed ! 
+21.02.2021 17:37 (Init) | lines failed !
+21.02.2021 17:37 (Console) | Created !!! 
+21.02.2021 17:41 (Init) | Executable Started !
+21.02.2021 17:41 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+21.02.2021 17:41 (Materials) | MARE Header: 362 materials in file
+21.02.2021 17:41 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+21.02.2021 17:41 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+21.02.2021 17:41 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+21.02.2021 17:41 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+21.02.2021 17:41 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+21.02.2021 17:41 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+21.02.2021 17:41 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+21.02.2021 17:41 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+21.02.2021 17:41 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+21.02.2021 17:41 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+21.02.2021 17:41 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+21.02.2021 17:41 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+21.02.2021 17:41 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+21.02.2021 17:41 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+21.02.2021 17:41 (Materials) | Not found match with texture hash 5fa4c08 and material hash 1874f102 
+21.02.2021 17:41 (EMOD) | Package name: Lab
+21.02.2021 17:41 (Helpers) | Bbox: count: 1
+21.02.2021 17:41 (Helpers) | Lines: count: 0
+21.02.2021 17:41 (Helpers) | Lines CreateBuffer failed ! 
+21.02.2021 17:41 (Init) | lines failed !
+21.02.2021 17:41 (EMOD) | Bbox: count: 689
+21.02.2021 17:41 (Console) | Created !!! 
+21.02.2021 17:51 (Init) | Executable Started !
+21.02.2021 17:51 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+21.02.2021 17:51 (Materials) | MARE Header: 362 materials in file
+21.02.2021 17:51 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+21.02.2021 17:51 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+21.02.2021 17:51 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+21.02.2021 17:51 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+21.02.2021 17:51 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+21.02.2021 17:51 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+21.02.2021 17:51 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+21.02.2021 17:51 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+21.02.2021 17:51 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+21.02.2021 17:51 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+21.02.2021 17:51 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+21.02.2021 17:51 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+21.02.2021 17:51 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+21.02.2021 17:51 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+21.02.2021 17:51 (Materials) | Not found match with texture hash 9b47b20 and material hash 3f919944 
+21.02.2021 17:51 (EMOD) | Package name: Lab
+21.02.2021 17:51 (Helpers) | Bbox: count: 1
+21.02.2021 17:51 (Helpers) | Lines: count: 0
+21.02.2021 17:51 (Helpers) | Lines CreateBuffer failed ! 
+21.02.2021 17:51 (Init) | lines failed !
+21.02.2021 17:51 (EMOD) | Bbox: count: 689
+21.02.2021 17:51 (Console) | Created !!! 
+21.02.2021 18:04 (Init) | Executable Started !
+21.02.2021 18:04 (RSCF_Parse_Enviroment) | env_header: total_meshes: 4407 total_indexes: 1425000 total_vertexes: 658089
+21.02.2021 18:04 (Materials) | MARE Header: 362 materials in file
+21.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash f21aa1ec 
+21.02.2021 18:04 (Materials) | Not found match with texture hash e6730b9a and material hash 50c817eb 
+21.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash 5c13d641 
+21.02.2021 18:04 (Materials) | Not found match with texture hash dafe70e1 and material hash 11971870 
+21.02.2021 18:04 (Materials) | Not found match with texture hash 17f3c765 and material hash 2db08136 
+21.02.2021 18:04 (Materials) | Not found match with texture hash efc02f89 and material hash 2eaeec 
+21.02.2021 18:04 (Materials) | Not found match with texture hash c78b24c3 and material hash 6965a512 
+21.02.2021 18:04 (Materials) | Not found match with texture hash d4d4e0bb and material hash 4ca273d1 
+21.02.2021 18:04 (Materials) | Not found match with texture hash f3151dfa and material hash da9ab8c8 
+21.02.2021 18:04 (Materials) | Not found match with texture hash 850876a1 and material hash 34f363f2 
+21.02.2021 18:04 (Materials) | Not found match with texture hash efc02f89 and material hash 222e2df3 
+21.02.2021 18:04 (Materials) | Not found match with texture hash db0a5cb4 and material hash f526abf2 
+21.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash 585a54d5 
+21.02.2021 18:04 (Materials) | Not found match with texture hash 0 and material hash b2f045fd 
+21.02.2021 18:04 (Materials) | Not found match with texture hash 26e1e38 and material hash 3cd01183 
+21.02.2021 18:04 (EMOD) | Package name: Lab
+21.02.2021 18:04 (Helpers) | Bbox: count: 1
+21.02.2021 18:04 (Helpers) | Lines: count: 0
+21.02.2021 18:04 (Helpers) | Lines CreateBuffer failed ! 
+21.02.2021 18:04 (Init) | lines failed !
+21.02.2021 18:04 (EMOD) | Bbox: count: 689
+21.02.2021 18:04 (Console) | Created !!! 
+21.02.2021 18:08 (EMOD_dump) | name: alien_statue_big_mossy 0x4
+ pos: 93.745697 1.535388 184.206100 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: anti_pred_posts 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: arge_window_maintenanceroom_055 0x4
+ pos: 18.068129 24.686613 117.918732 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: barrier_railing_04 0x4
+ pos: -5.120742 22.637455 102.244263 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: barrier_railing_05 0x4
+ pos: -5.120742 22.637455 98.244560 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: barrier_railing_07 0x4
+ pos: 5.120748 22.637455 98.244560 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: barrier_railing_10 0x4
+ pos: 5.120748 22.637455 102.244263 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: BenCollision 0x2a
+ pos: 83.174026 -5.772602 41.947002 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: bracket_01 0x4
+ pos: 76.261093 -2.999999 4.143488 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: bracket_02 0x4
+ pos: 76.261093 -1.499998 4.143488 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: bracket_03 0x4
+ pos: 76.261093 -1.499998 -4.143488 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: bracket_04 0x4
+ pos: 76.261093 -2.999999 -4.143488 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: bracket_05 0x4
+ pos: 52.261093 -2.999999 2.792052 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_1_switchroom02 0x4
+ pos: 19.076487 19.298624 25.674759 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_1_switchroom03 0x4
+ pos: 19.076487 19.298624 25.674759 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Cargo_1_switchroom_00 0x4
+ pos: 19.076487 19.298624 25.674759 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Cargo_1_switchroom_01 0x4
+ pos: 19.076487 19.298624 25.674759 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Cargo_ceiling_00 0x4
+ pos: 41.526630 14.591094 26.002316 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_ceiling_01 0x4
+ pos: 33.969032 14.591075 33.523121 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_ceiling_02 0x4
+ pos: 41.526630 14.591094 26.002316 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_doorframe 0x4
+ pos: 48.000053 19.374516 26.003181 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_railings00 0x4
+ pos: 62.009323 21.436115 29.623726 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_railings02 0x4
+ pos: 62.009323 21.436115 29.623726 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_railings05 0x4
+ pos: 62.009151 21.436396 21.381866 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargo_railings_03 0x4
+ pos: 62.009151 21.436396 21.381866 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cargocorridor_04 0x4
+ pos: 64.028915 -14.272179 91.393143 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: CargoCorridorCorner_05 0x2a
+ pos: 42.003628 14.499998 34.003815 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: Cargocrossroads_03 0x2a
+ pos: 74.003052 14.500005 25.999973 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: ceiling_911 0x4
+ pos: 27.118084 -11.875884 1.062500 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ceiling_912 0x4
+ pos: 27.000002 -11.875651 -6.062499 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ceiling_mesh_cover_01 0x4
+ pos: 53.999886 -9.622150 9.008127 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ceiling_mesh_cover_02 0x4
+ pos: 72.005241 -8.153363 8.509288 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ceiling_vent_ent_01 0x5
+ pos: 24.995659 -11.194475 2.981120 flags: 5 
+21.02.2021 18:08 (EMOD_dump) | name: ceiling_vent_ent_02 0x5
+ pos: 24.995659 -11.194475 -7.016550 flags: 5 
+21.02.2021 18:08 (EMOD_dump) | name: COL_anti_pred_fence 0x2a
+ pos: 89.813927 3.947172 131.784866 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_cargo_annex_rails 0x28a
+ pos: 47.108189 16.344522 17.452562 flags: 650 
+21.02.2021 18:08 (EMOD_dump) | name: COL_duct_56 0x2a
+ pos: 46.984818 15.961007 14.333753 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_guardrails_1 0x4a
+ pos: -0.000074 22.999111 101.999977 flags: 74 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_ext_rails 0x2a
+ pos: 63.993725 -19.557552 103.902519 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_ext_rails04 0x6a
+ pos: 11.010688 4.776011 106.973389 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_ext_rails05 0x6a
+ pos: 50.447334 -20.125740 97.023674 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_ext_rails06 0x6a
+ pos: 90.445168 -10.128874 101.027420 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_land_01 0x2a
+ pos: 63.993725 -19.557552 103.902519 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_land_02 0x2a
+ pos: 63.993725 -19.557552 103.902519 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_land_04 0x2a
+ pos: 146.600830 -21.587694 31.757168 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_land_05 0x2a
+ pos: 63.993725 -19.557552 103.902519 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_lab_land_06_J 0x2a
+ pos: 3.630327 -8.226227 107.387527 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_Lab_New_StairRail 0x6a
+ pos: 63.993725 -19.557552 103.902519 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: COL_LiftShaft_4x4_01a_wz02 0x2a
+ pos: 41.999020 -12.062510 88.709564 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_monorail_station_elev 0x2a
+ pos: 0.000000 18.496140 64.000000 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_monorail_station_left 0x2a
+ pos: 0.000000 18.496140 64.000000 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_monorail_station_left_02 0x2a
+ pos: 0.000000 18.496140 64.000000 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_monorail_station_right 0x2a
+ pos: 0.000000 18.496140 64.000000 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: Col_monorail_station_right02 0x2a
+ pos: 0.000000 18.496140 64.000000 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: col_pod_01_int_01 0x2a
+ pos: 3.630327 -8.226227 107.387527 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: col_pod_01_int_02 0x2a
+ pos: 63.260448 -15.486059 103.650963 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: col_pod_01_int_03 0x2a
+ pos: 115.287483 -2.982297 118.213982 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: col_pod_2_inside 0x2a
+ pos: 57.891193 -15.689070 84.537910 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_pod_89 0x2a
+ pos: 63.184181 -19.557552 103.902519 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_pod_exteior_99 0x2a
+ pos: 63.993725 -19.557552 103.902519 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: col_pod_gen_rails 0x2a
+ pos: 23.760647 16.827574 126.131126 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_podrails_04 0x64a
+ pos: 25.435188 11.428460 104.032539 flags: 1610 
+21.02.2021 18:08 (EMOD_dump) | name: COL_podrails_05 0x66a
+ pos: 64.870430 -13.472904 94.082687 flags: 1642 
+21.02.2021 18:08 (EMOD_dump) | name: COL_podrails_06 0x64a
+ pos: 104.023941 -3.483335 103.088295 flags: 1610 
+21.02.2021 18:08 (EMOD_dump) | name: COL_pods_01 0x2a
+ pos: 63.993725 -19.557552 103.902519 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_pred_door_01 0xa
+ pos: 63.993725 -19.557552 103.902519 flags: 10 
+21.02.2021 18:08 (EMOD_dump) | name: COL_rail_entrance 0xa
+ pos: 3.630327 -8.226227 107.387527 flags: 10 
+21.02.2021 18:08 (EMOD_dump) | name: COL_rails_service_01 0x22a
+ pos: 39.569973 21.461002 21.907652 flags: 554 
+21.02.2021 18:08 (EMOD_dump) | name: COL_scientist_corridor 0x0
+ pos: 97.782784 -4.499998 15.741764 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: COL_station_gantry_1_railing_2 0x66a
+ pos: 0.000000 11.373002 69.974701 flags: 1642 
+21.02.2021 18:08 (EMOD_dump) | name: COL_station_gantry_2_railing 0x66a
+ pos: 0.000000 11.373002 70.026299 flags: 1642 
+21.02.2021 18:08 (EMOD_dump) | name: COL_station_platform_railing_1 0x6a
+ pos: -12.896738 21.424961 50.006527 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: COL_station_platform_railing_2 0x6a
+ pos: 12.896738 21.424961 50.006527 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: COL_station_tunnel 0x2a
+ pos: 0.000000 18.496136 64.000000 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: col_switchroom02 0x2a
+ pos: 17.087296 19.999180 29.054567 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_wz_corr_end01 0x2a
+ pos: 25.766800 -3.536638 34.359028 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_wz_corr_end03 0x2a
+ pos: 99.762932 -3.535430 84.362450 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COL_wz_corr_end05 0x2a
+ pos: 30.000357 -4.370138 61.625355 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: coll_colony_12 0x2a
+ pos: 85.984726 -7.003263 86.536758 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_eggroom_railing 0x66a
+ pos: 65.000023 -1.699784 0.662797 flags: 1642 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_Medlabs_00 0xa
+ pos: 29.999472 -4.999188 27.999748 flags: 10 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_Medlabs_01 0xa
+ pos: 29.999472 -4.999188 27.999748 flags: 10 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_Medlabs_02 0xa
+ pos: 29.999472 -4.999188 27.999748 flags: 10 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_Medlabs_04 0xa
+ pos: 82.489510 -7.133009 -21.000011 flags: 10 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_Medlabs_08 0xa
+ pos: 29.999472 -4.999188 27.999748 flags: 10 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_Medlabs_artifact 0x2
+ pos: 32.763493 -9.499668 -33.746262 flags: 2 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_queen_uppercor 0x2a
+ pos: 83.174026 -5.772602 41.947002 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_queenroom_left 0x2a
+ pos: 83.174026 -5.772602 41.947002 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_queenroom_right 0x22
+ pos: 83.174026 -5.772602 41.947002 flags: 34 
+21.02.2021 18:08 (EMOD_dump) | name: Coll_queenshaft 0x2a
+ pos: 83.174026 -5.772602 41.947002 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: COLMESH_monorail 0x2
+ pos: 0.000000 23.499989 45.200001 flags: 2 
+21.02.2021 18:08 (EMOD_dump) | name: COLMESH_PlatformEdge_01 0x12a
+ pos: -0.000507 22.999105 76.111855 flags: 298 
+21.02.2021 18:08 (EMOD_dump) | name: COLMESH_PlatformEdge_02 0x30a
+ pos: -0.000507 23.999107 45.199997 flags: 778 
+21.02.2021 18:08 (EMOD_dump) | name: COLMESH_PlatformEdge_03 0x32a
+ pos: 0.000000 23.999105 -4.911843 flags: 810 
+21.02.2021 18:08 (EMOD_dump) | name: control_ceiling_ent_01 0x5
+ pos: -9.022438 -6.152136 -19.028746 flags: 5 
+21.02.2021 18:08 (EMOD_dump) | name: control_ceiling_ent_02 0x5
+ pos: -9.022438 -6.152136 -13.018848 flags: 5 
+21.02.2021 18:08 (EMOD_dump) | name: control_ceiling_ent_03 0x5
+ pos: 61.000820 -6.250617 -42.999607 flags: 5 
+21.02.2021 18:08 (EMOD_dump) | name: control_crawlspace_01 0x4
+ pos: -8.881920 -6.871939 -16.000000 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: control_poly_03 0x4
+ pos: 35.250252 -4.999188 -41.250542 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: control_poly_05 0x4
+ pos: 33.999748 -4.999188 -41.999466 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: control_upper_01 0x4
+ pos: 53.000000 -10.000046 -36.500034 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: cooridoor_plain_11 0x4
+ pos: 49.000034 -10.000002 -16.499981 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corr_station_lift_01 0x4
+ pos: -6.663302 11.301641 78.000320 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corr_station_lift_02 0x4
+ pos: -16.849892 10.905001 78.000237 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corridoor_plain_01 0x4
+ pos: 5.999748 -4.999188 -9.999468 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corridoor_plain_02 0x4
+ pos: 19.200001 -10.151990 26.799995 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corridoor_plain_03 0x4
+ pos: 5.999748 -4.999188 -9.999468 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corridoor_plain_04 0x4
+ pos: 54.000313 -4.999192 -37.999420 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corridoor_sec_778 0x4
+ pos: 11.127184 -4.999998 -2.000820 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corridoor_side_110 0x4
+ pos: 39.276909 -4.997654 -29.999249 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: corridoor_side_111 0x4
+ pos: 30.000549 -4.997654 -20.723146 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: crawlspace_452 0x4
+ pos: 73.123024 -6.875653 -22.000002 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: debris 0x4
+ pos: 104.000015 -3.698443 93.126709 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_732 0x4
+ pos: 72.000130 2.275002 13.000011 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_733 0x4
+ pos: 63.999664 1.750000 9.008301 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_734 0x4
+ pos: 72.000130 2.275002 13.399785 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_735 0x4
+ pos: 72.517807 2.275002 15.140963 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_736 0x4
+ pos: 73.741310 2.275002 19.140966 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_737 0x4
+ pos: 68.000099 2.275002 21.140955 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_738 0x4
+ pos: 64.000099 2.275002 21.140955 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_739 0x4
+ pos: 60.000103 2.275002 21.140955 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_740 0x4
+ pos: 60.000103 2.275002 21.140955 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_741 0x4
+ pos: 54.000137 2.275002 21.140955 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_742 0x4
+ pos: 55.482471 2.275002 19.140953 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_743 0x4
+ pos: 54.000137 2.275002 15.140956 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_745 0x4
+ pos: 56.000141 2.275002 14.140962 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_746 0x4
+ pos: 56.000141 2.275002 13.000011 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_747 0x4
+ pos: 54.000137 2.275002 1.999998 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_748 0x4
+ pos: 55.482471 2.275002 1.999998 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_751 0x4
+ pos: 52.758961 2.275002 -5.217000 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: decorative_edge_752 0x4
+ pos: 72.000130 2.275002 2.734679 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: door 0x4
+ pos: 63.999992 2.000001 28.000250 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: door_access_small01 0x4
+ pos: 14.149034 10.399840 109.949677 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: door_access_small02 0x4
+ pos: 53.585529 -14.501638 99.999924 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: door_access_small03 0x4
+ pos: 114.413467 -4.511816 104.003723 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: doorway_68 0x4
+ pos: 75.000092 -14.337574 77.001335 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: doorway_888 0x4
+ pos: 40.000145 15.651011 39.999905 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: doorway_889 0x4
+ pos: 54.999828 15.649338 40.000072 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: doorway_890 0x4
+ pos: 48.000092 15.647626 32.000156 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: doorway_891 0x4
+ pos: 47.997887 15.652270 20.492628 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: doorway_912 0x4
+ pos: 75.000092 -14.337574 42.999039 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: duct_ex_01 0x4
+ pos: 51.961720 -2.249999 -0.200336 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: duct_ex_102 0x4
+ pos: 76.261093 -2.249999 -0.200337 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eev_rocks05 0x4
+ pos: 97.171875 11.319715 206.508301 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_02 0x4
+ pos: 68.000099 3.402708 20.267467 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_03 0x4
+ pos: 72.000145 3.402708 20.267467 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_06 0x4
+ pos: 72.000145 3.402708 14.140974 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_07 0x4
+ pos: 64.000099 3.402708 20.267467 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_08 0x4
+ pos: 60.000103 3.402708 20.267467 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_10 0x4
+ pos: 69.000137 3.402708 14.140963 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_11 0x4
+ pos: 69.000137 3.402708 2.734690 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_12 0x4
+ pos: 59.000137 3.402708 2.734690 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_13 0x4
+ pos: 59.000137 3.402708 14.140963 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_14 0x4
+ pos: 73.499474 3.402708 2.734679 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: egg_support_15 0x4
+ pos: 55.000126 3.402708 -4.733353 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom ceiling 0x4
+ pos: 52.254135 -7.999999 22.754494 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_coll 0x2a
+ pos: 65.000023 -1.699784 0.662797 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_01 0x4
+ pos: 52.667797 1.487466 1.734680 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_02 0x4
+ pos: 54.000137 1.487466 -5.065687 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_03 0x4
+ pos: 54.452255 2.000001 0.015096 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_04 0x4
+ pos: 56.666866 1.187286 8.513091 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_05 0x4
+ pos: 57.332005 1.362286 8.513092 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_06 0x4
+ pos: 54.452255 2.000001 17.118704 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_07 0x4
+ pos: 60.000103 1.487466 19.808647 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_08 0x4
+ pos: 56.000103 1.487466 19.808647 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_09 0x4
+ pos: 64.000099 1.487466 19.808647 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_10 0x4
+ pos: 68.667786 1.362286 8.513092 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_11 0x4
+ pos: 71.332458 1.187286 8.513091 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_12 0x4
+ pos: 68.000099 1.487466 19.808647 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_13 0x4
+ pos: 75.331146 1.487466 3.734681 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_14 0x4
+ pos: 70.320930 1.487449 2.402363 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_railings_15 0x4
+ pos: 71.999184 1.487466 22.473314 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: eggroom_walls 0x4
+ pos: 52.254135 3.750001 22.754494 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ex_corner_01 0x4
+ pos: 19.067181 -43.644726 216.085037 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ex_corner_02 0x4
+ pos: 19.069956 -43.644726 216.085037 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: exterior_pipes_big 0x4
+ pos: 16.351067 -69.257477 69.943214 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: frame_type_07 0x4
+ pos: 59.000462 19.499846 26.003679 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: frame_type_09 0x4
+ pos: 33.998547 19.499954 50.997421 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: frame_type_10 0x4
+ pos: 49.240356 19.499846 26.003679 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: frame_type_11 0x4
+ pos: 33.998543 19.499952 41.237305 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gantry_07 0x4
+ pos: 70.000877 -5.772388 22.754097 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gantry_08 0x4
+ pos: 57.999016 -5.772388 22.754097 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gantry_pod03 0x4
+ pos: 95.279533 -3.128813 107.508850 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gantry_pod04 0x4
+ pos: 72.670540 -13.125463 103.505150 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: giant_pipes_side01 0x4
+ pos: 16.349117 -69.519310 62.981152 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gr_decal_01 0x4
+ pos: 9.973374 15.249174 61.976322 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gr_decal_02 0x4
+ pos: -14.498349 18.494373 44.024822 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gr_decal_07 0x4
+ pos: 14.501368 18.494373 99.954071 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: gr_decal_08 0x4
+ pos: 18.041313 20.126553 44.002399 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: hex_room 0x4
+ pos: 69.708214 19.449932 26.700129 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: hive bottom03 0x4
+ pos: 63.999664 3.250000 8.437831 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: hudson03 0x4
+ pos: 0.000000 -1.000000 0.000000 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_00 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_01 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_02 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_03 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_04 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_05 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_07 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_09 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_10 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_central_terrain_11 0x4
+ pos: 62.000481 -8.000008 65.999527 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_mesh_terrain_00 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_mesh_terrain_01 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_mesh_terrain_02 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_mesh_terrain_03 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_mesh_terrain_04 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_MonoRail_Entrance 0x4
+ pos: -7.250281 18.163305 73.750397 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_New_StairWell 0x4
+ pos: 41.863686 13.628920 122.821228 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_pod_06 0x0
+ pos: 24.538322 6.642267 113.396065 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_pod_06_gantry 0x4
+ pos: 15.643141 11.776007 113.454880 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_podbase01 0x0
+ pos: 30.555363 16.597368 116.642952 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_pyramid_section_01 0x4
+ pos: 62.000481 -8.000008 65.999527 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_pyramid_section_01_true 0x4
+ pos: 62.000481 -8.000008 65.999527 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_pyramid_section_022 0x4
+ pos: 62.000481 -8.000008 65.999527 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_pyramid_section_022_true 0x4
+ pos: 62.000481 -8.000008 65.999527 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_pyramid_section_03 0x4
+ pos: 62.000481 -8.000008 65.999527 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_rend_monorail_frame01 0x4
+ pos: -5.426039 24.086582 163.902298 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_rend_monorail_frame02 0x4
+ pos: -5.426039 24.086582 163.902298 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_SafetyWires_06 0x4
+ pos: 18.247023 5.088194 126.451195 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_SafetyWires_07 0x4
+ pos: 57.683659 -19.813559 116.501488 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Lab_SafetyWires_08 0x4
+ pos: 97.681503 -9.816690 120.505226 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_alien_test_03 0x4
+ pos: 70.757042 -6.875653 -44.000004 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_alien_test_04 0x4
+ pos: 86.000015 -6.871939 -42.000000 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_00 0x4
+ pos: 30.000326 -12.002038 27.052797 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_01 0x4
+ pos: 34.052395 -12.003337 11.999841 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_02 0x4
+ pos: 13.999133 -12.000162 -11.000640 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_03 0x4
+ pos: 40.181126 -12.003263 -12.375846 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_04 0x4
+ pos: 46.001701 -12.003151 -35.011543 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_05 0x4
+ pos: 70.000610 -12.000128 -29.999855 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_06 0x4
+ pos: 30.000301 -11.999964 -15.999960 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_07 0x4
+ pos: 0.179242 -9.621126 -15.999862 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: labs_ceilingvent_08 0x4
+ pos: 16.946289 -12.002515 6.998746 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close00 0x4
+ pos: 196.043106 -63.637653 26.675928 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close01 0x4
+ pos: 196.043106 -63.637653 26.675928 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close02 0x4
+ pos: -8.729904 -60.020088 266.189331 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close03 0x4
+ pos: -8.729904 -60.020088 266.189331 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close04 0x4
+ pos: -8.729904 -60.020088 266.189331 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close05 0x4
+ pos: -8.729904 -60.020088 266.189331 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close06 0x4
+ pos: 235.878586 -63.284069 214.390854 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close07 0x4
+ pos: 235.878586 -63.284069 214.390854 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close10 0x4
+ pos: 235.878586 -63.284069 214.390854 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close11 0x4
+ pos: 103.026489 -35.303185 387.127014 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close12 0x4
+ pos: 103.026489 -35.303185 387.127014 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Close13 0x4
+ pos: 103.026489 -35.303185 387.127014 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far00 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far01 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far02 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far03 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far04 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far05 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far06 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far07 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far08 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far09 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far10 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far11 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far12 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far13 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far14 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far15 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far16 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far17 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far18 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far19 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far20 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Far21 0x4
+ pos: 135.446198 -163.331284 366.739319 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med00 0x4
+ pos: 262.553802 -92.036446 40.892590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med01 0x4
+ pos: 262.553802 -92.036446 40.892590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med02 0x4
+ pos: 262.553802 -92.036446 40.892590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med03 0x4
+ pos: 262.553802 -92.036446 40.892590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med04 0x4
+ pos: 262.553802 -92.036446 40.892590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med05 0x4
+ pos: 262.553802 -92.036446 40.892590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med06 0x4
+ pos: 262.553802 -92.036446 40.892590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med07 0x4
+ pos: 46.610363 -90.990982 53.890244 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med08 0x4
+ pos: 46.610363 -90.990982 53.890244 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med09 0x4
+ pos: 46.610363 -90.990982 53.890244 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med10 0x4
+ pos: 46.610363 -90.990982 53.890244 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med11 0x4
+ pos: 46.610363 -90.990982 53.890244 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med12 0x4
+ pos: 46.610363 -90.990982 53.890244 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med13 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med14 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med15 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med16 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med17 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med18 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med19 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med20 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med21 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med22 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Labs_vista_Med23 0x4
+ pos: -186.848145 -85.096260 191.828659 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: landscape_side_00 0x4
+ pos: 156.514008 -20.299911 97.993996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: landscape_side_01 0x4
+ pos: 156.514008 -20.299911 97.993996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: landscape_side_02 0x4
+ pos: 156.514008 -20.299911 97.993996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: landscape_side_03 0x4
+ pos: 156.514008 -20.299911 97.993996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: landscape_side_04 0x4
+ pos: 156.514008 -20.299911 97.993996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: landscape_side_05 0x4
+ pos: 156.514008 -20.299911 97.993996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: landscape_side_06 0x4
+ pos: 156.514008 -20.299911 97.993996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: large_window_maintenanceroom_02 0x4
+ pos: 63.918930 -15.668721 75.781509 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: large_window_maintenanceroom_03 0x4
+ pos: 19.584650 25.418596 117.999580 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: lift_door_06 0x4
+ pos: 66.536697 -1.010652 62.047016 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: lift_door_07 0x4
+ pos: 60.323456 -0.550598 62.082809 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: lift_entrance_04a 0x4
+ pos: -16.849892 10.905001 78.000237 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: lift_entrance_qr_a 0x4
+ pos: 42.006783 2.056573 89.599548 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: lift_entrance_qr_b 0x4
+ pos: 42.006783 2.056573 89.599548 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Line01 0x4
+ pos: 51.716488 -2.326891 17.074150 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Line44 0x4
+ pos: 58.772133 -11.683023 51.885494 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Line45 0x4
+ pos: 51.716488 -2.098537 17.074150 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Line48 0x4
+ pos: 76.283279 -2.326891 16.945393 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Line49 0x4
+ pos: 76.283279 -2.098537 16.945393 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: LPad_03 0x4
+ pos: -60.000019 -15.130653 130.140503 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: markings 0x4
+ pos: -10.011544 22.275347 57.999664 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: markings01 0x4
+ pos: 10.011538 22.275347 57.999664 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_artifact_01 0x0
+ pos: 30.000277 -9.093251 -27.999264 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_artifact_02 0x4
+ pos: 34.739388 -9.093251 -33.249928 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_cable_00 0x0
+ pos: 27.768698 -7.911397 19.144531 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_cont_a_01 0x4
+ pos: 63.801853 -4.553224 -41.541588 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_cont_a_02 0x4
+ pos: 74.563988 -4.801680 -42.084152 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_cont_b_01 0x0
+ pos: 74.677170 -5.086005 -17.993771 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_cont_b_01_corridor 0x4
+ pos: 79.740204 -4.591872 -3.337533 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_cont_ctrl 0x4
+ pos: 85.724953 -4.602679 -42.084015 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_00 0x0
+ pos: 30.000103 -6.129814 27.799986 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_01 0x4
+ pos: 33.800728 -6.129814 12.774747 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_02 0x4
+ pos: 14.760588 -6.129814 10.562945 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_03 0x4
+ pos: 61.999893 -4.593505 -20.224876 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_04 0x0
+ pos: 25.999451 -4.498348 -15.524869 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_05 0x4
+ pos: 27.994570 -6.129726 -16.000120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_06 0x0
+ pos: 43.520256 -6.129726 -17.500801 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_07 0x4
+ pos: 56.000561 -6.999001 -29.137377 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_08 0x0
+ pos: 46.020386 -6.129680 -41.637074 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_09 0x0
+ pos: 56.000561 -6.999001 -29.137377 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_10 0x0
+ pos: 76.429520 -6.129726 -29.479992 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_11 0x0
+ pos: 76.429520 -6.129726 -29.479992 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_corridor_enterance 0x0
+ pos: 27.968390 -4.094878 42.550240 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_gantry_01 0x0
+ pos: 35.758835 -7.725000 -3.997782 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_gantry_02 0x4
+ pos: 56.002224 -7.725000 -47.758823 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_medical 0x4
+ pos: -0.000428 -4.593493 -15.999770 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_medical_ctrl 0x4
+ pos: -9.774876 -4.591495 -16.319218 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_00 0x4
+ pos: 44.000004 -7.000002 16.124968 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_01 0x4
+ pos: 34.125011 -7.000002 16.125013 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_02 0x4
+ pos: 34.125000 -7.000002 33.999653 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_03 0x4
+ pos: 25.874985 -7.000002 33.999653 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_04 0x4
+ pos: 25.874998 -7.000002 16.125011 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_05 0x4
+ pos: 14.000001 -7.000002 16.124968 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_06 0x4
+ pos: 11.874996 -7.000002 14.000004 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_07 0x4
+ pos: 11.874996 -7.000002 -2.003037 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_08 0x4
+ pos: 11.874996 -7.000002 -20.124998 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_09 0x4
+ pos: 48.125000 -6.999828 -11.874999 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_10 0x4
+ pos: 48.125000 -7.000002 -25.874989 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_11 0x4
+ pos: 48.124973 -7.512364 -35.999985 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_12 0x4
+ pos: 58.001495 -7.000002 -34.124855 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: med_rail_13 0x4
+ pos: 58.001495 -7.000002 -25.875387 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_research 0x4
+ pos: 39.175079 -4.591952 28.001087 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_00 0x4
+ pos: 25.310640 -12.724927 -1.023424 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_01 0x4
+ pos: 3.371320 -6.995602 -9.248771 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_02 0x4
+ pos: 19.176020 -4.129785 -4.829263 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_03 0x0
+ pos: 29.999062 -4.997518 -11.276647 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_04 0x4
+ pos: 30.000265 -9.000444 -11.429292 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_05 0x4
+ pos: 32.999981 -4.498404 -2.000202 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_06 0x0
+ pos: 32.999981 -11.091070 -2.000191 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_07 0x4
+ pos: 35.412338 -8.527779 -7.179599 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_08 0x0
+ pos: 32.999981 -11.091070 -2.000191 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_09 0x4
+ pos: 35.412338 -8.527779 -7.179599 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_10 0x4
+ pos: 29.999868 -9.104584 7.475556 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_11 0x4
+ pos: 20.524366 -9.104584 -2.000125 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_12 0x4
+ pos: 43.977310 -4.593468 -1.349879 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_theater_13 0x0
+ pos: 30.356026 -5.499044 -1.999939 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Med_upper_corridor 0x4
+ pos: 72.107750 -9.093028 -24.000294 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_upper_corridor_02 0x4
+ pos: 44.168640 -9.000792 -39.999760 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_upper_corridor_03 0x4
+ pos: 30.000277 -9.093251 -27.999264 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_upper_corridor_04 0x4
+ pos: 24.023291 -9.591866 -26.650087 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_upperdoor_00 0x4
+ pos: 7.000652 -6.999996 -1.999997 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_upperdoor_01 0x4
+ pos: 21.000652 -6.999996 27.999996 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Med_xray 0x4
+ pos: 21.174423 -4.591952 27.663998 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_02 0x4
+ pos: 73.803413 -2.386158 208.960938 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_03 0x4
+ pos: 95.092743 -1.589835 215.183487 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_09 0x4
+ pos: 36.310684 3.289516 146.002930 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_10 0x4
+ pos: 48.007973 -14.748944 152.172699 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_11 0x4
+ pos: 3.755918 -50.249573 176.373947 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_12 0x4
+ pos: -93.844200 -11.192508 185.536331 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_14 0x4
+ pos: -16.843431 -33.174866 189.449524 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mega_root_15 0x4
+ pos: 65.122543 -13.005461 188.222427 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mesh_cover_02 0x4
+ pos: 51.573063 -0.999998 14.719506 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mesh_cover_03 0x4
+ pos: 76.186668 -2.683923 11.295281 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: mess01 0x4
+ pos: 99.999947 -7.999998 77.876724 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_L_upper_00 0x4
+ pos: -5.000988 10.406426 84.248940 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_L_upper_01 0x4
+ pos: -7.250281 18.163305 73.750397 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_lift_A_00 0x4
+ pos: 30.007170 12.055267 72.099762 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_lift_A_01 0x4
+ pos: 30.007170 12.055267 72.099762 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_lift_A_02 0x4
+ pos: 30.007166 18.007042 72.413094 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_R_upper_00 0x4
+ pos: 7.087446 16.823830 70.242035 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_R_upper_01 0x4
+ pos: 10.125027 16.823830 84.187805 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: monorail_station_right01 0x4
+ pos: 7.087446 16.823830 70.242035 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object01 0x4
+ pos: 51.971416 19.725121 26.002499 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object02 0x4
+ pos: 77.119324 -12.500066 42.996803 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object05 0x0
+ pos: 64.000000 -5.499660 77.248993 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Object06 0x4
+ pos: 52.528862 15.779165 33.223099 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object07 0x4
+ pos: 85.124443 -4.250241 52.000111 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object08 0x4
+ pos: 63.999653 -12.500150 35.917397 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object09 0x4
+ pos: 43.353886 -10.560039 40.274826 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object10 0x4
+ pos: 34.002453 19.372972 40.007599 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object11 0x2a
+ pos: 52.977306 -9.522940 23.615005 flags: 42 
+21.02.2021 18:08 (EMOD_dump) | name: Object12 0x4
+ pos: 63.999329 -9.124218 42.205357 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object13 0x4
+ pos: 48.845753 -11.948895 67.999977 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object14 0x4
+ pos: 47.928585 -10.382379 52.000031 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object15 0x4
+ pos: 75.633835 -12.724930 59.997784 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object16 0xaa
+ pos: 45.999344 -12.812557 39.999783 flags: 170 
+21.02.2021 18:08 (EMOD_dump) | name: Object17 0x6a
+ pos: 66.262268 -9.017838 32.412224 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: Object18 0x6a
+ pos: 83.174026 -5.772602 41.947002 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: Object19 0x66a
+ pos: 83.174026 -5.772602 41.947002 flags: 1642 
+21.02.2021 18:08 (EMOD_dump) | name: Object20 0x6a
+ pos: 83.174026 -5.772602 41.947002 flags: 106 
+21.02.2021 18:08 (EMOD_dump) | name: Object22 0xc
+ pos: 43.244450 -3.000530 -33.715149 flags: 12 
+21.02.2021 18:08 (EMOD_dump) | name: Object23 0x4
+ pos: 41.814240 -10.485230 59.905590 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object24 0x4
+ pos: 63.999329 -9.124218 42.205357 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object25 0x4
+ pos: 63.458252 19.594057 25.999821 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object26 0x4
+ pos: 73.998558 19.600014 48.099998 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object27 0x4
+ pos: 73.972900 19.594057 38.098804 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object28 0x4
+ pos: 58.776009 -1.660082 62.199997 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object29 0x4
+ pos: 37.999962 -8.000018 52.871822 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object30 0x4
+ pos: 10.257916 21.436115 64.325546 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object31 0x4
+ pos: 10.257916 21.436115 64.325546 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object32 0x4
+ pos: -10.257916 21.436115 64.325546 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object35 0x4
+ pos: -14.038554 22.201401 90.109200 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object36 0x4
+ pos: -3.347007 25.379372 83.993568 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object37 0x4
+ pos: -5.596995 25.149553 52.000530 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object38 0x4
+ pos: 5.595314 25.129368 51.999981 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object39 0x4
+ pos: 3.363057 25.129370 83.993576 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object40 0x4
+ pos: -24.099945 12.052897 78.001114 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object42 0x4
+ pos: 74.796928 -2.249999 -0.200336 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object43 0x4
+ pos: 56.852592 2.744021 2.329513 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object44 0x4
+ pos: 51.745655 -1.550091 -0.207927 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object45 0x4
+ pos: 74.908348 -0.143360 16.987564 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object46 0x4
+ pos: 67.999672 3.649938 11.746199 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object47 0x4
+ pos: 72.767792 2.402709 17.140961 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object48 0x4
+ pos: 63.999664 3.250000 8.437831 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object49 0x4
+ pos: 74.831459 -2.249998 -0.200335 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object50 0x4
+ pos: 74.499657 -2.249999 -0.200336 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object51 0x4
+ pos: 60.889175 3.876973 -0.200507 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123243 0x4
+ pos: 45.999901 -1.497785 64.000435 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123251 0x4
+ pos: 89.997505 -1.497785 64.000435 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123304 0x4
+ pos: 80.000313 -10.382379 52.000057 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123806 0x4
+ pos: 85.475830 -10.560038 53.900524 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123808 0x4
+ pos: 85.999680 -2.999937 76.000191 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123809 0x4
+ pos: 85.999680 -8.000319 76.000191 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123815 0x4
+ pos: 64.000694 60.886154 53.013351 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123817 0x4
+ pos: 75.935760 -11.948895 67.999977 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123818 0x4
+ pos: 63.966824 -11.948896 52.000389 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123831 0x4
+ pos: 63.999722 -0.550850 62.029316 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123840 0x4
+ pos: 64.000710 2.000000 43.922371 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123871 0x4
+ pos: 70.095718 19.499554 44.000000 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123925 0x4
+ pos: 64.000000 -0.499690 61.878208 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123954 0x4
+ pos: 64.027100 -0.553107 62.051796 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123969 0x4
+ pos: 63.956249 5.202212 52.992283 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123970 0x4
+ pos: 54.515163 -3.042521 8.437831 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123971 0x4
+ pos: 73.484116 -3.042521 8.437831 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123972 0x4
+ pos: 73.484116 -6.461577 8.437831 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123973 0x4
+ pos: 51.670650 -1.999998 15.008063 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123983 0x4
+ pos: 51.626797 -0.063898 15.577982 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123989 0x4
+ pos: 74.812386 2.000001 18.803471 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123990 0x4
+ pos: 74.295921 2.000001 14.241171 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123991 0x4
+ pos: 64.149666 3.649938 5.099125 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123995 0x4
+ pos: 70.000877 -5.051226 20.849779 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123996 0x4
+ pos: 63.956245 22.526573 52.992275 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object5123997 0x4
+ pos: 108.003441 -12.001284 68.274681 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object52 0x4
+ pos: 60.653709 3.236641 -0.200507 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object53 0x4
+ pos: 53.385735 -6.461577 8.437831 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object54 0x4
+ pos: 60.999676 3.509727 10.987927 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object55 0x4
+ pos: 53.150448 2.020464 19.022297 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object56 0x4
+ pos: 85.438347 11.289880 185.100800 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object57 0x4
+ pos: 51.670650 -1.999998 19.008059 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object58 0x4
+ pos: 64.096306 -2.187491 -0.205904 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object59 0x4
+ pos: 79.997337 12.040949 184.147476 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object60 0x4
+ pos: 77.641922 11.687759 184.651413 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object61 0x4
+ pos: 105.427856 -29.861435 240.332855 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object62 0x4
+ pos: 102.868050 11.201746 201.565903 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object64 0x4
+ pos: 92.991913 2.526004 184.098419 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object68 0x4
+ pos: 64.000053 1.999919 36.000294 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object71 0x4
+ pos: 64.000053 1.999919 36.000294 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object82 0x4
+ pos: 46.509197 -4.411138 60.000450 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object86 0x4
+ pos: 66.270447 -17.765831 65.236473 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object87 0x4
+ pos: 61.255348 -17.572546 65.262749 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object88 0x4
+ pos: 63.999992 -12.400141 32.130020 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object90 0x4
+ pos: 52.977486 -9.522281 23.619795 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object911 0x4
+ pos: 58.000366 4.500101 44.011696 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Object93 0x4
+ pos: 81.331032 -3.772516 47.591217 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: outside_edge 0x4
+ pos: 23.000854 18.167814 125.394775 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pipe 0x4
+ pos: 58.772133 -11.839196 67.656715 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pipe_a_01 0x4
+ pos: 74.908348 -0.143360 16.987564 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pipe_a_03 0x4
+ pos: 73.006805 -0.252857 16.664555 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod07 0x0
+ pos: 104.024185 -8.262556 107.450035 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: pod1 0x0
+ pos: 63.974815 -18.259211 103.446312 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: pod_04_int 0x4
+ pos: 54.785568 -13.660637 102.778969 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_06_int 0x4
+ pos: 15.349066 11.240841 112.728722 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_07_int 0x4
+ pos: 113.213455 -3.670815 106.782768 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_annex01 0x4
+ pos: 24.592421 10.626030 101.342888 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_101 0x0
+ pos: 30.562271 11.424611 111.839882 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_102 0x4
+ pos: 18.632050 11.424613 106.077942 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_104 0x4
+ pos: 55.000340 -13.476867 102.682487 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_105 0x0
+ pos: 69.998772 -13.476867 101.890129 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_106 0x4
+ pos: 58.068596 -13.473598 96.128685 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_110 0x4
+ pos: 109.896667 -3.477083 100.131882 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_112 0x0
+ pos: 97.966393 -3.487045 105.893929 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: pod_railings_116 0x4
+ pos: 112.998611 -3.487045 106.686287 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pod_sign_01 0x4
+ pos: 25.675135 8.072182 104.571983 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: podbase02 0x4
+ pos: 109.992867 1.692547 110.696922 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: podbase1 0x4
+ pos: 69.991852 -8.304104 106.693207 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: pred_colume_01 0x4
+ pos: 135.000137 2.232212 116.946098 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Predator_Gate_Low01 0x0
+ pos: 112.275352 11.942173 204.123322 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: Predator_Gate_Low02 0x0
+ pos: 112.275352 11.942173 196.320770 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: queen_approuch_01 0x4
+ pos: 38.221336 -13.657366 86.331772 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_approuch_05 0x4
+ pos: 38.221336 -13.657366 86.331772 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_approuch_06 0x4
+ pos: 77.779045 -13.657366 86.331688 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_ceiling_00 0x4
+ pos: 47.928585 -10.382379 52.000031 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_ceiling_01 0x4
+ pos: 47.928585 -10.382379 52.000031 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_ceiling_02 0x4
+ pos: 80.000313 -10.382379 52.000057 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_ceiling_03 0x4
+ pos: 80.000313 -10.382379 52.000057 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_cor_02 0x4
+ pos: 64.000252 -4.250257 62.000378 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_cor_06 0x4
+ pos: 85.124443 -4.250241 52.000111 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_glass_01 0x4
+ pos: 64.096779 -15.396642 78.165680 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_glass_02 0x4
+ pos: 64.096741 -15.396642 75.494461 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_00 0x4
+ pos: 94.011856 -4.562436 46.124832 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_01 0x4
+ pos: 94.011856 -4.562436 46.124832 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_02 0x4
+ pos: 85.124443 -4.250241 52.000111 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_03 0x4
+ pos: 85.872894 -4.561989 72.000252 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_04 0x4
+ pos: 41.875298 -4.561989 72.000252 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_05 0x4
+ pos: 64.000252 -4.250257 62.000378 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_06 0x4
+ pos: 33.987892 -4.562436 54.124855 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_lowercorridors_07 0x4
+ pos: 33.987892 -4.562436 54.124855 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_shaft_detail03 0x4
+ pos: 64.000000 -0.384450 44.123230 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_shaft_detail_02 0x4
+ pos: 64.000000 -0.384450 44.123230 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_spawnroom_00 0x4
+ pos: 72.999527 3.152672 65.608635 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queen_spawnroom_01 0x4
+ pos: 55.000240 3.152672 65.608635 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queencor_end 0x4
+ pos: 41.875298 -4.561989 72.000252 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_main_left_a 0x4
+ pos: 63.999992 4.779747 51.865402 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_main_left_b 0x4
+ pos: 58.191795 -3.934262 32.988800 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_main_left_strut 0x4
+ pos: 63.999992 -5.250037 31.604315 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_main_right_a 0x4
+ pos: 63.999992 4.779747 51.865402 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_main_right_b 0x4
+ pos: 63.999992 4.779747 51.865402 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_main_right_strut 0x4
+ pos: 63.999992 4.779747 51.865402 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_stairs_01 0x4
+ pos: 84.555969 -3.050022 64.000130 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: queenroom_stairs_02 0x4
+ pos: 43.457024 -3.050023 64.000122 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Ren_garage06 0x4
+ pos: 64.017906 -18.738382 59.565559 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ren_ops_65 0x4
+ pos: 86.000160 -6.679013 81.558601 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree09 0x4
+ pos: 94.365799 -0.393365 190.691559 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree10 0x4
+ pos: 85.040688 -9.927994 176.090515 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree11 0x4
+ pos: 65.699913 -16.373363 150.922043 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree12 0x4
+ pos: 105.599976 -14.465403 140.897171 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree13 0x4
+ pos: -34.497093 0.477317 182.931824 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree14 0x4
+ pos: 34.753689 -16.373363 140.665024 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree15 0x4
+ pos: -30.447714 -6.573862 155.520615 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree16 0x4
+ pos: -57.009220 -14.681896 175.533844 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree17 0x4
+ pos: 91.027100 -3.034588 146.899261 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree18 0x4
+ pos: -12.655128 10.088614 130.552582 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree19 0x4
+ pos: 154.351654 -11.705329 112.697281 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree21 0x4
+ pos: -13.245164 -43.027340 161.765625 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Canopy_Tree22 0x4
+ pos: 22.962351 -50.439533 176.222534 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_carg 0x4
+ pos: 41.526630 14.591094 26.002316 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_CorridorCorner 0x4
+ pos: 82.326057 11.859401 176.986771 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_CorridorCorner01 0x4
+ pos: -53.359280 8.807963 216.866043 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_jungleruinsexitgate02 0x4
+ pos: 81.140488 0.519939 174.009460 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_marine_exit 0x4
+ pos: 116.476013 4.227612 200.321533 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_monorail_101 0x4
+ pos: -0.000001 19.999987 16.000019 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_monorail_rail 0x4
+ pos: 0.003108 27.144697 162.269073 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_monorail_rail19 0x4
+ pos: -0.000001 19.999987 16.000019 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_monorail_rail_02 0x4
+ pos: 0.000000 25.803267 81.993736 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_monorail_rail_03 0x4
+ pos: -0.000015 27.144690 70.384857 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_plaza_wall_back_04 0x4
+ pos: 72.628731 -3.594267 178.091064 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_plaza_wall_back_05 0x4
+ pos: 123.553436 -9.624835 213.565628 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_plaza_wall_decoration_01 0x4
+ pos: 122.219070 -16.530922 214.134171 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_ruins_bits_01 0x4
+ pos: 61.753166 16.714745 133.464645 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_ruins_bits_02 0x4
+ pos: 61.753166 17.769663 133.464645 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_ruins_bits_03 0x4
+ pos: 64.345398 18.148113 112.841064 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_terraces_arch_01 0x4
+ pos: 104.436775 4.262012 130.681107 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_terraces_arch_02 0x4
+ pos: 119.732841 2.239880 130.867538 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_terraces_arch_03 0x4
+ pos: 135.000137 2.232212 116.946098 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_tunnelmono_03 0x4
+ pos: 0.003169 23.236315 193.726959 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: rend_Wall_top03 0x4
+ pos: 77.106316 -4.989911 173.973694 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: room_railings_05 0x4
+ pos: 46.665405 -3.767732 51.999935 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ruins_blocks_01 0x4
+ pos: -20.367067 17.016735 135.201004 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ruins_blocks_02 0x4
+ pos: 5.976249 6.999976 132.017120 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: ruins_blocks_03 0x4
+ pos: 43.236080 17.091566 137.569122 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: scaffold_girder_128 0x4
+ pos: -9.999985 18.813494 69.998985 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: scaffold_girder_131 0x4
+ pos: -9.999985 18.813494 49.998970 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: scaffold_girder_135 0x4
+ pos: -9.999985 18.813494 85.999001 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: scaffold_girder_136 0x4
+ pos: 9.999828 18.813494 49.998970 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: scaffold_girder_137 0x4
+ pos: 9.999828 18.813494 69.998985 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: scaffold_girder_138 0x4
+ pos: 9.999828 18.813494 85.999001 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: security_02 0x4
+ pos: 99.999947 -7.999998 77.876724 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: security_03 0x4
+ pos: 108.101334 -5.510799 59.619816 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: security_04 0x4
+ pos: 99.999947 -7.999998 77.876724 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: security_05 0x4
+ pos: 105.999672 -13.366693 60.000778 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: service_area_101 0x4
+ pos: 33.999729 19.725227 43.968369 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: service_area_102 0x4
+ pos: 36.582710 19.768396 19.130199 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: service_area_spawn_03 0x4
+ pos: 48.002243 16.449306 21.199757 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: service_corner_02 0x4
+ pos: 39.831669 19.743614 32.001778 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: service_rails_up_01 0x4
+ pos: 34.003593 18.962164 40.001476 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: service_rails_up_02 0x4
+ pos: 47.993023 18.962164 26.003653 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape01 0x4
+ pos: 64.096306 -2.187491 -0.205904 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape02 0x4
+ pos: 54.135872 -2.169101 -0.205904 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape03 0x4
+ pos: 54.099831 -1.731137 0.590681 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape04 0x5
+ pos: 74.499657 -2.249999 -0.200336 flags: 5 
+21.02.2021 18:08 (EMOD_dump) | name: Shape05 0x4
+ pos: 67.456146 1.182002 -0.989297 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape06 0x4
+ pos: 64.000099 3.402708 20.230637 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape07 0x4
+ pos: 75.875603 -2.927061 -0.200335 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape08 0x4
+ pos: 70.061249 5.202212 52.992275 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape14 0x4
+ pos: 70.061249 5.202212 52.992275 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape15 0x4
+ pos: 70.061249 5.202212 52.992275 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape16 0x4
+ pos: 63.956249 5.400045 53.087105 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape17 0x4
+ pos: 63.948662 5.233620 52.989491 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape19 0x4
+ pos: 54.099831 -1.731137 -1.145293 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape20 0x4
+ pos: 64.002678 -8.124997 -4.133000 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape24 0x4
+ pos: 55.863491 -7.874998 3.867365 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape25 0x4
+ pos: 59.776176 -5.352777 -0.132771 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape26 0x4
+ pos: 68.229179 -5.352777 -0.132771 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape27 0x4
+ pos: 72.141869 -5.352777 -0.132771 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape28 0x4
+ pos: 69.745827 -0.714334 1.218696 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape29 0x4
+ pos: 69.745827 -0.714334 -1.624701 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape30 0x4
+ pos: 60.586960 2.924966 -1.609372 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape31 0x4
+ pos: 60.586960 2.924966 1.189638 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape32 0x4
+ pos: 69.785515 3.402708 2.850441 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape34 0x4
+ pos: 64.002678 -8.124997 3.867238 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape35 0x4
+ pos: 64.002678 -8.124997 15.007586 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape36 0x4
+ pos: 70.061249 22.526573 52.992275 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape37 0x4
+ pos: 63.956245 22.724403 53.087105 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape38 0x4
+ pos: 63.948654 22.557983 52.989498 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape39 0x4
+ pos: 70.061249 22.526573 52.992275 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Shape40 0x4
+ pos: 63.970818 22.190228 52.992809 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: shutter_03 0x4
+ pos: 51.999653 -2.999998 1.867132 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: side_lift 0x4
+ pos: 73.998558 19.600014 48.099998 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: sign 0x4
+ pos: -9.492184 19.999998 49.997952 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: sign01 0x4
+ pos: 9.485840 19.999998 49.997952 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: sign_security_pod_01 0x4
+ pos: 6.451470 9.068641 93.989746 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: staion_chunk_01 0x4
+ pos: 10.125027 16.823830 84.187805 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: start_rocks 0x4
+ pos: 85.924049 -0.586765 183.644089 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_android_spawn_01 0x4
+ pos: 10.125027 16.823830 84.187805 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_chunk_02 0x4
+ pos: -10.125272 16.823830 84.242531 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_ent_01 0x0
+ pos: 10.000247 18.213741 106.000435 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: station_gantry_03 0x4
+ pos: 63.999493 -7.724999 34.241356 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_gantry_04 0x4
+ pos: 75.633835 -12.724930 59.997784 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_gantry_1 0x4
+ pos: 0.000000 12.274662 85.999992 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_gantry_1_railing 0x4
+ pos: 0.000000 12.274662 85.999992 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_gantry_2 0x4
+ pos: 0.000000 12.274662 54.000999 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_gantry_2_railing 0x4
+ pos: 0.000000 12.274662 54.000999 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_junction_01 0x4
+ pos: 30.124878 18.401087 59.999958 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_markings_05 0x4
+ pos: 10.004747 23.500006 71.232452 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_markings_06 0x4
+ pos: -10.004809 23.500008 71.232452 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_power_cable_10 0x4
+ pos: 11.554451 23.451712 65.230270 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_power_cable_11 0x4
+ pos: -11.558679 23.451714 65.763153 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_railings_02 0x4
+ pos: 11.691740 21.436115 49.897511 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: station_railings_1 0x4
+ pos: -11.691740 22.201401 69.995071 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: steps_367 0x4
+ pos: 56.717609 3.224172 17.118702 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: steps_368 0x4
+ pos: 56.706348 3.224172 0.015096 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: steps_369 0x4
+ pos: 56.717609 3.224172 0.015096 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: stone_work_210 0x4
+ pos: 30.476154 17.499178 137.224472 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: support_01 0x4
+ pos: 63.999664 -1.749783 9.008301 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: support_02 0x4
+ pos: 63.999664 -1.749783 -7.062122 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: switch_airlock_01 0x4
+ pos: 26.365597 15.650998 40.001060 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: switch_room_02a02 0x4
+ pos: 51.994667 12.000001 38.123268 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: switchroom_door01 0x4
+ pos: 19.076487 19.298624 25.674759 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: vent_alienstart 0x4
+ pos: 97.803917 -6.987020 -37.628448 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: vent_alienstart_02 0x4
+ pos: 93.812447 -6.988127 -26.375128 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Vent_Vis 0x4
+ pos: 28.354195 -7.626460 46.798496 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Vent_Vis02 0x4
+ pos: 93.001160 -12.245022 -27.571138 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Vent_Vis_02 0x4
+ pos: 28.354195 -7.626460 46.798496 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: Vis_blocking_mesh 0x3
+ pos: 12.060883 10.985637 67.451340 flags: 3 
+21.02.2021 18:08 (EMOD_dump) | name: wall_panel_101 0x4
+ pos: 70.000023 -2.999779 22.979361 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wall_panels_100 0x4
+ pos: 57.999016 -2.999779 22.979361 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_roof_front_right_02 0x4
+ pos: 9.570202 -87.745796 54.708782 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_roof_left_02 0x4
+ pos: 28.566759 -87.746429 54.708511 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_roof_side_left_02 0x4
+ pos: 30.537863 -101.760109 -12.631525 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_roof_side_right_01 0x4
+ pos: 17.620667 -57.448578 216.085037 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_roof_side_right_02 0x4
+ pos: 7.599271 -101.760109 -12.631528 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_top_left 0x4
+ pos: 19.068569 -87.745796 54.708778 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_top_mid 0x4
+ pos: 19.068569 -92.426910 54.708778 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wgz_top_right 0x4
+ pos: 19.068567 -87.745796 54.708771 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: window_03 0x5
+ pos: 25.360792 18.749287 29.001190 flags: 5 
+21.02.2021 18:08 (EMOD_dump) | name: window_04 0x4
+ pos: 50.446598 15.241491 26.011206 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: window_05 0x4
+ pos: 33.973900 15.241509 42.490692 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_chunk_wway_mid07 0x0
+ pos: 104.000015 -3.698443 93.126709 flags: 0 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_chunk_wway_mid08 0x4
+ pos: 104.000000 -3.698443 82.873276 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_end04 0x4
+ pos: 104.000023 -3.698442 85.126724 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_end06 0x4
+ pos: 30.000311 -4.095192 61.999924 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_end07 0x4
+ pos: 104.000023 -3.698442 85.126724 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_end08 0x4
+ pos: 104.000092 -4.347983 79.248772 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_wway_end03 0x4
+ pos: 104.000023 -3.698442 85.126724 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_wway_end09 0x4
+ pos: 103.999992 -3.698442 90.873260 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_wway_end_pipes 0x4
+ pos: 104.000023 -3.698442 85.126724 flags: 4 
+21.02.2021 18:08 (EMOD_dump) | name: wz_corr_wway_end_pipes_left 0x4
+ pos: 104.000023 -3.698442 85.126724 flags: 4 

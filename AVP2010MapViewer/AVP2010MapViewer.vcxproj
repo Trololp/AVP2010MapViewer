@@ -156,8 +156,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AVP2010MapViewer.h" />
+    <ClInclude Include="Console.h" />
     <ClInclude Include="DDSLoader.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="DLEV_load.h" />
+    <ClInclude Include="EMOD_load.h" />
     <ClInclude Include="Entity_loader.h" />
     <ClInclude Include="Hash_tree.h" />
     <ClInclude Include="Keyboard.h" />
@@ -169,8 +172,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AVP2010MapViewer.cpp" />
+    <ClCompile Include="Console.cpp" />
     <ClCompile Include="DDSLoader.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="DLEV_load.cpp" />
+    <ClCompile Include="EMOD_load.cpp" />
     <ClCompile Include="Entity_loader.cpp" />
     <ClCompile Include="Hash_tree.cpp" />
     <ClCompile Include="Keyboard.cpp" />

@@ -3,6 +3,12 @@
 extern ID3D11Device*           g_pd3dDevice;
 extern ID3D11Buffer*		   g_pVertexBuffer_stuff;
 extern ID3D11Buffer*			g_pVertexBuffer_lines;
+extern float pos_x;
+extern float pos_y;
+extern float pos_z;
+extern float g_alpha;
+extern float g_beta;
+extern XMMATRIX g_View;
 
 void dbgprint(const char* debug_note ,const char* fmt, ...)
 {
@@ -27,6 +33,24 @@ void dbgprint(const char* debug_note ,const char* fmt, ...)
 
 	va_end(args);
 	fclose(file);
+}
+
+DWORD Console_command_tp(DWORD* args)
+{
+	float y = ((float*)args)[0];
+	float z = ((float*)args)[1];
+	float x = ((float*)args)[2];
+	pos_x = x;
+	pos_y = y;
+	pos_z = z;
+	float delta_x =  cos(g_alpha) * cos(g_beta);
+	float delta_y =  sin(g_alpha) * cos(g_beta);
+	float delta_z =  sin(g_beta);
+	XMVECTOR Eye = XMVectorSet(pos_y, pos_z, pos_x, 0.0f);
+	XMVECTOR At = XMVectorSet(pos_y + delta_y, pos_z + delta_z, pos_x + delta_x, 0.0f);
+	XMVECTOR Up = XMVectorSet(0.0f, -1.0f, 0.0f, 0.0f);
+	g_View = XMMatrixLookAtLH(Eye, At, Up);
+	return 0;
 }
 
 int bbox_to_vertex(std::vector <bbox> &bboxes, DWORD* g_points)
@@ -169,5 +193,50 @@ void Dump_vector(const char* name, XMVECTOR vector)
 	else
 	{
 		dbgprint("Debug", "Vector dump %s: %f %f %f %f \n", name, vector.m128_f32[0], vector.m128_f32[1], vector.m128_f32[2], vector.m128_f32[3]);
+	}
+}
+
+char g_dump_hex_line[81] = { 0 };
+char g_dump_hex_number[5] = { 0 };
+
+void Dump_hex(const char* name ,void* data, unsigned int count)
+{
+	//dbgprint("Dump_hex_invoced", "data: %X count: %d\n", data, count);
+	if (count == 0 || data == nullptr)
+	{
+		return;
+	}
+	if (count < 16)
+	{
+		memset(g_dump_hex_line, 0, 81);
+		for (int i = 0; i < count; i++)
+		{
+			//dbgprint("test", "%X\n", ((unsigned char*)data)[i]);
+			sprintf(g_dump_hex_number, "%02X ", ((unsigned char*)data)[i]);
+			g_dump_hex_number[4] = '\0';
+			strcat(g_dump_hex_line, g_dump_hex_number);
+		}
+		g_dump_hex_line[80] = '\0';
+		dbgprint(name, "%s \n", g_dump_hex_line);
+	}
+	else
+	{
+		int lines = count / 16;
+		for (int i = 0; i < lines; i++)
+		{
+			dbgprint(name, "%08x %08x %08x %08x \n", ((DWORD*)data)[i*4], ((DWORD*)data)[i*4+1], ((DWORD*)data)[i*4+2], ((DWORD*)data)[i*4+3]);
+		}
+		if (count - lines * 16 > 0)
+		{
+			memset(g_dump_hex_line, 0, 81);
+			for (int i = 0; i < count - lines * 16; i++)
+			{
+				sprintf(g_dump_hex_number, "%02x ", ((unsigned char*)data)[i + lines*16]);
+				g_dump_hex_number[4] = '\0';
+				strcat(g_dump_hex_line, g_dump_hex_number);
+			}
+			g_dump_hex_line[80] = '\0';
+			dbgprint(name, "%s \n", g_dump_hex_line);
+		}
 	}
 }

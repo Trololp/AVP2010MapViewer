@@ -1,4 +1,5 @@
 #include "Keyboard.h"
+#include "Console.h"
 #include "Debug.h"
 
 extern XMMATRIX                g_View;
@@ -7,6 +8,7 @@ extern float					pos_y;
 extern float					pos_z;
 extern float					g_alpha;
 extern float					g_beta;
+extern Console*					g_pConsole;
 
 //Move Directions 
 bool b_Forward = false;
@@ -16,6 +18,8 @@ bool b_Left = false;
 bool b_RMB = false; // USE hold RMB mouse to look up
 bool b_LMB = false;
 bool b_Shift = false;
+bool b_show_info = true;
+bool b_show_emod = false;
 
 void MovementFunc()
 {
@@ -58,6 +62,13 @@ void MovementFunc()
 
 void KeyDown(WPARAM wParam, LPARAM lParam)
 {
+	
+	if (g_pConsole->is_active)
+	{
+		g_pConsole->Console_input(wParam, 1);
+		return;
+	}
+		
 	switch (wParam)
 	{
 	case 'W':
@@ -75,8 +86,25 @@ void KeyDown(WPARAM wParam, LPARAM lParam)
 	case VK_LSHIFT:
 		b_Shift = true;
 		break;
+	case 'H':
+		b_show_info = b_show_info ? 0 : 1;
+		break;
+	case 'C':
+		b_show_emod = b_show_emod ? 0 : 1;
+		break;
+	case 'P':
+		g_pConsole->is_active = true;
 	default:
 		break;
+	}
+}
+
+void KeyChar(WPARAM wParam, LPARAM lParam)
+{
+	if (g_pConsole->is_active)
+	{
+		g_pConsole->Console_input(wParam, 0);
+		return;
 	}
 }
 
@@ -126,6 +154,11 @@ void MouseRMB(bool down, WPARAM wParam, LPARAM lParam)
 	}
 }
 
+bool Show_info()
+{
+	return b_show_info;
+}
+
 void MouseLookUp(WPARAM wParam, LPARAM lParam)
 {
 	if (b_RMB)
@@ -154,3 +187,4 @@ void MouseLookUp(WPARAM wParam, LPARAM lParam)
 		g_View = XMMatrixLookAtLH(Eye, At, Up);
 	}
 }
+
