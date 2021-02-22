@@ -28,7 +28,16 @@ my problem with linking. find and delete in `AVP2010MapViewer.h` this stroke `#p
    
    **Usage**
    use keys W, S, A, D to move camera. press RMB (Right mouse button) to turn camera around. press LMB on specific entity to select this.
-
+   key 'G' - will hide bboxes and information.
+   key 'C' - show EMOD information
+   key 'P' - show console
+   ### Console commands
+   'tp x y z' - teleport camera to given x, y, z location.
+   'find seq_id' - finds entity by given id.
+   'dump_smsg' - dump all SMSG entrys in debug.txt file.
+   'dump_emod' - dump EMOD entry in debug.txt file.
+   'font_size float' - editing console font size. (0.25 < font_size < 4.0)
+   'font_color r g b' - editing console font color.
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
