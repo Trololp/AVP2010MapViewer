@@ -1,0 +1,289 @@
+BLUE chunk
+
+BLUE - blueprint. I think all NPC, game, weapons behavior can be adjusted from here.
+This files contains bunch of properties of an objects in game, and there some hierarchy of objects.
+
+
+16 byte hdr (type1 == 0 => true)
+4b BLUE_type (in avp2010 is 2, can be 0 or 1)
+4b Unknown (maybe amount of entries) (is 1 in avp2010)
+
+	while((i=0)++ < Unknown)
+		4b Entry_name_hash
+		C_str Entry_name
+		4b Some_count
+		if !(entry created):
+			break
+		For Some_count:
+			4b subentry_name_hash => pass to func create subentry
+			subentry func:
+				4b type_of_subentry
+				4b hash == subentry_name_hash
+				4b unk_hash
+				C_str sub_entry_name
+				4b some_amount => for some array (elem = 5*DWORD)
+				For some_amount:
+					read properties func (type_of_subentry)
+		4b again_some_amount
+		while again_some_amount--:
+			4b Hash? 
+			4b type1
+			read_some_structs3(type1):
+			
+			
+
+
+
+
+read_some_structs3(type1)
+  switch ( type1 )
+  {
+    case 1:
+		result = sub_5189C0();
+    case 2:
+		result = sub_518B00(a2);
+    case 3:
+		result = sub_518C30(a2);
+    case 4:
+		result = sub_518D60(a2);
+    default:
+      return 0;
+  }
+  return result;
+
+
+sub_5189C0: // first
+	4b type
+	if(type < 10002):
+		if (type == 10001 or 10000):
+			4b unk
+		else unk = type;
+		skip_size = unk*8 + ((12) if type == 10001)
+		skip(skip_size)
+		4b amount1
+		do
+			4b unk_array_elem;
+		while (i++ < amount1)
+	else:
+		4b unk
+		4b amount1
+		do
+			4b unk_array_elem;
+		while (i++ < amount1)
+
+sub_518B00:
+	same as first func exept array elems is 8b
+sub_518C30:
+	same as first func exept array elems is 12b
+sub_518D60
+	same as first func exept array elems is 16b
+
+read properties func (type, struct):
+
+	switch(type)
+	{
+	case 8:
+		4b unk1 => mem[0] // property name hash
+		C_str str1
+		C_str str2
+		4b unk2 => mem[1]
+		4b unk3 => mem[2] // some common hash value or hash of some common name?
+		4b some_type
+		switch (some_type)
+		{
+		case 1: // float
+			4b val 
+			sets 1 in some struct and sets val in it
+		case 2: // maybe bool
+			1b val
+			sets 2 in some struct and sets val in it
+		case 3:
+			4b val // a hash of substring of continue string after last "." symbol
+			4b val2 // a hash of continue string
+			if !val2 => sets 3 in some struct and sets val in it and break;
+			C_str
+			sets 3 in some struct and sets val in it
+		case 4:
+			4b size_of_smth
+			Read size_of_smth bytes 4b aligned
+			sets 4 in some struct and store p strings arrays in it
+		case default:
+			4b val
+			sets 0 in some struct and sets val in it
+		}
+		if(unk1 + 3 != (int *)&seted_property )
+			sets property
+	
+	case 7, 6:
+		4b unk1 => mem[0] // property name hash
+		C_str str1
+		C_str str2
+		4b unk2 => mem[1]
+		4b unk3 => mem[2]
+		4b some_type
+		switch (some_type)
+		{
+		case 1: // float
+			4b val 
+			sets 1 in some struct and sets val in it
+		case 2:
+			1b val
+			sets 2 in some struct and sets val in it
+		case 3:
+			4b val	// a hash of substring of continue string after last "." symbol
+			4b val2 // a hash of continue string
+			if !val2 => sets 3 in some struct and sets val in it and break;
+			C_str
+			sets 3 in some struct and sets val in it
+		case default:
+			4b val
+			sets 0 in some struct and sets val in it
+		}
+		if(unk1 + 3 != (int *)&seted_property )
+			sets property
+	case 5:
+		4b unk1 => mem[0]
+		C_str str1
+		C_str str2
+		4b unk2 => mem[1]
+		4b unk3 => mem[2]
+		4b amount_of_stuff
+		do
+			4b some_type
+			switch (some_type)
+			{
+			case 1:
+				4b val 
+				sets 1 in some struct and sets val in it
+			case 2:
+				1b val
+				sets 2 in some struct and sets val in it
+			case 3:
+				4b val // a hash of substring of continue string after last "." symbol
+				4b val2 // a hash of continue string
+				if !val2 => sets 3 in some struct and sets val in it and break;
+				C_str
+				sets 3 in some struct and sets val in it
+			case default:
+				4b val
+				sets 0 in some struct and sets val in it
+			}
+			if(unk1 + 3 != (int *)&seted_property )
+				sets property
+		while i < amount_of_stuff
+	}
+}
+
+ENTI_blueprint_entry_hash table is at addr 9CCCE0
+pool struct
+[ADDR][COUNT][ZERO][ZERO]
+
+struct small_struct_BLUE_1
+{
+	BLUE_subentry1* pSubentries;
+	DWORD Count;
+	BYTE  unk3_b; // is 0
+	DWORD unk4;
+	DWORD unk5;
+	DWORD unk6;
+	DWORD unk7;
+	BYTE  unk8_b; // is 1
+} size of 8 DWORD 
+
+entry size 0x54
+struct BLUE_entry_in_pool
+{
+	DWORD Entry_name_hash;
+	small_struct_BLUE_1 ssblue_1;
+	void* vtbl_of_struct_bellow;
+	small_struct_BLUE_1 ssblue_2;
+	BLUE_entry_in_pool* next_upper_hash_entry;
+	BLUE_entry_in_pool* next_lower_hash_entry;
+	WORD  unk20_w;
+	WORD  unk21_w;
+}
+
+struct small_struct_BLUE_2
+{
+	DWORD hash; // 0
+	DWORD some_hash; // 4
+	DWORD unk3; // 8
+	QWORD unk4_q; // 0C
+	QWORD unk5_q; // 14
+	WORD  unk6_w; // 1C
+	WORD  unk7_w; // 1E
+	DWORD psmall_sub_structs; // 20 {DWORD * 5}
+}
+
+struct small_struct_BLUE_3
+{
+	DWORD hash;
+	void* pVal;
+	small_struct_BLUE_3* lower_hash_p;
+	small_struct_BLUE_3* upper_hash_p;
+	WORD unk4_w;
+	WORD unk5_w;
+};
+
+struct BLUE_some_next_property
+{
+	void* vtbl;
+	DWORD unk1;
+	DWORD unk2;
+	DWORD unk3;
+	DWORD unk4;
+	float unk_f;
+}
+
+struct BLUE_struct4
+{
+	DWORD hash;
+	DWORD unk1;
+	DWORD unk2;
+	DWORD unk3;
+	DWORD unk4;
+	byte unk_b;
+}
+
+struct BLUE_subentry1
+{
+	DWORD subentry_name_hash; // identificator
+	small_struct_BLUE_2 ssblue_2_1;
+	BLUE_subentry1* lower_hash_subentry_p;
+	BLUE_subentry1* upper_hash_subentry_p;
+	WORD unk3_w;
+	WORD unk4_w;
+};
+
+
+// THAT ALL WAS FOR TYPE 2 BLUE chunk !!!
+
+
+
+//So...        now type 0 .look like the same but some values store in different order.
+
+16 byte hdr (type1 == 0 => true)
+4b BLUE_type (in avp2010 is 2, can be 0 or 1)
+4b Unknown (maybe amount of entries) (is 1 in avp2010)
+
+	while((i=0)++ < Unknown)
+		4b Entry_name_hash
+		4b Some_count
+		C_str Entry_name
+		if !(entry created):
+			break
+		For Some_count:
+			subentry func:
+				4b type_of_subentry
+				4b hash == subentry_name_hash
+				4b unk_hash
+				C_str sub_entry_name
+				4b some_amount => for some array (elem = 5*DWORD)
+				For some_amount:
+					read properties func (type_of_subentry)
+		4b again_some_amount
+		while again_some_amount--:
+			4b Hash? 
+			4b type1
+			read_some_structs3(type1):
+			
