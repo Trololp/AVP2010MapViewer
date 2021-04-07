@@ -76,6 +76,7 @@ struct entity
 
 int load_enti(const wchar_t* folder_path);
 int load_smsg(const wchar_t* folder_path);
+int load_actor_names();
 void load_entity(wchar_t* file_path);
 void Entity_update_vertex_buffer(DWORD id);
 void Entity_delete_all();

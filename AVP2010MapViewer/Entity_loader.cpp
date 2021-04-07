@@ -54,6 +54,7 @@ extern Console*				g_pConsole;
 float g_default_row = 0.0f;
 float g_default_column = 0.0f;
 wchar_t* g_curr_file;
+hash_tree_node2* g_actornames_hashs = nullptr;
 
 // SMSG table
 // count / ptr / ptr2 /; ptr for id < 30000 / ptr2 for id > 30000
@@ -518,92 +519,12 @@ char* BE_messages(HANDLE f)
 char* Actor_name_from_hash(DWORD hash)
 {
 	char* actor_name = (char*)"Unknown";
-	switch (hash)
-	{
-	case 56865079: 
-		actor_name = (char*)"Male ShotGun B02";
-		break;
-	case 56885259:
-		actor_name = (char*)"Male ShotGun W01";
-		break;
-
-	case 130498614:
-		actor_name = (char*)"Colonist_bluesuit1";
-		break;
-	case 130498615:
-		actor_name = (char*)"Colonist_bluesuit2";
-		break; 
-	case 130498616:
-		actor_name = (char*)"Colonist_bluesuit3";
-		break;
-	case 130498617:
-		actor_name = (char*)"Colonist_bluesuit4_US";
-		break;
-	case 394465882:
-		actor_name = (char*)"Male PulseRifle W01";
-		break;
-	case 394465883:
-		actor_name = (char*)"Male PulseRifle W02 No Head for M04";
-		break;
-	case 394445702:
-		actor_name = (char*)"Male PulseRifle B02";
-		break;
-	case 394451467:
-		actor_name = (char*)"Male PulseRifle H01";
-		break;
-	case 1020718497:
-		actor_name = (char*)"ConstructionWorker_head1";
-		break;
-	case 1020718498:
-		actor_name = (char*)"ConstructionWorker_head2";
-		break;
-	case 1020718499:
-		actor_name = (char*)"ConstructionWorker_head3";
-		break;
-	case 1463773938:
-		actor_name = (char*)"Warrior_Alien_Always_Block";
-		break;
-	case 1469093676:
-		actor_name = (char*)"Warrior_Alien_Always_Heavy";
-		break;
-	case 1472912251:
-		actor_name = (char*)"Warrior_Alien_Always_Light";
-		break;
-	case 1573742133:
-		actor_name = (char*)"SentryGun_SingleBarrel_AttackCivilians";
-		break;
-	case 2135828582:
-		actor_name = (char*)"Female PulseRifle B01";
-		break;
-	case 2233643625:
-		actor_name = (char*)"Warrior_Alien_GrappleTest";
-		break;
-	case 245379434:
-		actor_name = (char*)"MarineAI_GrappleTests";
-		break;
-	case 2928489064:
-		actor_name = (char*)"Colonist_bluesuit1_chestburst";
-		break;
-	case 1334834821:
-		actor_name = (char*)"FaceHugger Variant 01";
-		break;
-	case 2446227059:
-		actor_name = (char*)"Warrior_Alien_Tutorial"; 
-		break;
-	case 2988985991:
-		actor_name = (char*)"Male Generic B01";
-		break;
-	case 3725945502:
-		actor_name = (char*)"Facehugger_A05";
-		break;
-	case 4250767021:
-		actor_name = (char*)"SentryGun SingleBarrel";
-		break;
 	
+	hash_tree_node2* hn_p = search_by_hash2(g_actornames_hashs, hash);
 
-	default:
-		break;
-	}
+	if (hn_p)
+		return (char*)hn_p->ptr;
+
 	return actor_name;
 }
 
@@ -1642,12 +1563,15 @@ void load_enti_94(HANDLE f, DWORD seq_id)
 void load_enti_97(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
-	SFPS(0x3C);
+	SFPS(0x30);
+
+	DWORD actor_name_hash;
+	READ(actor_name_hash);
+	SFPC(8);
+	char* BE_data = BE_messages(f);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
 	DWORD num1;
-	READ(num1);
-	SFPC(num1 * 4);
 	READ(pos);
 	READ(rot);
 	SFPC(25);
@@ -1659,9 +1583,10 @@ void load_enti_97(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Predator (97)\n");
+	sprintf(name, "Predator (%d)\n", seq_id);
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s \n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, \
+		Actor_name_from_hash(actor_name_hash), some_float_data.x, some_float_data.y, BE_data);
 	//XMFLOAT3 dir = { pos.x + rot.x, pos.y + rot.y, pos.z + rot.z };
 	//g_lines.push_back({ pos, dir, XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f) }); // blue line
 	bbox* bbox_p = new bbox;
@@ -1856,6 +1781,10 @@ void load_enti_132(HANDLE f, DWORD seq_id)
 void load_enti_135(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
+	SFPS(0x34);
+	DWORD actor_name_hash;
+	READ(actor_name_hash);
+
 	SFPS(0x40);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
@@ -1877,9 +1806,10 @@ void load_enti_135(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Combat_droid (135)\n");
+	sprintf(name, "Combat_droid (%d)\n", seq_id);
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, some_float_data.x, some_float_data.y);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s \n Curr_health: %f \n Max_health: %f \n", seq_id, g_curr_file, \
+		Actor_name_from_hash(actor_name_hash), some_float_data.x, some_float_data.y);
 	bbox* bbox_p = new bbox;
 	bbox_p->p1 = { pos.x + 0.3f, pos.y - 1.2f, pos.z + 0.3f };
 	bbox_p->p2 = { pos.x - 0.3f, pos.y + 0.0f, pos.z - 0.3f };
@@ -1901,7 +1831,7 @@ void load_enti_133(HANDLE f, DWORD seq_id)
 	DWORD a = 0;
 	SFPS(0x30);
 	DWORD count = 0;
-	READ(f, &count, 4, &a);
+	READ(count);
 
 	DWORD found = 0;
 	DWORD totaly_found = 0;
@@ -2925,6 +2855,55 @@ int load_smsg(const wchar_t* folder_path)
 	} while (FindNextFile(hFind, &FindFileData) != 0);
 
 	FindClose(hFind);
+	return 1;
+}
+
+int load_actor_names()
+{
+	FILE* f = fopen("ActorNames.txt", "rt");
+
+	printf("Init hashs\n");
+
+	if (f == INVALID_HANDLE_VALUE)
+	{
+		dbgprint("actor names", "Error opening names list !!!\n");
+		return 0;
+	}
+
+	g_actornames_hashs = new hash_tree_node2;
+	g_actornames_hashs->hash = 0;
+	g_actornames_hashs->bigger = nullptr;
+	g_actornames_hashs->smaller = nullptr;
+	g_actornames_hashs->ptr = nullptr;
+
+	char _name[512];
+
+	while (!feof(f))
+	{
+		char* name = new char[512];
+		ZeroMemory(name, 512);
+		fgets(_name, 512, f);
+		strcpy(name, _name);
+		name[strlen(name) - 1] = '\0';
+
+		if (strlen(name) == 0)
+			break;
+
+		DWORD hash = hash_from_str(0, name);
+
+		if (search_by_hash2(g_actornames_hashs, hash))
+		{
+			delete[] name;
+			continue;
+		}
+
+		hash_tree_node2* hn = new hash_tree_node2;
+		hn->hash = hash;
+		hn->ptr = name;
+		add_hash2(g_actornames_hashs, hn);
+	}
+
+	fclose(f);
 	return 1;
 }
 

@@ -1,5 +1,9 @@
 #include "Debug.h"
 
+#define SwapFourBytes(data)   \
+( (((data) >> 24) & 0x000000FF) | (((data) >>  8) & 0x0000FF00) | \
+  (((data) <<  8) & 0x00FF0000) | (((data) << 24) & 0xFF000000) ) 
+
 extern ID3D11Device*           g_pd3dDevice;
 extern ID3D11Buffer*		   g_pVertexBuffer_stuff;
 extern ID3D11Buffer*			g_pVertexBuffer_lines;
@@ -199,7 +203,7 @@ void Dump_vector(const char* name, XMVECTOR vector)
 char g_dump_hex_line[81] = { 0 };
 char g_dump_hex_number[5] = { 0 };
 
-void Dump_hex(const char* name ,void* data, unsigned int count)
+void Dump_hex(const char* name, void* data, unsigned int count)
 {
 	//dbgprint("Dump_hex_invoced", "data: %X count: %d\n", data, count);
 	if (count == 0 || data == nullptr)
@@ -209,7 +213,7 @@ void Dump_hex(const char* name ,void* data, unsigned int count)
 	if (count < 16)
 	{
 		memset(g_dump_hex_line, 0, 81);
-		for (int i = 0; i < count; i++)
+		for (unsigned int i = 0; i < count; i++)
 		{
 			//dbgprint("test", "%X\n", ((unsigned char*)data)[i]);
 			sprintf(g_dump_hex_number, "%02X ", ((unsigned char*)data)[i]);
@@ -224,14 +228,16 @@ void Dump_hex(const char* name ,void* data, unsigned int count)
 		int lines = count / 16;
 		for (int i = 0; i < lines; i++)
 		{
-			dbgprint(name, "%08x %08x %08x %08x \n", ((DWORD*)data)[i*4], ((DWORD*)data)[i*4+1], ((DWORD*)data)[i*4+2], ((DWORD*)data)[i*4+3]);
+			dbgprint(name, "%08x %08x %08x %08x \n", SwapFourBytes(((DWORD*)data)[i * 4]), \
+				SwapFourBytes(((DWORD*)data)[i * 4 + 1]), SwapFourBytes(((DWORD*)data)[i * 4 + 2]), \
+				SwapFourBytes(((DWORD*)data)[i * 4 + 3]));
 		}
 		if (count - lines * 16 > 0)
 		{
 			memset(g_dump_hex_line, 0, 81);
-			for (int i = 0; i < count - lines * 16; i++)
+			for (unsigned int i = 0; i < count - lines * 16; i++)
 			{
-				sprintf(g_dump_hex_number, "%02x ", ((unsigned char*)data)[i + lines*16]);
+				sprintf(g_dump_hex_number, "%02x ", ((unsigned char*)data)[i + lines * 16]);
 				g_dump_hex_number[4] = '\0';
 				strcat(g_dump_hex_line, g_dump_hex_number);
 			}

@@ -65,19 +65,22 @@ void Read_model(const wchar_t* model_name, int skip)
 	DWORD bytes_readen = 0;
 
 	HANDLE file = CreateFileW(file_path, GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-	DWORD* asura_header = (DWORD*)malloc(28);
-	ReadFile(file, asura_header, 28, &bytes_readen, NULL);
+
 	if (GetLastError() != ERROR_SUCCESS)
 	{
 		dbgprint("Models", "Opening file Error: %d\n", GetLastError());
 		return;
 	}
+	DWORD* asura_header = (DWORD*)malloc(28);
+	ReadFile(file, asura_header, 28, &bytes_readen, NULL);
+	
 	if (*asura_header != (DWORD)'FCSR' || *(asura_header + 5) != (DWORD)0xF)
 	{
 		dbgprint("Models", "Opening file Error: BAD_HEADER (HEADER: %08x Type %02d BytesReaden: %d)\n", *asura_header, *(asura_header + 5), bytes_readen);
 		CloseHandle(file);
 		return;
 	}
+
 	free(asura_header);
 
 	char* name_str = (char*)malloc(260);
