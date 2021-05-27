@@ -1,0 +1,26 @@
+# Asura engine (script 0.2.2a)
+#  Sniper Elite
+#  Rogue Trooper
+#  Guard Shield
+#  possibly other Rebellion's games
+#   thanx to Terry Butler for having solved the mistery of the filenames in ASTS
+# script for QuickBMS http://aluigi.org/papers.htm#quickbms
+
+get PACK_SIZE asize
+getdstring SIGN 8
+if SIGN == "AsuraCmp"
+	get ZSIZE long
+	get SIZE long
+	math ZSIZE = PACK_SIZE
+	math ZSIZE -= 8
+	comtype huffboh
+	clog TEMPORARY_FILE 8 ZSIZE SIZE
+elif SIGN == "AsuraZlb"
+	get ZERO long
+	get ZSIZE long
+	get SIZE long
+	savepos OFFSET
+	math ZSIZE = PACK_SIZE
+	math ZSIZE -= OFFSET
+	comtype zlib
+	clog "Fuke.dat" OFFSET ZSIZE SIZE
