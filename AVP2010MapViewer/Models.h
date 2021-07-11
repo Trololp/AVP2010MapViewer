@@ -8,7 +8,7 @@ struct model_header
 	DWORD index_count;
 	DWORD unk;
 	DWORD count_unk_chunks;
-	bool  unk_bool;
+	bool  vertex_layout;
 };
 #pragma pack(pop)
 
@@ -28,7 +28,7 @@ struct model_info
 	ID3D11Buffer *pIndexBuff;
 	model_mat_info* mmi;
 	UINT		mmi_count;
-	UINT		unk; //unk bool value (maybe displays that current model can be ragdol)
+	UINT		vertex_layout; //is trangle_strip or triangle_list
 	char*		mdl_name;
 	int			empty_model;
 };

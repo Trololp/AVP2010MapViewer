@@ -151,7 +151,7 @@ int load_EMOD_chunk(wchar_t * FileName)
 
 	for (int i = 0; i < fh.count; i++)
 	{
-		char* emod_name = (char*)malloc(256);
+		char* emod_name = (char*)malloc(512);
 		read_padded_str(f, emod_name);
 		EMOD_entry* emod_entry = g_emod_entrys + i;
 		emod_entry->name = emod_name;

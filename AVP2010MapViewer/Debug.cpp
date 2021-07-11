@@ -57,6 +57,34 @@ DWORD Console_command_tp(DWORD* args)
 	return 0;
 }
 
+bbox* shifted_bbox_to_normal(XMVECTOR C, bbox* bounds, XMVECTOR quat)
+{
+	XMVECTOR p1 = XMLoadFloat3(&(bounds->p1));
+	XMVECTOR p2 = XMLoadFloat3(&(bounds->p2));
+	p1 += C;
+	p2 += C;
+	XMVECTOR mid_p = (p1 + p2) / 2;
+	XMVECTOR mid_p_new = XMVector3Transform(mid_p - C, XMMatrixRotationQuaternion(quat));
+	XMVECTOR delta_M = mid_p_new - (mid_p - C);
+
+	p1 += delta_M;
+	p2 += delta_M;
+
+	XMFLOAT3 new_p1 = { p1.m128_f32[0], p1.m128_f32[1], p1.m128_f32[2] };
+	XMFLOAT3 new_p2 = { p2.m128_f32[0], p2.m128_f32[1], p2.m128_f32[2] };
+	XMFLOAT4 rot;
+	XMStoreFloat4(&rot, quat);
+
+	bbox* normal_bbox = new bbox;
+
+	normal_bbox->p1 = new_p1;
+	normal_bbox->p2 = new_p2;
+	normal_bbox->rot = rot;
+	normal_bbox->Color = bounds->Color;
+
+	return normal_bbox;
+}
+
 int bbox_to_vertex(std::vector <bbox> &bboxes, DWORD* g_points)
 {
 	HRESULT hr = S_OK;

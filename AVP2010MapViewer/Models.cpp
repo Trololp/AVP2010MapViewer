@@ -90,8 +90,14 @@ void Read_model(const wchar_t* model_name, int skip)
 	model_info* mdl_info = new model_info;
 	mdl_info->mdl_name = name_str;
 	mdl_info->empty_model = 0;
+	
+
 	if (ReadFile(file, &mdl_header, sizeof(model_header), &bytes_readen, NULL))
 	{
+		// 
+		mdl_info->vertex_layout = mdl_header.vertex_layout;
+
+
 		//dbgprint("Models", "Model header: mmi_count: %d, Vertexes: %d, Indexes: %d \n", mdl_header.model_mesh_info_count, mdl_header.vertex_count, mdl_header.index_count);
 		if (mdl_header.model_mesh_info_count == 0)
 		{

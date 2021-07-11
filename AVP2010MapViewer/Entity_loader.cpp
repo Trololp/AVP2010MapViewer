@@ -46,15 +46,16 @@ extern hash_tree_node2* model_hashs;
 extern hash_tree_node2*		g_default_model;
 extern int read_padded_str(HANDLE file, char* dest);
 extern wchar_t* g_path2;
-std::vector<entity_p> g_entity_p;
 extern DWORD					g_selected_entity_id;
 extern Console*				g_pConsole;
 
-
+std::vector<entity_p> g_entity_p;
 float g_default_row = 0.0f;
 float g_default_column = 0.0f;
 wchar_t* g_curr_file;
 hash_tree_node2* g_actornames_hashs = nullptr;
+bool g_actornames_loaded = false;
+
 
 // SMSG table
 // count / ptr / ptr2 /; ptr for id < 30000 / ptr2 for id > 30000
@@ -139,7 +140,7 @@ entity_info e_info[180] = {
 	{ 69, ENTITY_POINT },
 	{ 70, ENTITY_POINT },
 	{ 71, ENTITY_POINT },
-	{ 72, ENTITY_UNKNOWN },
+	{ 72, ENTITY_POINT },
 	{ 73, ENTITY_UNKNOWN },
 	{ 74, ENTITY_GLOBAL },
 	{ 75, ENTITY_POINT },
@@ -162,7 +163,7 @@ entity_info e_info[180] = {
 	{ 92, ENTITY_POINT },
 	{ 93, ENTITY_UNKNOWN },
 	{ 94, ENTITY_POINT },
-	{ 95, ENTITY_UNKNOWN },
+	{ 95, ENTITY_POINT },
 	{ 96, ENTITY_UNKNOWN },
 	{ 97, ENTITY_POINT },
 	{ 98, ENTITY_UNKNOWN },
@@ -182,7 +183,7 @@ entity_info e_info[180] = {
 	{ 112, ENTITY_UNKNOWN },
 	{ 113, ENTITY_UNKNOWN },
 	{ 114, ENTITY_POINT },
-	{ 115, ENTITY_UNKNOWN },
+	{ 115, ENTITY_POINT },
 	{ 116, ENTITY_UNKNOWN },
 	{ 117, ENTITY_UNKNOWN },
 	{ 118, ENTITY_UNKNOWN },
@@ -243,7 +244,7 @@ entity_info e_info[180] = {
 	{ 173, ENTITY_POINT },
 	{ 174, ENTITY_UNKNOWN },
 	{ 175, ENTITY_UNKNOWN },
-	{ 176, ENTITY_UNKNOWN },
+	{ 176, ENTITY_POINT },
 	{ 177, ENTITY_UNKNOWN },
 	{ 178, ENTITY_UNKNOWN },
 	{ 179, ENTITY_UNKNOWN }
@@ -482,8 +483,16 @@ char* dump_msg(WORD msgid)
 	sprintf_s(msg_id_line, sizeof(msg_id_line), "msg_id: %05d\nID Cnt ent_id delay? \n", msgid);
 	strcat_s(buffer, 1024, msg_id_line);
 	SMSG_subentry* entries = (SMSG_subentry*)((DWORD*)entries_ptr + 1);
-	if (count >= 15)
-		count = 15;
+	
+	bool excided_limit = false;
+
+	if (count >= 3)
+	{
+		count = 3;
+		excided_limit = true;
+	}
+		
+
 	for (int i = 0; i < count; i++)
 	{
 		char new_line[64];
@@ -491,6 +500,12 @@ char* dump_msg(WORD msgid)
 		sprintf_s(new_line, sizeof(new_line), "0x%04x %02d %07d %.5f \n", entries[i].w1, entries[i].w2, entries[i].seq_id, entries[i].f1);
 		strcat_s(buffer, 1024, new_line);
 	}
+
+	if (excided_limit)
+	{
+		strcat_s(buffer, 1024, "...\n");
+	}
+
 	return buffer;
 }
 
@@ -506,6 +521,8 @@ char* BE_messages(HANDLE f)
 	ZeroMemory(buffer, 1024);
 	strcat_s(buffer, 1024, "BE data\n");
 
+
+
 	for (int i = 0; i < count; i++)
 	{
 		char new_line[1024];
@@ -513,6 +530,8 @@ char* BE_messages(HANDLE f)
 		sprintf_s(new_line, sizeof(new_line), "On event_id : 0x%04x \n %s \n", msgs[i] & 0xFFFF, dump_msg(msgs[i] >> 16));
 		strcat_s(buffer, 1024, new_line);
 	}
+
+
 	return buffer;
 }
 
@@ -520,6 +539,9 @@ char* Actor_name_from_hash(DWORD hash)
 {
 	char* actor_name = (char*)"Unknown";
 	
+	if(!g_actornames_loaded)
+		return actor_name;
+
 	hash_tree_node2* hn_p = search_by_hash2(g_actornames_hashs, hash);
 
 	if (hn_p)
@@ -1263,6 +1285,22 @@ void load_enti_71(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 71, seq_id, pos, Colors::Yellow);
 }
 
+void load_enti_72(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x38);
+	char* BE_data = BE_messages(f);
+	XMFLOAT3 pos;
+	READ(pos);
+	
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Entity waypoint (72)\n");
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n", seq_id, g_curr_file);
+	Create_entity(name, data, 72, seq_id, pos, Colors::Cyan);
+}
+
 void load_enti_74(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
@@ -1461,7 +1499,7 @@ void load_enti_85(HANDLE f, DWORD seq_id)
 	SFPS(0x2C);
 	char* BE_data = BE_messages(f);
 	DWORD DLLN_counts; //dialogu lines count
-	SFPS(0x52);
+	SFPC(0x22);
 	READ(DLLN_counts);
 	SFPC(0x13 * DLLN_counts); // dont interessting right now
 	DWORD amount;
@@ -1560,6 +1598,43 @@ void load_enti_94(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 94, seq_id, pos, Colors::Yellow, prop, bbox_p, 2, seq_ids);
 }
 
+void load_enti_95(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x30);
+	DWORD hash;
+	READ(hash);
+	SFPC(8);
+	char* BE_data = BE_messages(f);
+	XMFLOAT3 pos;
+	XMFLOAT4 rot;
+	READ(pos);
+	READ(rot);
+	SFPC(25);
+	XMFLOAT2 hp;
+	READ(hp);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "alien_queen (%d)\n", seq_id);
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s\n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, Actor_name_from_hash(hash), hp.x, hp.y, BE_data);
+	bbox* bbox_p = new bbox;
+	bbox_p->p1 = { pos.x + 1.0f, pos.y - 3.0f, pos.z + 1.0f };
+	bbox_p->p2 = { pos.x - 1.0f, pos.y - 0.0f, pos.z - 1.0f };
+	bbox_p->rot = rot;
+	bbox_p->Color = { 1.0f, 0.0f, 1.0f, 1.0f };
+
+	entity_prop* prop = new entity_prop;
+	ZeroMemory(prop, sizeof(entity_prop));
+	prop->visible = 1;
+	prop->model_hash = hash_from_str(0, (char*)"Hag_Queen");
+	prop->pos = pos;
+	prop->angle = rot;
+
+	Create_entity(name, data, 95, seq_id, pos, Colors::Yellow, prop, bbox_p);
+}
+
 void load_enti_97(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
@@ -1571,7 +1646,6 @@ void load_enti_97(HANDLE f, DWORD seq_id)
 	char* BE_data = BE_messages(f);
 	XMFLOAT3 pos;
 	XMFLOAT4 rot;
-	DWORD num1;
 	READ(pos);
 	READ(rot);
 	SFPC(25);
@@ -1605,35 +1679,6 @@ void load_enti_97(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 97, seq_id, pos, Colors::Yellow, prop, bbox_p, 2, seq_ids);
 }
 
-void load_enti_114(HANDLE f, DWORD seq_id)
-{
-	DWORD a = 0;
-	SFPS(0x38);
-	DWORD num;
-	READ(num);
-	SFPC(num * 4);
-	DWORD flags;
-	XMFLOAT3 pos;
-	READ(flags);
-	READ(pos);
-	DWORD* seq_ids = (DWORD*)malloc(4);
-	READP(seq_ids, 4);
-	if (*seq_ids == -1)
-		seq_ids = nullptr;
-
-	char* name = nullptr; char* data = nullptr;
-	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Entity waypoint (114)\n");
-
-	bool reversible = flags & 0x80;
-	bool start_node = flags & 0x10;
-	const char* str = (reversible) ? "true" : "false";
-	const char* str2 = (start_node) ? "true" : "false";
-
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n Reversible: %s \nStart_node: %s \n", seq_id, g_curr_file, flags, str, str2);
-	Create_entity(name, data, 63, seq_id, pos, Colors::Cyan, nullptr, nullptr, 1, seq_ids);
-}
-
 void load_enti_100(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
@@ -1662,6 +1707,66 @@ void load_enti_100(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 64, seq_id, pos, Colors::Cyan, nullptr, nullptr, 2, seq_ids);
 }
 
+void load_enti_114(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x38);
+	DWORD num;
+	READ(num);
+	SFPC(num * 4);
+	DWORD flags;
+	XMFLOAT3 pos;
+	READ(flags);
+	READ(pos);
+	DWORD* seq_ids = (DWORD*)malloc(4);
+	READP(seq_ids, 4);
+	if (*seq_ids == -1)
+		seq_ids = nullptr;
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Entity waypoint (114)\n");
+
+	bool reversible = flags & 0x80;
+	bool start_node = flags & 0x10;
+	const char* str = (reversible) ? "true" : "false";
+	const char* str2 = (start_node) ? "true" : "false";
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Flags: %x \n Reversible: %s \nStart_node: %s \n", seq_id, g_curr_file, flags, str, str2);
+	Create_entity(name, data, 114, seq_id, pos, Colors::Cyan, nullptr, nullptr, 1, seq_ids);
+}
+
+void load_enti_115(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x5C);
+	XMFLOAT3 pos;
+	XMFLOAT4 rot;
+	char* BE_data = BE_messages(f);
+	READ(pos);
+	READ(rot);
+	SFPC(25);
+	XMFLOAT2 hp;
+	READ(hp);
+	DWORD hash;
+	SFPC(8);
+	READ(hash);
+	
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "115 (%d)\n", seq_id);
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, hp.x, hp.y, BE_data);
+	entity_prop* prop = new entity_prop;
+	ZeroMemory(prop, sizeof(entity_prop));
+	prop->visible = 1;
+	prop->model_hash = hash;
+	prop->pos = pos;
+	prop->angle = rot;
+
+	Create_entity(name, data, 115, seq_id, pos, Colors::Purple, prop, nullptr);
+}
+
 void load_enti_122(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;
@@ -1688,7 +1793,13 @@ void load_enti_122(HANDLE f, DWORD seq_id)
 	Alloc_name_and_data_str(&name, &data);
 	sprintf(name, "retinal_scanner (%d)\n", seq_id);
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, hp.x, hp.y, BE_data);
+	hash_tree_node2* node = search_by_hash2(model_hashs, hash);
+	if (!node)
+		node = g_default_model; // Default mdl
+
+	model_info* mi = (model_info*)node->ptr;
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n Model_name: %s \n %s \n", seq_id, g_curr_file, hp.x, hp.y, mi->mdl_name, BE_data);
 	entity_prop* prop = new entity_prop;
 	ZeroMemory(prop, sizeof(entity_prop));
 	prop->visible = 1;
@@ -2182,6 +2293,7 @@ void load_enti_146(HANDLE f, DWORD seq_id)
 
 void load_enti_147(HANDLE f, DWORD seq_id)
 {
+	dbgprint("ENTI", "Trying load 147 spawn_property (%ws)\n", g_curr_file);
 	DWORD a = 0;
 	SFPS(0x2C);
 	char* BE_dump = (char*)BE_messages(f);
@@ -2190,19 +2302,39 @@ void load_enti_147(HANDLE f, DWORD seq_id)
 	float f1;
 	float f2;
 	DWORD seq_id1;
-	//skip
-	DWORD hash;
-	//skip hash - "Actor initializaton"
-	//skip 12
+	DWORD actor_count;
 	int num;
 	READ(d1);
 	READ(d2);
 	READ(f1);
 	READ(f2);
 	READ(seq_id1);
-	SFPC(4);
-	READ(hash);
-	SFPC(16);
+	READ(actor_count);
+
+	struct actor_data
+	{
+		DWORD actor_name_hash;
+		DWORD actor_init_hash;
+		float prob; // maybe probability to spawn
+	};
+
+	actor_data* actors = (actor_data*)malloc(actor_count * sizeof(actor_data));
+
+	READP(actors, actor_count * sizeof(actor_data));
+
+	char actors_str[1024] = { 0 };
+	char tmp_str[20] = { 0 };
+
+
+	for (int i = 0; i < actor_count; i++)
+	{
+		strcat_s(actors_str, sizeof(actors_str), (const char*)Actor_name_from_hash(actors[i].actor_name_hash));
+		sprintf(tmp_str, " (prob: %f)", actors[i].prob);
+		strcat_s(actors_str, sizeof(actors_str), tmp_str);
+		strcat_s(actors_str, sizeof(actors_str), "\n");
+	}
+
+	SFPC(8);
 	READ(num);
 	DWORD* seq_ids = (DWORD*)malloc((1 + num) * 4);
 	seq_ids[0] = seq_id1;
@@ -2214,7 +2346,7 @@ void load_enti_147(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s \n BE_data: %s \n d1: %d \n d2: %d \n f1: %f \n f2: %f", seq_id, g_curr_file, Actor_name_from_hash(hash), BE_dump, d1, d2, f1, f2);
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actors: %s \n BE_data: %s \n d1: %d \n d2: %d \n f1: %f \n f2: %f", seq_id, g_curr_file, actors_str, BE_dump, d1, d2, f1, f2);
 	sprintf(name, "spawn_property? (147)\n");
 
 	Create_global_entity(name, data, 147, seq_id, Colors::Magenta, num + 1, seq_ids);
@@ -2490,9 +2622,15 @@ void load_enti_165(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Retina_scan (%d)\n", seq_id);
+	sprintf(name, "retina_scanner? (%d)\n", seq_id);
 
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, hp.x, hp.y, BE_data);
+	hash_tree_node2* node = search_by_hash2(model_hashs, hash);
+	if (!node)
+		node = g_default_model; // Default mdl
+
+	model_info* mi = (model_info*)node->ptr;
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Curr_health: %f \n Max_health: %f \n Model_name: %s \n %s \n", seq_id, g_curr_file, hp.x, hp.y, mi->mdl_name, BE_data);
 	entity_prop* prop = new entity_prop;
 	ZeroMemory(prop, sizeof(entity_prop));
 	prop->visible = 1;
@@ -2670,6 +2808,42 @@ void load_enti_173(HANDLE f, DWORD seq_id)
 	Create_entity(name, data, 173, seq_id, pos, Colors::Purple, prop, bbox_p);
 }
 
+void load_enti_176(HANDLE f, DWORD seq_id)
+{
+	DWORD a = 0;
+	SFPS(0x30);
+	DWORD hash;
+	READ(hash);
+	SFPC(8);
+	char* BE_data = BE_messages(f);
+	XMFLOAT3 pos;
+	XMFLOAT4 rot;
+	READ(pos);
+	READ(rot);
+	SFPC(25);
+	XMFLOAT2 hp;
+	READ(hp);
+
+	char* name = nullptr; char* data = nullptr;
+	Alloc_name_and_data_str(&name, &data);
+	sprintf(name, "Preatorian (%d)\n", seq_id);
+
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n Actor: %s\n Curr_health: %f \n Max_health: %f \n %s \n", seq_id, g_curr_file, Actor_name_from_hash(hash), hp.x, hp.y, BE_data);
+	bbox* bbox_p = new bbox;
+	bbox_p->p1 = { pos.x + 0.6f, pos.y - 2.0f, pos.z + 0.6f };
+	bbox_p->p2 = { pos.x - 0.6f, pos.y - 0.0f, pos.z - 0.6f };
+	bbox_p->rot = rot;
+	bbox_p->Color = { 1.0f, 0.0f, 1.0f, 1.0f };
+
+	entity_prop* prop = new entity_prop;
+	ZeroMemory(prop, sizeof(entity_prop));
+	prop->visible = 1;
+	prop->model_hash = 0xEE060EC5;
+	prop->pos = pos;
+	prop->angle = rot;
+
+	Create_entity(name, data, 176, seq_id, pos, Colors::Yellow, prop, bbox_p);
+}
 
 void load_effect(HANDLE f, DWORD seq_id)
 {
@@ -2862,9 +3036,9 @@ int load_actor_names()
 {
 	FILE* f = fopen("ActorNames.txt", "rt");
 
-	printf("Init hashs\n");
+	dbgprint("actor names", "Init hashs\n");
 
-	if (f == INVALID_HANDLE_VALUE)
+	if (f == NULL)
 	{
 		dbgprint("actor names", "Error opening names list !!!\n");
 		return 0;
@@ -2903,6 +3077,8 @@ int load_actor_names()
 		add_hash2(g_actornames_hashs, hn);
 	}
 
+	g_actornames_loaded = true;
+
 	fclose(f);
 	return 1;
 }
@@ -2911,6 +3087,8 @@ int load_actor_names()
 
 void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 {
+
+
 	switch (entity_id)
 	{
 	case 7:
@@ -2946,6 +3124,9 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 	case 71:
 		//load_enti_71(file, seq_id); // special fx projector
 		return;
+	case 72:
+		load_enti_72(file, seq_id); // some predator waypoints
+		return;
 	case 75:
 		//load_enti_75(file, seq_id); // special fx light shafts
 		return;
@@ -2964,6 +3145,9 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 	case 94:
 		load_enti_94(file, seq_id); //Facehugger
 		return;
+	case 95:
+		load_enti_95(file, seq_id); // Alien Queen 
+		return;
 	case 97:
 		load_enti_97(file, seq_id); // Predator
 		return;
@@ -2972,6 +3156,9 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 		return;
 	case 114:
 		load_enti_114(file, seq_id);// NPC waypoints
+		return;
+	case 115:
+		load_enti_115(file, seq_id);
 		return;
 	case 122:
 		load_enti_122(file, seq_id); // Computer console
@@ -3051,6 +3238,9 @@ void load_point_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 	case 173:
 		load_enti_173(file, seq_id); // Computer
 		return;
+	case 176:
+		load_enti_176(file, seq_id); // Praetorian
+		return;
 
 	default:
 		break;
@@ -3090,6 +3280,7 @@ void load_default_entity(DWORD ent_id, DWORD seq_id, wchar_t* file_name)
 
 void load_global_entity(HANDLE file, DWORD entity_id, DWORD seq_id)
 {
+
 	DWORD bytes_readen = 0;
 	switch (entity_id)
 	{
@@ -3174,6 +3365,8 @@ void load_entity(wchar_t* file_name)
 		return;
 	}
 	ENTITY_TYPE type = e_info[ent_id].type;
+
+	//dbgprint("enti_debug", "Trying load entity %d (%d) (%ws)\n", ent_id, file_header.seq_id, file_name);
 
 	switch (type)
 	{
