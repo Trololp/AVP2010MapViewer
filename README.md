@@ -4,7 +4,7 @@ AVP2010MapViewer is map viewer for the game "Aliens versus Predator (2010)". Map
 
 ## Installation
 
-Make sure your computer support DirectX 11. Download [last release v0.5](https://github.com/Trololp/AVP2010MapViewer/releases/tag/v0.5). unpack zip files into new folder. done.
+Make sure your computer support DirectX 11. Download [last release v0.5.1](https://github.com/Trololp/AVP2010MapViewer/releases/tag/v0.5.1). unpack zip files into new folder. done.
 ## Development
 I use **Visual Studio 2017**. Used **Microsoft DirectX SDK (June 2010)**. also you need **directXTK** for text on a screen (this was get from Nuget). There file in 
 [usefull_stuff](https://github.com/Trololp/AVP2010MapViewer/tree/main/usefull_stuff) folder named **HACKS.lib** dont scare its is d3dcompiler v47 lib. with is solve
