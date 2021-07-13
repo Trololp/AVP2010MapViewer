@@ -1,7 +1,12 @@
-EMOD - (E... model ?)
+EMOD - (Embedded model ?)
 
-EMOD found in enviroment directory. Have meaningful names of objects. Maybe somehow handle invisible collision brushes.
+EMOD found in enviroment directory. Have meaningful names of objects.
+Handle collisions, related to objects inside Map RSCF.
+In other older Asura engine games, this file can contain collision geometry different 
+from simble boundary boxes.
+
 Header have following format
+
 
 Chunk header:
 	DWORD magic; 	- Always 'EMOD'
@@ -14,13 +19,13 @@ Chunk header:
 EMOD_entry
 	CStr_padded name; - Name of entry.
 	XMVECTOR3f  vec_pos; - x,y,z of some point
-	DWORD unk1; - 0
-	DWORD unk2; - 1
-	DWORD unk3; - 0
-	DWORD size1; - always 0x44
-	DWORD unk4; - always 9
+	DWORD unk1; - 0 // 
+	DWORD unk2; - 1 // 
+	DWORD unk3; - 0 // 
+	DWORD size1; - always 0x44 //
+	DWORD unk4; - always 9 // specific to AVP2010
 	DWORD zeros[5];
-	WORD flag; - some flag, almost always 0x4
+	WORD flag; - some flag, almost always 0x4 // 0x2a - collision
 	WORD unk; - always -1 (FFFF)
 	DWORD unk5;
 	Asura_bbox bb; - asura bbox is bounding box with these format of 2 points

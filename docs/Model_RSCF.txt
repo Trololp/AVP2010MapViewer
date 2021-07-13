@@ -11,7 +11,7 @@ File format:
 
 Model_header:
 
-#pragma pack(push, 1)
+#pragma pack(push, 1) 
 struct model_header
 {
 	DWORD model_mesh_info_count; // amount of different materials used
@@ -19,7 +19,7 @@ struct model_header
 	DWORD index_count;
 	DWORD unk;
 	DWORD count_unk_chunks;
-	bool  unk_bool;
+	bool  bVertex_layout; // 1 => TRIANGLELIST 0 => TRIANGLESTRIP
 };
 #pragma pack(pop) // This structure inside file is not padded. sizeof(struct) = 21
 
@@ -30,7 +30,7 @@ struct model_mat_info
 	DWORD mat_hash; // Hash of material name
 	DWORD unk;
 	DWORD points_count;
-	DWORD some_offset;
+	DWORD some_flags; // 0 bit set is Meat? others bits is body chunks identification ? 
 	DWORD unk2;
 	DWORD unk3;
 };

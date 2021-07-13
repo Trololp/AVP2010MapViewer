@@ -31,8 +31,8 @@ struct Map_mesh_info
 	DWORD Index_buf_num; // always 0
 	DWORD start_index;
 	DWORD mat1_hash; // this is material name hash
-	DWORD mat2_hash;
-	DWORD unk3; //no clue flags ? or internal id of mesh on map
+	DWORD mat2_hash; // 
+	DWORD EMOD_model_id; //related to EMOD chunk, is it unique id of model ?
 	float bound_x; 
 	float bound_x_;
 	float bound_y;
