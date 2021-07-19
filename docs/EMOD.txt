@@ -30,5 +30,5 @@ EMOD_entry
 	DWORD unk5;
 	Asura_bbox bb; - asura bbox is bounding box with these format of 2 points
 			(x1, x2, y1, y2, z1, z2)
-	DWORD unk_hash; - can be hash or not.
+	DWORD half_diag; // = sqrt(x_len^2 + y_len^2 + z_len^2)/2 ; x_len = (x2-x1), etc..
 	DWORD zeros2[2];
