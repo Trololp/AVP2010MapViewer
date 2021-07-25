@@ -2,6 +2,8 @@
 
 AVP2010MapViewer is map viewer for the game "Aliens versus Predator (2010)". Map viewer allow you to see a map itself, props, entities and provide additional information to it.
 
+![image](https://github.com/Trololp/AVP2010MapViewer/blob/main/usefull_stuff/preview.png)
+
 ## Installation
 
 Make sure your computer support DirectX 11. Download [last release v0.5.1](https://github.com/Trololp/AVP2010MapViewer/releases/tag/v0.5.1). unpack zip files into new folder. done.
