@@ -14,6 +14,10 @@ int g_i = 0;
 
 void load_texture(const wchar_t* file_name, int type)
 {
+	wchar_t* texture_path = (wchar_t*)malloc(MAX_PATH);
+	lstrcpy(texture_path, file_name);
+
+
 	HRESULT hr = CreateDDSTextureFromFile(g_pd3dDevice, file_name, nullptr, &(AVP_TEXTURES[g_i].pSRView));
 	wchar_t file_name2[260] = { 0 };
 	if (type == 0)
@@ -42,6 +46,7 @@ void load_texture(const wchar_t* file_name, int type)
 	{
 		AVP_TEXTURES[g_i].hash = hash;
 		AVP_TEXTURES[g_i].id = g_i;
+		AVP_TEXTURES[g_i].path = texture_path;
 		//dbgprint("Textures", "Successful load texture %ws : %x : id = %d : hash = %x \n", file_name, &(AVP_TEXTURES[g_i].pSRView), g_i, AVP_TEXTURES[g_i].hash);
 		hash_tree_node* hn = new hash_tree_node;
 		hn->Hash = hash;

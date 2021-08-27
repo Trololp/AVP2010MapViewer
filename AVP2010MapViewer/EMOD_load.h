@@ -7,6 +7,7 @@ struct EMOD_entry {
 	XMFLOAT3 pos;
 	WORD some_flags;
 	bbox bb;
+	float radius;
 };
 
 int read_EMOD_chunk(wchar_t* FileName);

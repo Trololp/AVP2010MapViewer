@@ -268,12 +268,11 @@ VIEWER_CONSOLE_ERROR_TYPE Console::Detect_and_execute_command()
 			DWORD* args = (DWORD*)malloc(16 * 4);
 			ZeroMemory(args, 16 * 4);
 			VIEWER_CONSOLE_ARG * pArgschema = (*it)->pArgschema;
+			//VIEWER_CONSOLE_ARG argtype = CONARG_END;
 			char* curr_p = CurrentLine + cmd_name_size;
 			char* end_p = CurrentLine + 255;
 			int i = 0;
-			VIEWER_CONSOLE_ARG argtype = pArgschema[0];
-			if ((*it)->argtype == CONARG_END)
-				goto execute;
+			
 			
 			if (!((*it)->pArgschema))
 			{
@@ -304,6 +303,10 @@ VIEWER_CONSOLE_ERROR_TYPE Console::Detect_and_execute_command()
 				}
 				goto execute;
 			}
+
+			//VIEWER_CONSOLE_ARG argtype = pArgschema[0];
+			if ((*it)->argtype == CONARG_END)
+				goto execute;
 
 			for (;  i < 16; i++)
 			{

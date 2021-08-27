@@ -759,11 +759,23 @@ void load_enti_1(HANDLE f, DWORD seq_id)
 	float f1, f2;
 	READ(f1);
 	READ(f2);
+	DWORD flags_;
+	READ(flags_);
 
+
+	//bool is_frozen = flags_ & 0x2;
+	//bool is_enabled = flags_ & 0x1;
+	//const char* is_frozen_str = is_frozen ? "frozen" : "clocks from begining";
+	//is_frozen_str = is_enabled ? is_frozen_str : "dissabled";
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "message_like_trigger (1)\n");
-	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n %s \n time?: %f %f \n ", seq_id, g_curr_file, dump_msg(msgids[2]), f1, f2);
+	
+	
+
+	
+
+	sprintf(name, "trigger_start ? (1)\n");
+	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n %s \n time: %f %f \n", seq_id, g_curr_file, dump_msg(msgids[2]), f1, f2 );
 
 	Create_global_entity(name, data, 1, seq_id, Colors::Purple, founded, seq_ids);
 }
@@ -1247,10 +1259,10 @@ void load_enti_70(HANDLE f, DWORD seq_id)
 
 	char* name = nullptr; char* data = nullptr;
 	Alloc_name_and_data_str(&name, &data);
-	sprintf(name, "Entity debug node (70)\n");
+	sprintf(name, "Entity debug note (70)\n");
 	sprintf(data, "SEQ_ID: %d \n FILE: %ws \n note: %s \n", seq_id, g_curr_file, str1);
 
-	Create_entity(name, data, 71, seq_id, pos, Colors::Magenta, nullptr, nullptr, founded, seq_ids);
+	Create_entity(name, data, 70, seq_id, pos, Colors::Magenta, nullptr, nullptr, founded, seq_ids);
 }
 
 void load_enti_71(HANDLE f, DWORD seq_id)

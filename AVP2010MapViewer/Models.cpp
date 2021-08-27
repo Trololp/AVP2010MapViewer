@@ -36,7 +36,7 @@ int read_padded_str(HANDLE file, char* dest)
 	int data;
 	DWORD offset = SetFilePointer(file, NULL, NULL, FILE_CURRENT);
 	ReadFile(file, &data, 4, &bytes_readen, NULL);
-	for (; ((data >> 24) && ((data >> 16) & 0xFF ) && ((data >> 8) & 0xFF) && (data & 0xFF));)
+	for (; ((data >> 24) && ((data >> 16) & 0xFF) && ((data >> 8) & 0xFF) && (data & 0xFF));)
 	{
 		ReadFile(file, &data, 4, &bytes_readen, NULL);
 		len += 4;

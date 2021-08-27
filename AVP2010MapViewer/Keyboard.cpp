@@ -1,5 +1,6 @@
 #include "Keyboard.h"
 #include "Console.h"
+#include "Collisions.h"
 #include "Debug.h"
 
 extern XMMATRIX                g_View;
@@ -9,6 +10,7 @@ extern float					pos_z;
 extern float					g_alpha;
 extern float					g_beta;
 extern Console*					g_pConsole;
+extern Collisions*				g_pCollisions;
 
 //Move Directions 
 bool b_Forward = false;
@@ -91,6 +93,9 @@ void KeyDown(WPARAM wParam, LPARAM lParam)
 		break;
 	case 'C':
 		b_show_emod = b_show_emod ? 0 : 1;
+		break;
+	case 'X':
+		g_pCollisions->m_displayable = g_pCollisions->m_displayable ? 0 : 1;
 		break;
 	case 'P':
 		g_pConsole->is_active = true;

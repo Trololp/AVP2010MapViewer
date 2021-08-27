@@ -158,9 +158,9 @@ int load_EMOD_chunk(wchar_t * FileName)
 		READP(&(emod_entry->pos), 12);
 		SFPC(0x28);
 		READP(&(emod_entry->some_flags), 2);
-		char temp_str[16] = { 0 };
-		sprintf(temp_str, " 0x%x\n", emod_entry->some_flags);
-		strcat(emod_name, temp_str);
+		//char temp_str[16] = { 0 };
+		//sprintf(temp_str, " 0x%x\n", emod_entry->some_flags);
+		//strcat(emod_name, temp_str);
 		//dbgprint("EMOD", "name: %s pos: %05f %05f %05f flags: %d \n", emod_name, emod_entry->pos.x, emod_entry->pos.y, emod_entry->pos.z, emod_entry->some_flags);
 		SFPC(6);
 		asura_bbox asura_bb;
@@ -171,8 +171,10 @@ int load_EMOD_chunk(wchar_t * FileName)
 			+ emod_entry->pos.y, asura_bb.z2 + emod_entry->pos.z };
 		emod_entry->bb.Color = {1.0f, 1.0f, 1.0f, 1.0f};
 		emod_entry->bb.rot = NULL_ROT;
-		//g_bboxes.push_back({ emod_entry->bb.p1,emod_entry->bb.p2, XMFLOAT4(1.0f,1.0f,1.0f,1.0f) });
-		SFPC(12);
+
+		READ(emod_entry->radius);
+
+		SFPC(8);
 
 	}
 

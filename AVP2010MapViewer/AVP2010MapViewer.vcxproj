@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AVP2010MapViewer.h" />
+    <ClInclude Include="Collisions.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="DDSLoader.h" />
     <ClInclude Include="Debug.h" />
@@ -172,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AVP2010MapViewer.cpp" />
+    <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="DDSLoader.cpp" />
     <ClCompile Include="Debug.cpp" />
