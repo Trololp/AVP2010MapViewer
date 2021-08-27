@@ -6,7 +6,7 @@ AVP2010MapViewer is map viewer for the game "Aliens versus Predator (2010)". Map
 
 ## Installation
 
-Make sure your computer support DirectX 11. Download [last release v0.5.1](https://github.com/Trololp/AVP2010MapViewer/releases/tag/v0.5.1). unpack zip files into new folder. done.
+Make sure your computer support DirectX 11. Download [last release v0.5.2](https://github.com/Trololp/AVP2010MapViewer/releases/tag/v0.5.2). unpack zip files into new folder. done.
 ## Development
 I use **Visual Studio 2017**. Used **Microsoft DirectX SDK (June 2010)**. also you need **directXTK** for text on a screen (this was get from Nuget). There file in 
 [usefull_stuff](https://github.com/Trololp/AVP2010MapViewer/tree/main/usefull_stuff) folder named **HACKS.lib** dont scare its is d3dcompiler v47 lib. with is solve
@@ -29,17 +29,20 @@ my problem with linking. find and delete in `AVP2010MapViewer.h` this stroke `#p
    3. **Wait**, it can take long to load all files needed.
    
    **Usage**
-   use keys W, S, A, D to move camera. press RMB (Right mouse button) to turn camera around. press LMB on specific entity to select this.
-   key 'G' - will hide bboxes and information.
-   key 'C' - show EMOD information
-   key 'P' - show console
+   - use keys W, S, A, D to move camera. press RMB (Right mouse button) to turn camera around. press LMB on specific entity to select this.
+   - key 'G' - will hide bboxes and information.
+   - key 'C' - show EMOD information
+   - key 'P' - show console
+   - key 'X' - show collision (experimental)
    ### Console commands
-   'tp x y z' - teleport camera to given x, y, z location.
-   'find seq_id' - finds entity by given id.
-   'dump_smsg' - dump all SMSG entrys in debug.txt file.
-   'dump_emod' - dump EMOD entry in debug.txt file.
-   'font_size float' - editing console font size. (0.25 < font_size < 4.0)
-   'font_color r g b' - editing console font color.
+   - `tp x y z` - teleport camera to given x, y, z location.
+   - `find seq_id` - finds entity by given id.
+   - `dump_smsg` - dump all SMSG entrys in debug.txt file.
+   - `dump_emod` - dump EMOD entry in debug.txt file.
+   - `font_size float` - editing console font size. (0.25 < font_size < 4.0)
+   - `font_color r g b` - editing console font color.
+   - `dump_map 1` - dumping map meshes with absolute location saved.
+   - `dump_map 2` - dumping map meshes without absolute location saved.
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
