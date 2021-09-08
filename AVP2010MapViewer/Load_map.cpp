@@ -914,7 +914,8 @@ bool Dump_Entire_Map_to_Models(unsigned int type)
 				WORD _3 = indexes[j + 2] + 1 + start_index_2;
 
 
-				sprintf(face_str, "f %d/%d/%d %d/%d/%d %d/%d/%d \n", _2, _2, _2, _1, _1, _1, _3, _3, _3);
+				//sprintf(face_str, "f %d/%d/%d %d/%d/%d %d/%d/%d \n", _2, _2, _2, _1, _1, _1, _3, _3, _3);
+				sprintf(face_str, "f %d/%d/%d %d/%d/%d %d/%d/%d \n", _1, _1, _1, _2, _2, _2, _3, _3, _3);
 				WRITEP(face_str, strlen(face_str));
 			}
 
