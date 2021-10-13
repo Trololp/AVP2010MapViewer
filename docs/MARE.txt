@@ -12,11 +12,11 @@ struct MARE_ENTRY
 {
 	DWORD mat_hash;	// hash from material name (unfortunately for us, there no material names in plain text exist)
 	unsigned long int num; // sequence number of entry from 0 to count of entries
-	DWORD Hash1; // All this hashes made from string path to texture without extension
-	DWORD Hash2;
-	DWORD Hash3;
-	DWORD Hash4;
-	DWORD Hash5;
+	DWORD hash_albedo; // All this hashes made from string path to texture without extension '\graphics\textures\texture.tga' -> '\textures\texture'
+	DWORD hash_normal;
+	DWORD hash_specular;
+	DWORD hash_alpha_map;
+	DWORD hash_emission;
 	float a;	//alot stuff not known
 	float b[4];
 	DWORD c[3];
