@@ -195,7 +195,7 @@ Entity ids: (many is unknown yet, every name is not original)
 (0x804e)	    169	specific point	
 (0x804f)	    170	In door area	area
 (0x8050)	    171	-	
-(0x8051)	    172	???	
+(0x8051)	    172	Predalien	
 (0x8052)	    173	Computer	
 (0x8053)	    174 -
 (0x8054)	    175 ???
