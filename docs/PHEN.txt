@@ -1,0 +1,56 @@
+PHEN (Physical ... ?)
+Describes additional mesh information that is used in 
+Collision calculations. For example shoting bullets hit walls,
+Alien jump indicator show where it can land. and where you can walk
+and where is walls to stop movement etc...
+
+format:
+
+chunk_header {
+  DWORD magic, // PHEN
+  DWORD chunk_size,
+  UINT ver1;
+  UINT ver2;
+  UINT amt_volumes;
+  UINT points_arr_cnt; // size 0xC
+  UINT amt_indexes; // size 0x8
+  UINT amt_flags;
+  UINT amt_mat_hashes;
+  UINT amt_unk;
+}
+
+.. chunk_header .. // ver1 is 6
+.. PHEN_volumes .. // volumes that contain collision mesh 
+.. PHEN_vertexes ..
+.. PHEN_indexes .. 
+.. some_flags .. // size is 1 byte, they padded to 4 bytes 
+                 // amount is same as indexes
+.. flags .. // this describes collision type
+.. then material info .. // (it used for sound of walking and bullet hits)
+
+struct PHEN_vertexe {
+  float x;
+  float y;
+  float z;
+}
+
+struct PHEN_indexes
+{
+	WORD i0;
+	WORD i1;
+	WORD i2;
+	WORD i3; // if i3 == 0xFFFF then it mean that it describes triangle
+	         // insted it describes quad.
+};
+
+struct PHEN_volume
+{
+	DWORD indexes_offset; // offset in PHEN indexes array
+	DWORD point_offset; // offset in vertex array
+	DWORD amount_indexes;
+	DWORD id2;
+	asura_bbox bb; // x0 x1 y0 y1 z0 z1
+	DWORD flags_offset; // offset in flags array
+	DWORD unk;
+	WORD  vol_flags; // if 1 all mesh have same flag for all triangles/quads
+};
