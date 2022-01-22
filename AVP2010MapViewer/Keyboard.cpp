@@ -22,6 +22,7 @@ bool b_LMB = false;
 bool b_Shift = false;
 bool b_show_info = true;
 bool b_show_emod = false;
+bool b_show_collision = false;
 
 void MovementFunc()
 {
@@ -96,6 +97,9 @@ void KeyDown(WPARAM wParam, LPARAM lParam)
 		break;
 	case 'X':
 		g_pCollisions->m_displayable = g_pCollisions->m_displayable ? 0 : 1;
+		break;
+	case 'Z':
+		b_show_collision = b_show_collision ? 0 : 1;
 		break;
 	case 'P':
 		g_pConsole->is_active = true;

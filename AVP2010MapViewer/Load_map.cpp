@@ -311,8 +311,8 @@ int Read_map(const wchar_t* file_name, DWORD* g_total_meshes)
 	{
 		dbgprint("RSCF_Parse_Enviroment", "Create index buffer failed !!!\n");
 		CloseHandle(f);
-		return 0;
 		_aligned_free(indexes);
+		return 0;
 	}
 
 	_aligned_free(indexes);

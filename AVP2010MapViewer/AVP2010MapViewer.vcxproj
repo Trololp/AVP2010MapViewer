@@ -167,6 +167,7 @@
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Load_map.h" />
     <ClInclude Include="Models.h" />
+    <ClInclude Include="PHEN_loader.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Textures.h" />
     <ClInclude Include="ViewFrustrum.h" />
@@ -184,6 +185,7 @@
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Load_map.cpp" />
     <ClCompile Include="Models.cpp" />
+    <ClCompile Include="PHEN_loader.cpp" />
     <ClCompile Include="Textures.cpp" />
     <ClCompile Include="ViewFrustrum.cpp" />
   </ItemGroup>

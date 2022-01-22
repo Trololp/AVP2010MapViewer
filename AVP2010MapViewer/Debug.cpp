@@ -274,3 +274,14 @@ void Dump_hex(const char* name, void* data, unsigned int count)
 		}
 	}
 }
+
+// Help function to convert types
+bbox* bbox_from_asura_bb(asura_bbox* bb, XMFLOAT4 rot, XMVECTOR color)
+{
+	bbox* bbox_p = new bbox;
+	bbox_p->p1 = { bb->x1, bb->y1, bb->z1 };
+	bbox_p->p2 = { bb->x2, bb->y2, bb->z2 };
+	bbox_p->rot = rot;
+	XMStoreFloat4(&(bbox_p->Color), color);
+	return bbox_p;
+}

@@ -731,16 +731,6 @@ bbox* bbox_from_point(XMFLOAT3 pos, float size, XMVECTOR color,XMFLOAT4 rot = { 
 	return e_bbox;
 }
 
-bbox* bbox_from_asura_bb(asura_bbox* bb, XMFLOAT4 rot, XMVECTOR color)
-{
-	bbox* bbox_p = new bbox;
-	bbox_p->p1 = { bb->x1, bb->y1, bb->z1 };
-	bbox_p->p2 = { bb->x2, bb->y2, bb->z2 };
-	bbox_p->rot = rot;
-	XMStoreFloat4(&(bbox_p->Color), color);
-	return bbox_p;
-}
-
 void load_enti_1(HANDLE f, DWORD seq_id)
 {
 	DWORD a = 0;

@@ -10,3 +10,4 @@ int line_to_vertex(std::vector <line> &lines, DWORD* g_points);
 void Dump_matrix(const char* name, XMMATRIX matrix);
 void Dump_vector(const char* name, XMVECTOR vector);
 void Dump_hex(const char* name, void* data, unsigned int count);
+bbox* bbox_from_asura_bb(asura_bbox* bb, XMFLOAT4 rot, XMVECTOR color);
