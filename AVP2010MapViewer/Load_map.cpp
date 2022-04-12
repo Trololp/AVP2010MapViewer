@@ -500,7 +500,7 @@ bool parse_MARE_for_dump_map(wchar_t* MARE_file_name, wchar_t* folder_where_to_d
 			}
 
 			char asd2[260];
-			sprintf(asd2, "map_Kd %ws%ws \n", material_folder_name, file_name + 1);
+			sprintf(asd2, "map_Kd Materials\\%ws%ws \n", material_folder_name, file_name + 1);
 			WRITEP(asd2, strlen(asd2));
 		}
 		else
@@ -536,7 +536,7 @@ bool parse_MARE_for_dump_map(wchar_t* MARE_file_name, wchar_t* folder_where_to_d
 			}
 
 			char asd2[260];
-			sprintf(asd2, "map_Bump %ws%ws \n \n", material_folder_name, file_name + 1);
+			sprintf(asd2, "map_Bump Materials\\%ws%ws \n \n", material_folder_name, file_name + 1);
 			WRITEP(asd2, strlen(asd2));
 		}
 		else
@@ -570,7 +570,7 @@ bool parse_MARE_for_dump_map(wchar_t* MARE_file_name, wchar_t* folder_where_to_d
 			}
 
 			char asd2[260];
-			sprintf(asd2, "map_d %ws%ws \n \n", material_folder_name, file_name + 1);
+			sprintf(asd2, "map_d Materials\\%ws%ws \n \n", material_folder_name, file_name + 1);
 			WRITEP(asd2, strlen(asd2));
 		}
 		else
