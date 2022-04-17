@@ -23,182 +23,182 @@ struct ENTI_header
 
 Entity ids: (many is unknown yet, every name is not original)
 
-	    id	Description
-	    1	trigger_start?	activates on start of level
-	    2	-	
-	    3	cutscene start	
-	    4	-	
-	    5	-	
-	    6	-	
-	    7	Prop	
-	    8	-	
-	    9	-	
-	    10	-	
-	    11	Call message	Maybe calls some global message
-	    12	-	
-	    13	???
-	    14	Unknown	Invisible
-	    15	-	
-	    16	-	
-	    17	-	
-	    18	-	
-	    19	-	
-	    20	Some trigger near doors	
-	    21	Movable obj	
-	    22	-	
-	    23	-	
-	    24	-	
-	    25	-	
-	    26	-	
-	    27	-	
-	    28	???	
-	    29	-	
-	    30	-	
-	    31	-	
-	    32	Trigger Hurt	Global no pos area boundaries
-	    33	Statical effect	
-	    34	Multimanager	Global
-	    35	Trigger (dynamic)	Point maybe sphere trigger
-	    36	???
-	    37	-	
-	    38	Unknown	Global
-	    39	-	
-	    40	???
-	    41	Unknown	Point
-	    42	Timer sequence	Global
-	    43	???	
-	    44	???
-	    45	-
-	    46	-	
-	    47	???	
-	    48	-
-	    49	-	
-	    50	-	
-	    51	-	
-	    52	???		
-	    53	???		
-	    54	???
-	    55	-
-	    56	???	
-	    57	???
-	    58	-
-	    59	???	
-	    60	-
-	    61	-	
-	    62	???	
-	    63	Path point	
-	    64	Path controller	
-	    65	???	
-	    66	Unknown	Global
-	    67	???	
-	    68	Properties of 69	
-	    69	Teleport location	
-	    70	Entity debug note 
-	    71	Special fx (projectors)	
-	    72	Some waypoint 
-	    73	Unknown	Global
-	    74	Console variable	
-	    75	Special fx (light shafts)	
-	    76	???	
-	    77	Trigger 	
-	    78	Triggers  this is most used trigger entity	
-	    79	???
-	    80	-
-	    81	-	
-	    82	-	
-	    83	Light obj (with model)	
-	    84	Like 11 but with hash	Global
-	    85	Dialogue sequence	hash DLIG and DLLN hashes
-	    86	???	
-	    87	???	
-	    88	???	
-	    89	-	
-	    90	-	
-	    91	-	
-(0x8001)	    92	Alien	
-(0x8002)	    93	-	
-(0x8003)	    94	Facehugger	
-(0x8004)	    95	Alien_Queen	
-(0x8005)	    96	???	
-(0x8006)	    97	Predator	
-(0x8007)	    98	???	
-(0x8008)	    99	-	
-(0x8009)	    100	waypoint controller	
-(0x800a)	    101	-	
-(0x800b)	    102	-	
-(0x800c)	    103	???	
-(0x800d)	    104	???	
-(0x800e)	    105	-	
-(0x800f)	    106	-	
-(0x8010)	    107	-	
-(0x8011)	    108	-	
-(0x8012)	    109	-	
-(0x8013)	    110	-	
-(0x8014)	    111	-	
-(0x8015)	    112	???	
-(0x8016)	    113	???	
-(0x8017)	    114	waypoint	
-(0x8018)	    115	some object ?
-(0x8019)	    116	-	
-(0x801a)	    117	-	
-(0x801b)	    118	-	
-(0x801c)	    119	-	
-(0x801d)	    120	???	
-(0x801e)	    121	-	
-(0x801f)	    122	Computer console	
-(0x8020)	    123	-	
-(0x8021)	    124	Some waypoint controller	
-(0x8022)	    125	-	
-(0x8023)	    126	Checkpoint	
-(0x8024)	    127	-	
-(0x8025)	    128	-	
-(0x8026)	    129	???	
-(0x8027)	    130	GameScores?	
-(0x8028)	    131	???	
-(0x8029)	    132	unknown	
-(0x802a)	    133	some event	
-(0x802b)	    134	???	
-(0x802c)	    135	Combat_android	
-(0x802d)	    136	Obstacle obj	
-(0x802e)	    137	???	
-(0x802f)	    138	Predator spots?	
-(0x8030)	    139	???	
-(0x8031)	    140	patrol area ?	
-(0x8032)	    141	Colonist	
-(0x8033)	    142	Marine	
-(0x8034)	    143	???	
-(0x8035)	    144	Obstacle points	
-(0x8036)	    145	some waypoint?	
-(0x8037)	    146	alien hidding spot	
-(0x8038)	    147	spawn_property?	spawner 
-(0x8039)	    148	Some waypoint controller	
-(0x803a)	    149	NPC property	I think start up animation or smth
-(0x803b)	    150	-	
-(0x803c)	    151	Sentry Gun	
-(0x803d)	    152	???	
-(0x803e)	    153	-	
-(0x803f)	    154	-	
-(0x8040)	    155	???	
-(0x8041)	    156	Collectable (Marine & Predator)	
-(0x8042)	    157	Target_point (for NPC)	aiming at that
-(0x8043)	    158	Mission Target	Mission targeting sprite 
-(0x8044)	    159	-	
-(0x8045)	    160	???	
-(0x8046)	    161	-	
-(0x8047)	    162	Battery_station	Object that interact with batteries
-(0x8048)	    163	Unknown	Not found yet (its model)
-(0x8049)	    164	???	
-(0x804a)	    165	Retina scaner or button pad	
-(0x804b)	    166	Zone_area	With some area boundaries
-(0x804c)	    167	???
-(0x804d)	    168	???	
-(0x804e)	    169	specific point	
-(0x804f)	    170	In door area	area
-(0x8050)	    171	-	
-(0x8051)	    172	Predalien	
-(0x8052)	    173	Computer	
-(0x8053)	    174 -
-(0x8054)	    175 ???
-(0x8055)	    176 ???
-(0x8056)	    177 -
-(0x8057)	    178 ???
+	    id	Description                                         RTTI  name from server exe
+	    1	TimeTrigger                                         Asura_ServerEntity_TimeTrigger
+	    2	-	                                                
+	    3	CutsceneController                                  Asura_ServerEntity_CutsceneController
+	    4	-	                                                
+	    5	-	                                                
+	    6	-	                                                
+	    7	Prop	                                            AVP_ServerEntity_PhysicsObject
+	    8	-	                                                
+	    9	-	                                                
+	    10	-	                                                
+	    11	split_msg                                           Asura_ServerEntity_SplitterBlock
+	    12	-	                                                
+	    13	CountedTrigger                                      Asura_ServerEntity_CountedTrigger
+	    14	SoundController                                     Asura_ServerEntity_SoundController
+	    15	-	                                                
+	    16	-	                                                
+	    17	-	                                                
+	    18	-	                                                
+	    19	-	                                                
+	    20	AdvancedVolumeTrigger 	                            AVP_ServerEntity_AdvancedVolumeTrigger
+	    21	Lift_obj	                                        AVP_ServerEntity_Lift
+	    22	-	                                                
+	    23	-	                                                
+	    24	-	                                                
+	    25	-	                                                
+	    26	-	                                                
+	    27	-	                                                
+	    28	FMVTrigger	                                        Asura_ServerEntity_FMVTrigger
+	    29	-	                                                
+	    30	-	                                                
+	    31	-	                                                
+	    32	MultiDamageVolume	                                AVP_ServerEntity_MultiDamageVolume
+	    33	PFX_Effect   	                                    Asura_ServerEntity_PFX_Effect
+	    34	Multimanager	Global                              Asura_ServerEntity_Template
+	    35	LookAtTrigger                                       Asura_ServerEntity_LookAtTrigger
+	    36	ClockTrigger                                        Asura_ServerEntity_ClockTrigger
+	    37	-	                                                
+	    38	LogicTrigger                                        Asura_ServerEntity_LogicTrigger
+	    39	-	                                                
+	    40	ClientVolumeTrigger                                 Asura_ServerEntity_ClientVolumeTrigger
+	    41	StartPoint                                          Asura_ServerEntity_StartPoint/AVP_ServerEntity_StartPoint
+	    42	TimelineTrigger	Global                              Asura_ServerEntity_TimelineTrigger
+	    43	EnvTextureAnimControl                               Asura_ServerEntity_EnvTextureAnimControl
+	    44	CountedVolumeTrigger                                Asura_ServerEntity_CountedVolumeTrigger
+	    45	-                                                   
+	    46	-	                                                
+	    47	DebugMessageTrigger                                 Asura_ServerEntity_DebugMessageTrigger
+	    48	-                                                   
+	    49	-	                                                
+	    50	-	                                                
+	    51	-	                                                
+	    52	ProxyTrigger                                        Asura_ServerEntity_ProxyTrigger
+	    53	Node	                                            Asura_ServerEntity_Node
+	    54	Node_OrientedNode                                   Asura_ServerNode_OrientedNode
+	    55	-                                                   
+	    56	Node_Coverpoint                                     Asura_ServerNode_Coverpoint
+	    57	Node_GuardZone                                      Asura_ServerNode_GuardZone
+	    58	-                                                   
+	    59	Node_Spline	                                        Asura_ServerNode_Spline
+	    60	-                                                   
+	    61	-	                                                
+	    62	DialogueTrigger                                     Asura_ServerEntity_DialogueTrigger
+	    63	Node_LiftNode	                                    Asura_ServerNode_LiftNode
+	    64	Node_LiftSpline	                                    Asura_ServerNode_LiftSpline
+	    65	Affector                                            Asura_ServerEntity_Affector
+	    66	Affector_Wind                                       Asura_ServerEntity_Affector_Wind
+	    67	FX_Projector                                        Asura_ServerEntity_Projector
+	    68	Teleporter      	                                Asura_ServerEntity_Teleporter
+	    69	TeleportDestination	                                Asura_ServerEntity_TeleportDestination
+	    70	DebugWaypointTrigger                                Asura_ServerEntity_DebugWaypointTrigger
+	    71	FX_DynamicLight        	                            Asura_ServerEntity_DynamicLight
+	    72	ForceField_Conveyor                                 Asura_ServerEntity_ForceField_Conveyor
+	    73	AttractorController                                 Asura_ServerEntity_AttractorController
+	    74	Console_variable	                                Asura_ServerEntity_ConsoleVar
+	    75	FX_LightShaft	                                    Asura_ServerEntity_LightShaft
+	    76	StreamingBackgroundSoundController                  Asura_ServerEntity_StreamingBackgroundSoundController
+	    77	WaypointBlockerVolume                               Asura_ServerEntity_WaypointBlockerVolume
+	    78	VolumeTrigger this is most used trigger entity	    AVP_ServerEntity_VolumeTrigger
+	    79	Objective                                           Asura_ServerEntity_Objective
+	    80	-                                                   
+	    81	-	                                                
+	    82	-	                                                
+	    83	Light obj (with model)	                            
+	    84	DynamicMusicTrigger                                 Asura_ServerEntity_DynamicMusicTrigger
+	    85	DialogueController	hash DLIG and DLLN hashes       Asura_ServerEntity_DialogueController
+	    86	FMVController                                       Asura_ServerEntity_FMVController
+	    87	EffectVolume                                        Asura_ServerEntity_EffectVolume
+	    88	FMVSpeaker                                          Asura_ServerEntity_FMVSpeaker
+	    89	-	                                                
+	    90	-	                                                
+	    91	-	                                                
+(0x8001)	    92	Alien	                                    AVP_ServerActor_Alien
+(0x8002)	    93	-	                                        
+(0x8003)	    94	Facehugger	                                AVP_ServerActor_FaceHugger
+(0x8004)	    95	Alien_Queen	                                AVP_ServerActor_AlienQueen
+(0x8005)	    96	Marine                                      AVP_ServerActor_Marine
+(0x8006)	    97	Predator	                                AVP_ServerActor_Predator
+(0x8007)	    98	projectile_Mine                             AVP_ServerProjectile_Mine
+(0x8008)	    99	-	                                        
+(0x8009)	    100	Node_GS2Spline	                            AVP_ServerNode_GS2Spline
+(0x800a)	    101	-	                                        
+(0x800b)	    102	-	                                        
+(0x800c)	    103	InteractionTrigger                          AVP_ServerEntity_InteractionTrigger 
+(0x800d)	    104	SpawnPoint                                  AVP_ServerEntity_SpawnPoint
+(0x800e)	    105	-	                                        
+(0x800f)	    106	-	                                        
+(0x8010)	    107	-	                                        
+(0x8011)	    108	-	                                        
+(0x8012)	    109	-	                                        
+(0x8013)	    110	-	                                        
+(0x8014)	    111	-	                                        
+(0x8015)	    112	Node_OrientedNode                           AVP_ServerNode_OrientedNode
+(0x8016)	    113	Node_GuardZone                              AVP_ServerNode_GuardZone
+(0x8017)	    114	Node_GS2Node                                AVP_ServerNode_GS2Node
+(0x8018)	    115	DamageableObject                            AVP_ServerEntity_DamageableObject
+(0x8019)	    116	-	                                        
+(0x801a)	    117	-	                                        
+(0x801b)	    118	-	                                        
+(0x801c)	    119	-	                                        
+(0x801d)	    120	Vehicle_Dropship                            AVP_ServerVehicle_Dropship
+(0x801e)	    121	-	                                        
+(0x801f)	    122	InteractObject   	                        AVP_ServerEntity_InteractObject
+(0x8020)	    123	-	                                        
+(0x8021)	    124	Node_GS2Attractor       	                AVP_ServerNode_GS2Attractor
+(0x8022)	    125	-	                                        
+(0x8023)	    126	CheckPointNode                              AVP_ServerEntity_CheckPointNode
+(0x8024)	    127	-	                                        
+(0x8025)	    128	-	                                        
+(0x8026)	    129	???	                                        
+(0x8027)	    130	Entity_Team_Alien                           AVP_ServerEntity_Team_Alien
+(0x8028)	    131	AlienSpawnPoint                             AVP_ServerEntity_AlienSpawnPoint
+(0x8029)	    132	GamePlayVolume                              AVP_ServerEntity_GamePlayVolume
+(0x802a)	    133	Entity_Squad_Marine                         AVP_ServerEntity_Squad_Marine
+(0x802b)	    134	Entity_Team_Marine                          AVP_ServerEntity_Team_Marine
+(0x802c)	    135	Android      	                            AVP_ServerActor_Android
+(0x802d)	    136	Entity_LookAt                               AVP_ServerEntity_LookAt
+(0x802e)	    137	Node_FormationPoint                         AVP_ServerNode_FormationPoint
+(0x802f)	    138	Node_VantagePoint_Predator                  AVP_ServerNode_VantagePoint_Predator
+(0x8030)	    139	Node_Objective                              AVP_ServerNode_Objective
+(0x8031)	    140	Node_Objective_Marine                       AVP_ServerNode_Objective_Marine
+(0x8032)	    141	Civilian	                                AVP_ServerActor_Civilian
+(0x8033)	    142	Marine	                                    AVP_ServerActor_Marine
+(0x8034)	    143	HumanSpawnPoint                             AVP_ServerEntity_HumanSpawnPoint
+(0x8035)	    144	Node_CoverpointNode                         AVP_ServerNode_CoverpointNode
+(0x8036)	    145	Node_FleePoint                              AVP_ServerNode_FleePoint
+(0x8037)	    146	Entity_Vent     	                        AVP_ServerEntity_Vent
+(0x8038)	    147	SpawnController                             AVP_ServerEntity_SpawnController
+(0x8039)	    148	SpawnPoint2	                                AVP_ServerEntity_SpawnPoint2
+(0x803a)	    149	Entity_Squad_Alien                          AVP_ServerEntity_Squad_Alien
+(0x803b)	    150	-	                                        
+(0x803c)	    151	Sentry Gun	                                AVP_ServerWeapon_Sentrygun
+(0x803d)	    152	Entity_GameMode                             AVP_ServerEntity_GameMode
+(0x803e)	    153	-	                                        
+(0x803f)	    154	-	                                        
+(0x8040)	    155	Entity_Squad_FaceHugger                     AVP_ServerEntity_Squad_FaceHugger
+(0x8041)	    156	Collectable (Marine & Predator)	            AVP_ServerEntity_Pickup
+(0x8042)	    157	Entity_ShootAt (for NPC)	aiming at that  AVP_ServerEntity_ShootAt
+(0x8043)	    158	PlayerObjective                             AVP_ServerEntity_PlayerObjective
+(0x8044)	    159	-	                                        
+(0x8045)	    160	InteractPredatorLock                        AVP_ServerEntity_InteractPredatorLock
+(0x8046)	    161	-	                                        
+(0x8047)	    162	InteractBatteryReceptacle                   AVP_ServerEntity_InteractBatteryReceptacle
+(0x8048)	    163	InteractHackingPoint                        AVP_ServerEntity_InteractHackingPoint
+(0x8049)	    164	Entity_CommandPost                          AVP_ServerEntity_CommandPost
+(0x804a)	    165	InteractRetinalScanner   	                AVP_ServerEntity_InteractRetinalScanner
+(0x804b)	    166	Entity_RoomNode                             AVP_ServerEntity_RoomNode
+(0x804c)	    167	Entity_MotionTrackerBlip                    AVP_ServerEntity_MotionTrackerBlip
+(0x804d)	    168	Entity_PlayerProxy                          AVP_ServerEntity_PlayerProxy
+(0x804e)	    169	LocationMarker                              AVP_ServerEntity_LocationMarker
+(0x804f)	    170	WaypointBlockerVolume                       AVP_ServerEntity_WaypointBlockerVolume
+(0x8050)	    171	-	                                        
+(0x8051)	    172	Predalien	                                AVP_ServerActor_Predalien
+(0x8052)	    173	InteractInvisiSwitch                        AVP_ServerEntity_InteractInvisiSwitch
+(0x8053)	    174 -                                           
+(0x8054)	    175 Entity_CamPoint                             AVP_ServerEntity_CamPoint
+(0x8055)	    176 Praetorian                                  AVP_ServerActor_Praetorian
+(0x8056)	    177 -                                           
+(0x8057)	    178 Node_3DCoverpointNode                       AVP_ServerNode_3DCoverpointNode
