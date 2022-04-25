@@ -1,0 +1,14 @@
+Pistol:7c87d718
+SMG:42e9fe70
+FireThrower:d9a0ae61
+Sniper:09c36b00
+Shotgun:27161a67
+Also Pistol:ebd00bef
+Taser: 06907AD3
+
+predator:
+FireBlaster:085d304f
+Mines:53f921d5
+Disk:213064b6
+Spear:f1f493fa
+Speargun:80C6D6C7
