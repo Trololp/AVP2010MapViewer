@@ -1,5 +1,7 @@
 # AVP2010MapViewer
 
+*This project will no longer be maintained*
+
 AVP2010MapViewer is map viewer for the game "Aliens versus Predator (2010)". Map viewer allow you to see a map itself, props, entities and provide additional information to it.
 
 ![image](https://github.com/Trololp/AVP2010MapViewer/blob/main/usefull_stuff/preview.png)
@@ -44,6 +46,4 @@ my problem with linking. find and delete in `AVP2010MapViewer.h` this stroke `#p
    - `font_color r g b` - editing console font color.
    - `dump_map 1` - dumping map meshes with absolute location saved.
    - `dump_map 2` - dumping map meshes without absolute location saved.
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-Please make sure to update tests as appropriate.
+
